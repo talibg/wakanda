@@ -7,7 +7,7 @@ export const foodWords: WolofWord[] = [
         senegal: 'ceeb',
         gambia: 'cheb',
         category: 'food',
-        notes: 'Cheeb is the Gambian spelling for ceeb.',
+        notes: 'Cheeb is a common Gambian phonetic spelling for ceeb.',
         tags: ['staple'],
     },
     {
@@ -25,8 +25,8 @@ export const foodWords: WolofWord[] = [
         gambia: 'ndox',
         category: 'food',
         exampleSentenceEnglish: 'Please give me water.',
-        exampleSentenceSenegal: 'May ma ndox, baal ma.',
-        exampleSentenceGambia: 'Jox ma ndox si baal ma.',
+        exampleSentenceSenegal: 'Bu la neexee, jox ma ndox.', // Corrected politeness phrase and structure
+        exampleSentenceGambia: 'Bu la neexee, jox ma ndox.',
     },
     {
         id: 'food-4',
@@ -42,16 +42,17 @@ export const foodWords: WolofWord[] = [
         senegal: 'ataaya',
         gambia: 'ataya',
         category: 'food',
-        notes: 'Senegal keeps the double “aa” sound.',
+        notes: 'Refers to the traditional mint tea. Senegalese spelling often retains the double "aa" sound.',
         tags: ['drink'],
     },
     {
         id: 'food-6',
         english: 'pepper',
-        senegal: 'pim',
-        gambia: 'pim',
+        senegal: 'kani', // Changed from 'pim' to the fundamental Wolof word
+        gambia: 'kani',
         category: 'food',
         tags: ['spice'],
+        notes: 'Kani refers specifically to chili or hot peppers. "Pim" (from French \'piment\') is also widely used.',
     },
     {
         id: 'food-7',
@@ -59,6 +60,7 @@ export const foodWords: WolofWord[] = [
         senegal: 'sawara',
         gambia: 'sawara',
         category: 'food',
+        notes: 'Used specifically for cooking oil.',
     },
     {
         id: 'food-8',
@@ -66,14 +68,16 @@ export const foodWords: WolofWord[] = [
         senegal: 'legum',
         gambia: 'legum',
         category: 'food',
+        notes: 'A common borrowing from French ("légumes"), this is very widely used.',
     },
     {
         id: 'food-9',
         english: 'fruit',
-        senegal: 'meew',
-        gambia: 'meew',
+        senegal: 'frugi', // Corrected. 'Meew' means milk.
+        gambia: 'frugi',
         category: 'food',
         tags: ['market'],
+        notes: 'Borrowed from French "fruit", this is the most common marketplace term.',
     },
     {
         id: 'food-10',
@@ -81,6 +85,6 @@ export const foodWords: WolofWord[] = [
         senegal: 'suukar',
         gambia: 'sukar',
         category: 'food',
-        notes: 'Gambian dialect drops the doubled vowels in many loanwords.',
+        notes: 'Senegalese standard often doubles the vowel sound in this loanword.',
     },
 ]

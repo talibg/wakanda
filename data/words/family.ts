@@ -9,8 +9,8 @@ export const familyWords: WolofWord[] = [
         category: 'family',
         tags: ['family'],
         exampleSentenceEnglish: 'My mother is at home.',
-        exampleSentenceSenegal: 'Samay yaay nekk na kër ga.',
-        exampleSentenceGambia: 'Sunu yaay deh ci compound bi.',
+        exampleSentenceSenegal: 'Sama yaay nekk na ci kër gi.', // "Sama" (my), not "Samay" (my plural)
+        exampleSentenceGambia: 'Sama yaay nekk na kër ga.', // "Sama" (my), not "Sunu" (our)
     },
     {
         id: 'family-2',
@@ -34,14 +34,15 @@ export const familyWords: WolofWord[] = [
         senegal: 'rakk bu jigéen',
         gambia: 'rakk bu jigéen',
         category: 'family',
+        notes: 'Rakk means "younger sibling".',
     },
     {
         id: 'family-5',
         english: 'child',
         senegal: 'xale',
-        gambia: 'xaleh',
+        gambia: 'xale',
         category: 'family',
-        notes: 'Gambian speech often adds a final “h” sound.',
+        notes: 'Gambian pronunciation may add a final “h” sound. "Xale" means a child (a young person), while "doom" means one\'s offspring (son/daughter).',
         tags: ['everyday'],
     },
     {
@@ -57,10 +58,10 @@ export const familyWords: WolofWord[] = [
     {
         id: 'family-7',
         english: 'wife',
-        senegal: 'jàkkar',
+        senegal: 'jabar', // Corrected. "Jàkkar" means husband.
         gambia: 'jabar',
         category: 'family',
-        notes: 'Senegalese spelling keeps the double consonant.',
+        notes: '"Jabar" is the standard word for "wife".',
     },
     {
         id: 'family-8',
@@ -68,21 +69,23 @@ export const familyWords: WolofWord[] = [
         senegal: 'jékkër',
         gambia: 'jekker',
         category: 'family',
+        notes: 'The "ë" vowel is common in Senegalese spelling. "Jàkkar" is also used in Senegal.',
     },
     {
         id: 'family-9',
         english: 'family',
         senegal: 'wa kër',
-        gambia: 'wa keër',
+        gambia: 'wa kër',
         category: 'family',
         tags: ['household'],
+        notes: 'Literally "the people of the house" (household). "Njëbót" is also used to mean family/lineage.',
     },
     {
         id: 'family-10',
         english: 'neighbor',
-        senegal: 'deret',
-        gambia: 'deret',
+        senegal: 'dëkkandoo', // Corrected. "Deret" means "blood".
+        gambia: 'dekkandoo',
         category: 'family',
-        notes: 'Used broadly for people living nearby.',
+        notes: 'Literally "one who lives with (you)".',
     },
 ]

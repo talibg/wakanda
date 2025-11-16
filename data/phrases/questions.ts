@@ -4,10 +4,11 @@ export const questionPhrases: WolofPhrase[] = [
     {
         id: 'questions-1',
         english: 'What is your name?',
-        senegal: 'Noo tudd?',
-        gambia: 'Ngoo tudd?',
+        senegal: 'Nanga tudd?', // Corrected to the standard question form
+        gambia: 'Nanga tudd?',
         category: 'questions',
         tags: ['introductions'],
+        notes: 'Literally "How are you called?". The reply is often "Maa ngi tudd [name]." or "[Name] laa."',
     },
     {
         id: 'questions-2',
@@ -15,6 +16,7 @@ export const questionPhrases: WolofPhrase[] = [
         senegal: 'Fan ngay dëkk?',
         gambia: 'Fan nga dekk?',
         category: 'questions',
+        notes: 'Fan (where), ngay/nga (you are), dëkk/dekk (live).',
     },
     {
         id: 'questions-3',
@@ -22,21 +24,23 @@ export const questionPhrases: WolofPhrase[] = [
         senegal: 'Fan ngay dem?',
         gambia: 'Fan nga dem?',
         category: 'questions',
-        notes: 'Common street greeting to strangers.',
+        notes: 'Common street greeting to strangers. Fan (where), dem (go).',
     },
     {
         id: 'questions-4',
         english: 'What time is it?',
-        senegal: 'Ñaata nga waxtu?',
-        gambia: 'Ñaata nga wahtu?',
+        senegal: 'Ñaata waxtu la?', // Corrected grammar (removed 'nga')
+        gambia: 'Ñaata wahtu la?',
         category: 'questions',
         tags: ['time'],
+        notes: 'Literally "How many hours is it?".',
     },
     {
         id: 'questions-5',
         english: 'Can you help me?',
-        senegal: 'Manga soxla ndimbal?',
-        gambia: 'Mangi sohla ndimbal?',
+        senegal: 'Mën nga ma dimbali?', // Corrected to use the modal verb "can"
+        gambia: 'Mën nga ma dimbali?',
         category: 'questions',
+        notes: 'Mën nga (Can you), ma (me), dimbali (help).',
     },
 ]
