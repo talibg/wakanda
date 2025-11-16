@@ -1,65 +1,88 @@
-import Image from "next/image";
+import type { Metadata } from 'next'
+import Link from 'next/link'
 
-export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+
+export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
+    title: 'Learn Wolof Online — Free Wolof Lessons for Beginners',
+    description:
+        'Master Wolof words and phrases from Senegal and The Gambia with side-by-side dialect comparisons, authentic pronunciations, and practical study tips.',
+}
+
+const highlights = [
+    {
+        title: 'Explore Wolof Words',
+        description:
+            'Browse numbers, family members, food, and time vocabulary with both Senegalese and Gambian spellings.',
+        href: '/words',
+        action: 'Go to Words',
+    },
+    {
+        title: 'Practice Real Phrases',
+        description:
+            'Study greetings, market talk, travel questions, and everyday expressions for real-life conversations.',
+        href: '/phrases',
+        action: 'Go to Phrases',
+    },
+]
+
+export default function HomePage() {
+    return (
+        <div className="space-y-12">
+            <section className="rounded-3xl bg-card p-8 shadow-lg ring-1 ring-border">
+                <p className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Learn Wolof</p>
+                <h1 className="mt-4 text-3xl font-bold tracking-tight text-primary">
+                    Free Wolof lessons for Senegal and The Gambia
+                </h1>
+                <p className="mt-4 text-lg text-muted-foreground">
+                    Wolof is the bridge language of Senegal, The Gambia, and much of coastal West Africa. Learn how the
+                    Dakar and Banjul dialects compare through side-by-side cards that highlight spelling, pronunciation,
+                    and usage.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-4">
+                    <Button asChild size="lg">
+                        <Link href="/phrases/greetings">Start with Greetings</Link>
+                    </Button>
+                    <Button asChild size="lg" variant="outline">
+                        <Link href="/words">Explore Words</Link>
+                    </Button>
+                </div>
+            </section>
+
+            <section className="grid gap-8 lg:grid-cols-2">
+                <article className="space-y-3">
+                    <h2 className="text-2xl font-semibold">Why Wolof?</h2>
+                    <p className="text-muted-foreground">
+                        Speaking Wolof opens doors across Senegal, from bustling markets in Touba to the beaches of
+                        Saint-Louis, and helps you connect with Gambian families around Banjul and Serrekunda. Our
+                        lessons focus on the shared core of the language while pointing out the subtle dialect
+                        differences that locals expect you to know.
+                    </p>
+                    <p className="text-muted-foreground">
+                        Every card uses English explanations, practical usage notes, and optional search to help you
+                        remember new vocabulary quickly. Switch between both dialects or zoom in on just Senegal or just
+                        Gambia whenever you want.
+                    </p>
+                </article>
+                <div className="grid gap-4">
+                    {highlights.map((item) => (
+                        <Card key={item.title}>
+                            <CardHeader>
+                                <CardTitle>{item.title}</CardTitle>
+                                <CardDescription>{item.description}</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <Button asChild variant="secondary">
+                                    <Link href={item.href}>{item.action}</Link>
+                                </Button>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </div>
+            </section>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    )
 }
