@@ -43,7 +43,7 @@ export function SiteHeader() {
                 <NavigationMenu className="hidden flex-1 justify-center md:flex">
                     <NavigationMenuList>
                         {primaryNavItems.map((item) => (
-                            <NavigationMenuItem key={item.href}>
+                            <NavigationMenuItem key={item.href} value={item.href}>
                                 <NavigationMenuLink asChild>
                                     <Link
                                         className="rounded-md px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
