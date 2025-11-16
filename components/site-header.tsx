@@ -1,13 +1,8 @@
 import Link from 'next/link'
 
 import { DialectToggle } from '@/components/dialect-toggle'
+import { PrimaryNavMenu } from '@/components/primary-nav'
 import { ThemeToggle } from '@/components/theme-toggle'
-import {
-    NavigationMenu,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-} from '@/components/ui/navigation-menu'
 import {
     Sidebar,
     SidebarContent,
@@ -22,12 +17,7 @@ import {
     SidebarSeparator,
     SidebarTrigger,
 } from '@/components/ui/sidebar'
-
-export const primaryNavItems = [
-    { href: '/', label: 'Home', description: 'Return to the Learn Wolof overview' },
-    { href: '/words', label: 'Words', description: 'Browse Wolof word lists' },
-    { href: '/phrases', label: 'Phrases', description: 'Study useful Wolof sentences' },
-] as const
+import { primaryNavItems } from '@/lib/navigation'
 
 export function SiteHeader() {
     return (
@@ -40,22 +30,7 @@ export function SiteHeader() {
                         <p className="text-sm text-muted-foreground">Learn Wolof from Senegal and The Gambia</p>
                     </Link>
                 </div>
-                <NavigationMenu className="hidden flex-1 justify-center md:flex">
-                    <NavigationMenuList>
-                        {primaryNavItems.map((item) => (
-                            <NavigationMenuItem key={item.href} value={item.href}>
-                                <NavigationMenuLink asChild>
-                                    <Link
-                                        className="rounded-md px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                                        href={item.href}
-                                    >
-                                        {item.label}
-                                    </Link>
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
-                        ))}
-                    </NavigationMenuList>
-                </NavigationMenu>
+                <PrimaryNavMenu />
                 <div className="flex items-center gap-3">
                     <DialectToggle />
                     <ThemeToggle />
