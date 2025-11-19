@@ -53,6 +53,7 @@ export const metadata: Metadata = {
     openGraph: {
         // ... existing OG
         title: 'Learn Wolof — Words and Phrases from Senegal and The Gambia',
+        siteName: 'Learn Wolof',
         description:
             'Learn authentic Wolof with side-by-side Senegalese and Gambian variants. Study words, phrases, greetings, numbers, and everyday expressions with clear English explanations.',
         url: 'https://learnwolof.com',
