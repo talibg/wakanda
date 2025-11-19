@@ -13,9 +13,17 @@ export const metadata: Metadata = {
         'Study essential Wolof vocabulary for numbers, family, food, time, and daily basics. Compare Senegalese and Gambian word choices side-by-side.',
 }
 
+import { JsonLdBreadcrumb } from '@/components/json-ld'
+
 export default function WordsIndexPage() {
     return (
         <div className="space-y-8">
+            <JsonLdBreadcrumb
+                items={[
+                    { name: 'Home', item: '/' },
+                    { name: 'Words', item: '/words' },
+                ]}
+            />
             <header className="space-y-3">
                 <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Vocabulary</p>
                 <h1 className="text-3xl font-bold tracking-tight">Wolof Words</h1>

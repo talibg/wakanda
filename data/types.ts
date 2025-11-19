@@ -24,3 +24,16 @@ export type WolofPhrase = {
     notes?: string
     tags?: string[]
 }
+
+export type WolofLetter = {
+    id: string
+    letter: string
+    letterGambia?: string
+    pronunciation: string
+    pronunciationGambia?: string
+    soundsLike: string
+    soundsLikeGambia?: string
+    exampleWord?: string
+    exampleTranslation?: string
+    dialect?: 'senegal' | 'gambia'
+}

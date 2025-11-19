@@ -62,7 +62,7 @@ export const timeWords: WolofWord[] = [
         id: 'time-8',
         english: 'later',
         senegal: 'ci kanam', // Corrected. More common and distinct than 'leegi-leegi'.
-        gambia: 'ci kanam',
+        gambia: 'chi kanam',
         category: 'time',
         notes: 'Literally "in front." Also common is "leegi-leegi" (in a little bit).',
     },
@@ -70,7 +70,7 @@ export const timeWords: WolofWord[] = [
         id: 'time-9',
         english: 'soon',
         senegal: 'ci lu gàtt', // Corrected to mean "in a short time."
-        gambia: 'ci lu gatt',
+        gambia: 'chi lu gatt',
         category: 'time',
         notes: 'Literally "in a short thing/time".',
     },

@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { JsonLdFaq } from '@/components/json-ld'
 
 export const dynamic = 'force-dynamic'
 
@@ -13,6 +14,12 @@ export const metadata: Metadata = {
 }
 
 const highlights = [
+    {
+        title: 'Master the Alphabet',
+        description: 'Learn the sounds of Wolof, from the gutteral "X" to the nasal "Ñ", with audio examples.',
+        href: '/alphabet',
+        action: 'Start Alphabet',
+    },
     {
         title: 'Explore Wolof Words',
         description:
@@ -29,9 +36,29 @@ const highlights = [
     },
 ]
 
+const faqs = [
+    {
+        question: 'Is Wolof hard to learn?',
+        answer: 'Wolof is considered moderately easy for English speakers. The pronunciation is phonetic, and the grammar is relatively straightforward. With consistent practice, you can start having basic conversations within a few weeks.',
+    },
+    {
+        question: 'Where is Wolof spoken?',
+        answer: 'Wolof is primarily spoken in Senegal, where it is the lingua franca, and in The Gambia. It is also spoken by diaspora communities in Mauritania, Mali, and around the world.',
+    },
+    {
+        question: 'What is the difference between Senegalese and Gambian Wolof?',
+        answer: 'The main differences are in spelling and some vocabulary. Senegal uses letters like C, X, Ñ, and Ŋ, while Gambia uses Ch, Kh, Ny, and Ng. The spoken language is largely mutually intelligible.',
+    },
+    {
+        question: 'Do I need to learn both dialects?',
+        answer: 'No, you can focus on one dialect based on where you plan to travel or who you want to communicate with. Our app lets you switch between dialects so you can learn either or both.',
+    },
+]
+
 export default function HomePage() {
     return (
         <div className="space-y-12">
+            <JsonLdFaq items={faqs} />
             <section className="rounded-3xl bg-card p-8 shadow-lg ring-1 ring-border">
                 <p className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Learn Wolof</p>
                 <h1 className="mt-4 text-3xl font-bold tracking-tight text-primary">
@@ -54,17 +81,18 @@ export default function HomePage() {
 
             <section className="grid gap-8 lg:grid-cols-2">
                 <article className="space-y-3">
-                    <h2 className="text-2xl font-semibold">Why Wolof?</h2>
+                    <h2 className="text-2xl font-semibold">Why Learn Wolof?</h2>
                     <p className="text-muted-foreground">
                         Speaking Wolof opens doors across Senegal, from bustling markets in Touba to the beaches of
-                        Saint-Louis, and helps you connect with Gambian families around Banjul and Serrekunda. Our
-                        lessons focus on the shared core of the language while pointing out the subtle dialect
-                        differences that locals expect you to know.
+                        Saint-Louis, and helps you connect with Gambian families around Banjul and Serrekunda. Whether
+                        you're traveling, working with NGOs, or reconnecting with family, Wolof is the key to authentic
+                        cultural exchange in West Africa.
                     </p>
                     <p className="text-muted-foreground">
-                        Every card uses English explanations, practical usage notes, and optional search to help you
-                        remember new vocabulary quickly. Switch between both dialects or zoom in on just Senegal or just
-                        Gambia whenever you want.
+                        Our lessons focus on the shared core of the Senegal and Gambia dialects while pointing out the
+                        subtle spelling and vocabulary differences that locals expect you to know. Every card uses
+                        English explanations, practical usage notes, and optional search to help you remember new
+                        vocabulary quickly.
                     </p>
                 </article>
                 <div className="grid gap-4">
@@ -78,6 +106,22 @@ export default function HomePage() {
                                 <Button asChild variant="secondary">
                                     <Link href={item.href}>{item.action}</Link>
                                 </Button>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </div>
+            </section>
+
+            <section className="space-y-6">
+                <h2 className="text-2xl font-semibold">Frequently Asked Questions</h2>
+                <div className="grid gap-6 md:grid-cols-2">
+                    {faqs.map((faq) => (
+                        <Card key={faq.question}>
+                            <CardHeader>
+                                <CardTitle className="text-lg">{faq.question}</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-muted-foreground">{faq.answer}</p>
                             </CardContent>
                         </Card>
                     ))}

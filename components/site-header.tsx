@@ -1,22 +1,14 @@
+'use client'
+
+import { Menu } from 'lucide-react'
 import Link from 'next/link'
+import { useState } from 'react'
 
 import { DialectToggle } from '@/components/dialect-toggle'
 import { PrimaryNavMenu } from '@/components/primary-nav'
 import { ThemeToggle } from '@/components/theme-toggle'
-import {
-    Sidebar,
-    SidebarContent,
-    SidebarFooter,
-    SidebarGroup,
-    SidebarGroupContent,
-    SidebarGroupLabel,
-    SidebarHeader,
-    SidebarMenu,
-    SidebarMenuButton,
-    SidebarMenuItem,
-    SidebarSeparator,
-    SidebarTrigger,
-} from '@/components/ui/sidebar'
+import { Button } from '@/components/ui/button'
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { primaryNavItems } from '@/lib/navigation'
 
 export function SiteHeader() {
@@ -24,14 +16,14 @@ export function SiteHeader() {
         <header className="border-b border-border bg-card/80 backdrop-blur">
             <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-4 px-4 py-6">
                 <div className="flex flex-1 items-center gap-3">
-                    <SidebarTrigger className="md:hidden" />
+                    <MobileNav />
                     <Link className="space-y-1" href="/">
                         <p className="text-xl font-semibold tracking-tight text-primary">LearnWolof.com</p>
                         <p className="text-sm text-muted-foreground">Learn Wolof from Senegal and The Gambia</p>
                     </Link>
                 </div>
                 <PrimaryNavMenu />
-                <div className="flex items-center gap-3">
+                <div className="hidden items-center gap-3 md:flex">
                     <DialectToggle />
                     <ThemeToggle />
                 </div>
@@ -40,44 +32,44 @@ export function SiteHeader() {
     )
 }
 
-export function MobileNavSidebar() {
+function MobileNav() {
+    const [open, setOpen] = useState(false)
+
     return (
-        <Sidebar className="md:hidden" collapsible="offcanvas" side="left">
-            <SidebarHeader className="border-b border-sidebar-border px-4 py-4">
-                <Link className="space-y-1" href="/">
-                    <p className="text-lg font-semibold text-sidebar-foreground">LearnWolof.com</p>
-                    <p className="text-sm text-sidebar-foreground/70">Senegal + Gambia dialect lessons</p>
-                </Link>
-            </SidebarHeader>
-            <SidebarContent>
-                <SidebarGroup>
-                    <SidebarGroupLabel>Navigate</SidebarGroupLabel>
-                    <SidebarGroupContent>
-                        <SidebarMenu>
-                            {primaryNavItems.map((item) => (
-                                <SidebarMenuItem key={item.href}>
-                                    <SidebarMenuButton asChild>
-                                        <Link href={item.href}>{item.label}</Link>
-                                    </SidebarMenuButton>
-                                </SidebarMenuItem>
-                            ))}
-                        </SidebarMenu>
-                    </SidebarGroupContent>
-                </SidebarGroup>
-                <SidebarSeparator />
-                <SidebarGroup>
-                    <SidebarGroupLabel>Preferences</SidebarGroupLabel>
-                    <SidebarGroupContent>
-                        <div className="flex items-center gap-3 px-2 py-2">
-                            <DialectToggle />
-                            <ThemeToggle />
-                        </div>
-                    </SidebarGroupContent>
-                </SidebarGroup>
-            </SidebarContent>
-            <SidebarFooter className="px-4 pb-4 text-xs text-sidebar-foreground/70">
-                Learn Wolof with clear dialect comparisons.
-            </SidebarFooter>
-        </Sidebar>
+        <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                    <Menu className="h-5 w-5" />
+                    <span className="sr-only">Toggle menu</span>
+                </Button>
+            </SheetTrigger>
+            <SheetContent side="left">
+                <SheetHeader className="border-b pb-4">
+                    <SheetTitle>
+                        <Link href="/" onClick={() => setOpen(false)}>
+                            LearnWolof.com
+                        </Link>
+                    </SheetTitle>
+                </SheetHeader>
+                <div className="flex flex-col gap-4 py-4">
+                    <nav className="flex flex-col gap-2">
+                        {primaryNavItems.map((item) => (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={() => setOpen(false)}
+                                className="block rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                            >
+                                {item.label}
+                            </Link>
+                        ))}
+                    </nav>
+                    <div className="flex items-center gap-3 border-t pt-4">
+                        <DialectToggle />
+                        <ThemeToggle />
+                    </div>
+                </div>
+            </SheetContent>
+        </Sheet>
     )
 }

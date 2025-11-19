@@ -22,7 +22,7 @@ export const travelPhrases: WolofPhrase[] = [
         id: 'travel-3',
         english: 'How much is the ticket?',
         senegal: 'Ñaata la tiket bi?', // Simplified structure
-        gambia: 'Ñaata la ticket bi?',
+        gambia: 'Nyaata la ticket bi?',
         category: 'travel',
         tags: ['money'],
         notes: 'Ñaata la means "How much is it?".',
@@ -31,7 +31,7 @@ export const travelPhrases: WolofPhrase[] = [
         id: 'travel-4',
         english: 'Please stop here.',
         senegal: 'Bu la neexee, taagal fi.', // Corrected verb and politeness
-        gambia: 'Bu la neexee, taagal fi.',
+        gambia: 'Bu la neekhee, taagal fi.',
         category: 'travel',
         notes: 'Taagal is the correct verb for "stop/pause" (a vehicle). Bu la neexee means "please." (If it pleases you).',
     },
@@ -47,7 +47,7 @@ export const travelPhrases: WolofPhrase[] = [
         id: 'travel-6',
         english: 'I am getting off at the market.',
         senegal: 'Dinaa wàcc ci marché bi.', // Corrected verb from 'toog' (sit) to 'wàcc' (get off)
-        gambia: 'Dinaa wacc ci lumo bi.',
+        gambia: 'Dinaa wach chi lumo bi.',
         category: 'travel',
         notes: 'Wàcc / Wacc is the verb "to get off/descend." Lumo is the Gambian word for weekly market.',
     },

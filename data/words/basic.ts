@@ -21,7 +21,7 @@ export const basicWords: WolofWord[] = [
         id: 'basic-3',
         english: 'please',
         senegal: 'bu la neexee',
-        gambia: 'bu la neexee',
+        gambia: 'bu la neekhee',
         category: 'basic',
         notes: 'Literally "if it pleases you". Used when making a request.',
         exampleSentenceEnglish: 'Please wait for me.',

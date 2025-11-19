@@ -5,7 +5,7 @@ export const everydayPhrases: WolofPhrase[] = [
         id: 'everyday-1',
         english: 'I am hungry.',
         senegal: 'Dama xiif.', // Corrected to 1st person singular ('I')
-        gambia: 'Dama xiif.', // Corrected to 1st person singular ('I')
+        gambia: 'Dama khiif.', // Corrected to 1st person singular ('I')
         category: 'everyday',
         tags: ['needs'],
         notes: 'Literally "I have become hungry" or "I am in a state of hunger".',
@@ -21,7 +21,7 @@ export const everydayPhrases: WolofPhrase[] = [
         id: 'everyday-3',
         english: 'I live in ...',
         senegal: 'Maa ngi dëkk ci ...',
-        gambia: 'Mangi dekk ci ...',
+        gambia: 'Mangi dekk chi ...',
         category: 'everyday',
         notes: 'Replace ellipsis with town or neighborhood. The Gambian spelling reflects a common simplification.',
     },
@@ -38,7 +38,7 @@ export const everydayPhrases: WolofPhrase[] = [
         id: 'everyday-5',
         english: 'Do you speak English?',
         senegal: 'Danga wax angale?',
-        gambia: 'Dang wax angale?',
+        gambia: 'Dang wakh angale?',
         category: 'everyday',
         notes: 'Gambian speakers often shorten the prefix "Danga" to "Dang".',
     },

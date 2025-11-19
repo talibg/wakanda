@@ -13,9 +13,17 @@ export const metadata: Metadata = {
         'Master Wolof greetings, travel tips, market bargaining, questions, and everyday expressions with Senegalese and Gambian dialect notes.',
 }
 
+import { JsonLdBreadcrumb } from '@/components/json-ld'
+
 export default function PhrasesIndexPage() {
     return (
         <div className="space-y-8">
+            <JsonLdBreadcrumb
+                items={[
+                    { name: 'Home', item: '/' },
+                    { name: 'Phrases', item: '/phrases' },
+                ]}
+            />
             <header className="space-y-3">
                 <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Phrases</p>
                 <h1 className="text-3xl font-bold tracking-tight">Wolof Phrases</h1>

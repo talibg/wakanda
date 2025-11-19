@@ -22,7 +22,7 @@ export const marketPhrases: WolofPhrase[] = [
         id: 'market-3',
         english: 'Can you reduce the price?',
         senegal: 'Mën nga ci waññi?', // Corrected using the verb "to reduce"
-        gambia: 'Mën nga ci waññi?',
+        gambia: 'Mën nga chi wannyi?',
         category: 'market',
         tags: ['bargaining'],
         notes: 'Literally "Can you reduce from it?" Waññi is the verb "to reduce/deduct".',

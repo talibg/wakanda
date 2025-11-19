@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const baseRoutes: MetadataRoute.Sitemap = [
         { url: buildUrl('/'), lastModified: now, changeFrequency: 'weekly', priority: 1 },
+        { url: buildUrl('/alphabet'), lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
         { url: buildUrl('/words'), lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
         { url: buildUrl('/phrases'), lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     ]

@@ -22,7 +22,7 @@ export const foodWords: WolofWord[] = [
         id: 'food-3',
         english: 'water',
         senegal: 'ndox',
-        gambia: 'ndox',
+        gambia: 'ndokh',
         category: 'food',
         exampleSentenceEnglish: 'Please give me water.',
         exampleSentenceSenegal: 'Bu la neexee, jox ma ndox.', // Corrected politeness phrase and structure
