@@ -18,14 +18,13 @@ export function AlphabetCard({ letter }: AlphabetCardProps) {
     const hasDistinctGambia = letter.letterGambia && letter.letter !== letter.letterGambia
     const showBothVariants = mode === 'both' && hasDistinctGambia
 
-    const primaryLetter = showSenegal ? letter.letter : letter.letterGambia || letter.letter
-    const secondaryLetter = showGambia ? letter.letterGambia : undefined
+    const _primaryLetter = showSenegal ? letter.letter : letter.letterGambia || letter.letter
+    const _secondaryLetter = showGambia ? letter.letterGambia : undefined
 
     const displayPronunciation =
         mode === 'gambia' && letter.pronunciationGambia ? letter.pronunciationGambia : letter.pronunciation
 
-    const displaySoundsLike =
-        mode === 'gambia' && letter.soundsLikeGambia ? letter.soundsLikeGambia : letter.soundsLike
+    const displaySoundsLike = mode === 'gambia' && letter.soundsLikeGambia ? letter.soundsLikeGambia : letter.soundsLike
 
     return (
         <Card className="flex flex-col justify-between overflow-hidden transition-all hover:shadow-md">

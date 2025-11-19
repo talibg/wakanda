@@ -13,12 +13,7 @@ export function JsonLdWebSite() {
         },
     }
 
-    return (
-        <script
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-            type="application/ld+json"
-        />
-    )
+    return <script dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} type="application/ld+json" />
 }
 
 type BreadcrumbItem = {
@@ -38,12 +33,7 @@ export function JsonLdBreadcrumb({ items }: { items: BreadcrumbItem[] }) {
         })),
     }
 
-    return (
-        <script
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-            type="application/ld+json"
-        />
-    )
+    return <script dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} type="application/ld+json" />
 }
 
 type FaqItem = {
@@ -65,10 +55,5 @@ export function JsonLdFaq({ items }: { items: FaqItem[] }) {
         })),
     }
 
-    return (
-        <script
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-            type="application/ld+json"
-        />
-    )
+    return <script dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} type="application/ld+json" />
 }

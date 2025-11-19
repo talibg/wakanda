@@ -1,8 +1,8 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { SiteHeader } from '@/components/site-header'
 import { ThemeProvider } from '@/components/theme-provider'
 import { DialectProvider } from '@/context/dialect-context'
 
@@ -27,7 +27,15 @@ export const metadata: Metadata = {
     title: 'Learn Wolof — Words and Phrases from Senegal and The Gambia',
     description:
         'Learn authentic Wolof with side-by-side Senegalese and Gambian variants. Study words, phrases, greetings, numbers, and everyday expressions with clear English explanations.',
-    keywords: ['Wolof', 'Learn Wolof', 'Senegal Language', 'Gambia Language', 'Wolof Dictionary', 'Wolof Phrases', 'Wolof Alphabet'],
+    keywords: [
+        'Wolof',
+        'Learn Wolof',
+        'Senegal Language',
+        'Gambia Language',
+        'Wolof Dictionary',
+        'Wolof Phrases',
+        'Wolof Alphabet',
+    ],
     alternates: {
         canonical: 'https://learnwolof.com',
     },

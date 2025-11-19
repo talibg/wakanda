@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-
+import { JsonLdFaq } from '@/components/json-ld'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { JsonLdFaq } from '@/components/json-ld'
 
 export const dynamic = 'force-dynamic'
 
