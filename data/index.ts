@@ -1,13 +1,18 @@
+import { diningPhrases } from '@/data/phrases/dining'
 import { everydayPhrases } from '@/data/phrases/everyday'
 import { greetingPhrases } from '@/data/phrases/greetings'
+import { healthPhrases } from '@/data/phrases/health'
 import { marketPhrases } from '@/data/phrases/market'
 import { questionPhrases } from '@/data/phrases/questions'
 import { travelPhrases } from '@/data/phrases/travel'
 import type { PhraseCategory, WolofPhrase, WolofWord, WordCategory } from '@/data/types'
+import { animalsWords } from '@/data/words/animals'
 import { basicWords } from '@/data/words/basic'
+import { colorsWords } from '@/data/words/colors'
 import { familyWords } from '@/data/words/family'
 import { foodWords } from '@/data/words/food'
 import { numbersWords } from '@/data/words/numbers'
+import { placesWords } from '@/data/words/places'
 import { timeWords } from '@/data/words/time'
 
 export const wordCategories: { id: WordCategory; label: string; description: string }[] = [
@@ -35,6 +40,21 @@ export const wordCategories: { id: WordCategory; label: string; description: str
         id: 'time',
         label: 'Time & Schedule',
         description: 'Words for days, hours, and talking about the moment.',
+    },
+    {
+        id: 'animals',
+        label: 'Animals & Nature',
+        description: 'Common animals you might see in Senegal and The Gambia.',
+    },
+    {
+        id: 'colors',
+        label: 'Colors',
+        description: 'Describe the world around you with basic color vocabulary.',
+    },
+    {
+        id: 'places',
+        label: 'Places',
+        description: 'Important locations like the market, school, and home.',
     },
 ]
 
@@ -64,6 +84,16 @@ export const phraseCategories: { id: PhraseCategory; label: string; description:
         label: 'Questions & Clarifications',
         description: 'Ask for directions, information, and help in Wolof.',
     },
+    {
+        id: 'health',
+        label: 'Health & Emergency',
+        description: 'Express how you feel and ask for medical help.',
+    },
+    {
+        id: 'dining',
+        label: 'Dining & Eating',
+        description: 'Order food, ask for water, and compliment the chef.',
+    },
 ]
 
 const wordMap: Record<WordCategory, WolofWord[]> = {
@@ -72,6 +102,9 @@ const wordMap: Record<WordCategory, WolofWord[]> = {
     food: foodWords,
     basic: basicWords,
     time: timeWords,
+    animals: animalsWords,
+    colors: colorsWords,
+    places: placesWords,
 }
 
 const phraseMap: Record<PhraseCategory, WolofPhrase[]> = {
@@ -80,6 +113,8 @@ const phraseMap: Record<PhraseCategory, WolofPhrase[]> = {
     market: marketPhrases,
     everyday: everydayPhrases,
     questions: questionPhrases,
+    health: healthPhrases,
+    dining: diningPhrases,
 }
 
 export const getWordsByCategory = (category: WordCategory): WolofWord[] => {

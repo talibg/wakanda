@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 import { JsonLdCollectionPage } from '@/components/json-ld'
 import { PhraseCategoryBrowser } from '@/components/phrase-category-browser'
@@ -60,14 +59,14 @@ export default async function PhraseCategoryPage({ params }: PageParams) {
     return (
         <div className="space-y-8">
             <JsonLdCollectionPage
-                name={`Wolof ${descriptor.label}`}
                 description={descriptor.description}
-                url={`https://learnwolof.com/phrases/${descriptor.id}`}
                 items={phrases.map((phrase) => ({
                     name: phrase.english,
                     description: `Wolof translation for ${phrase.english}: ${phrase.senegal} (Senegal), ${phrase.gambia} (Gambia)`,
                     url: `https://learnwolof.com/phrases/${descriptor.id}?q=${encodeURIComponent(phrase.english)}`,
                 }))}
+                name={`Wolof ${descriptor.label}`}
+                url={`https://learnwolof.com/phrases/${descriptor.id}`}
             />
             <header className="space-y-3">
                 <p className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Phrases</p>
@@ -86,9 +85,9 @@ export default async function PhraseCategoryPage({ params }: PageParams) {
                         .filter((c) => c.id !== descriptor.id)
                         .map((category) => (
                             <Link
+                                className="group block rounded-lg border p-4 transition-colors hover:bg-muted/50"
                                 href={`/phrases/${category.id}`}
                                 key={category.id}
-                                className="group block rounded-lg border p-4 transition-colors hover:bg-muted/50"
                             >
                                 <h3 className="font-semibold group-hover:text-primary">{category.label}</h3>
                                 <p className="text-sm text-muted-foreground">{category.description}</p>

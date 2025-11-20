@@ -3,8 +3,8 @@
 import { useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 
-export default function Error({
-    error,
+export default function AppError({
+    error: errorInfo,
     reset,
 }: {
     error: Error & { digest?: string }
@@ -12,8 +12,8 @@ export default function Error({
 }) {
     useEffect(() => {
         // Log the error to an error reporting service
-        console.error(error)
-    }, [error])
+        console.error(errorInfo)
+    }, [errorInfo])
 
     return (
         <div className="flex min-h-[60vh] flex-col items-center justify-center text-center">

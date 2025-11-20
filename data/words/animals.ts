@@ -1,0 +1,77 @@
+import type { WolofWord } from '@/data/types'
+
+export const animalsWords: WolofWord[] = [
+    {
+        id: 'animal_dog',
+        english: 'Dog',
+        senegal: 'Xaj',
+        gambia: 'Khaj',
+        category: 'animals',
+        exampleSentenceEnglish: 'The dog is barking.',
+        exampleSentenceSenegal: 'Xaj bi dafay baw.',
+        exampleSentenceGambia: 'Khaj bi dafay baw.',
+    },
+    {
+        id: 'animal_cat',
+        english: 'Cat',
+        senegal: 'Muus',
+        gambia: 'Muus',
+        category: 'animals',
+    },
+    {
+        id: 'animal_bird',
+        english: 'Bird',
+        senegal: 'Picc',
+        gambia: 'Pich',
+        category: 'animals',
+    },
+    {
+        id: 'animal_lion',
+        english: 'Lion',
+        senegal: 'Gaynde',
+        gambia: 'Gaynde',
+        category: 'animals',
+    },
+    {
+        id: 'animal_horse',
+        english: 'Horse',
+        senegal: 'Fas',
+        gambia: 'Fas',
+        category: 'animals',
+    },
+    {
+        id: 'animal_cow',
+        english: 'Cow',
+        senegal: 'Nag',
+        gambia: 'Nag',
+        category: 'animals',
+    },
+    {
+        id: 'animal_sheep',
+        english: 'Sheep',
+        senegal: 'Xar',
+        gambia: 'Khar',
+        category: 'animals',
+    },
+    {
+        id: 'animal_goat',
+        english: 'Goat',
+        senegal: 'Bëy',
+        gambia: 'Bey',
+        category: 'animals',
+    },
+    {
+        id: 'animal_fish',
+        english: 'Fish',
+        senegal: 'Jën',
+        gambia: 'Jen',
+        category: 'animals',
+    },
+    {
+        id: 'animal_chicken',
+        english: 'Chicken',
+        senegal: 'Ginaar',
+        gambia: 'Ginaar',
+        category: 'animals',
+    },
+]
