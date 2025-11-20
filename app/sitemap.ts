@@ -14,6 +14,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: buildUrl('/alphabet'), lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
         { url: buildUrl('/words'), lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
         { url: buildUrl('/phrases'), lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+        { url: buildUrl('/privacy'), lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+        { url: buildUrl('/terms'), lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+        { url: buildUrl('/contact'), lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     ]
 
     const wordRoutes: MetadataRoute.Sitemap = wordCategories.map((category) => ({

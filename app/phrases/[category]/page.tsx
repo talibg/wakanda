@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import Link from 'next/link'
+
+import { JsonLdCollectionPage } from '@/components/json-ld'
 import { PhraseCategoryBrowser } from '@/components/phrase-category-browser'
 import { getPhrasesByCategory, phraseCategories } from '@/data/index'
 import type { PhraseCategory } from '@/data/types'
@@ -56,6 +59,16 @@ export default async function PhraseCategoryPage({ params }: PageParams) {
 
     return (
         <div className="space-y-8">
+            <JsonLdCollectionPage
+                name={`Wolof ${descriptor.label}`}
+                description={descriptor.description}
+                url={`https://learnwolof.com/phrases/${descriptor.id}`}
+                items={phrases.map((phrase) => ({
+                    name: phrase.english,
+                    description: `Wolof translation for ${phrase.english}: ${phrase.senegal} (Senegal), ${phrase.gambia} (Gambia)`,
+                    url: `https://learnwolof.com/phrases/${descriptor.id}?q=${encodeURIComponent(phrase.english)}`,
+                }))}
+            />
             <header className="space-y-3">
                 <p className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Phrases</p>
                 <h1 className="text-3xl font-bold tracking-tight">{descriptor.label}</h1>
@@ -65,6 +78,24 @@ export default async function PhraseCategoryPage({ params }: PageParams) {
                 </p>
             </header>
             <PhraseCategoryBrowser phrases={phrases} />
+
+            <section className="border-t pt-8">
+                <h2 className="mb-6 text-2xl font-bold">Related Categories</h2>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {phraseCategories
+                        .filter((c) => c.id !== descriptor.id)
+                        .map((category) => (
+                            <Link
+                                href={`/phrases/${category.id}`}
+                                key={category.id}
+                                className="group block rounded-lg border p-4 transition-colors hover:bg-muted/50"
+                            >
+                                <h3 className="font-semibold group-hover:text-primary">{category.label}</h3>
+                                <p className="text-sm text-muted-foreground">{category.description}</p>
+                            </Link>
+                        ))}
+                </div>
+            </section>
         </div>
     )
 }

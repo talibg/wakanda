@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import Link from 'next/link'
+
+import { JsonLdCollectionPage } from '@/components/json-ld'
 import { WordCategoryBrowser } from '@/components/word-category-browser'
 import { getWordsByCategory, wordCategories } from '@/data/index'
 import type { WordCategory } from '@/data/types'
@@ -56,6 +59,16 @@ export default async function WordCategoryPage({ params }: PageParams) {
 
     return (
         <div className="space-y-8">
+            <JsonLdCollectionPage
+                name={`Wolof ${descriptor.label}`}
+                description={descriptor.description}
+                url={`https://learnwolof.com/words/${descriptor.id}`}
+                items={words.map((word) => ({
+                    name: word.english,
+                    description: `Wolof translation for ${word.english}: ${word.senegal} (Senegal), ${word.gambia} (Gambia)`,
+                    url: `https://learnwolof.com/words/${descriptor.id}?q=${encodeURIComponent(word.english)}`,
+                }))}
+            />
             <header className="space-y-3">
                 <p className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Vocabulary</p>
                 <h1 className="text-3xl font-bold tracking-tight">{descriptor.label}</h1>
@@ -65,6 +78,24 @@ export default async function WordCategoryPage({ params }: PageParams) {
                 </p>
             </header>
             <WordCategoryBrowser words={words} />
+
+            <section className="border-t pt-8">
+                <h2 className="mb-6 text-2xl font-bold">Related Categories</h2>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {wordCategories
+                        .filter((c) => c.id !== descriptor.id)
+                        .map((category) => (
+                            <Link
+                                href={`/words/${category.id}`}
+                                key={category.id}
+                                className="group block rounded-lg border p-4 transition-colors hover:bg-muted/50"
+                            >
+                                <h3 className="font-semibold group-hover:text-primary">{category.label}</h3>
+                                <p className="text-sm text-muted-foreground">{category.description}</p>
+                            </Link>
+                        ))}
+                </div>
+            </section>
         </div>
     )
 }
