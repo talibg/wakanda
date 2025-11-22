@@ -6,41 +6,41 @@ export const healthPhrases: WolofPhrase[] = [
         english: 'I am sick',
         senegal: 'Dama feebar',
         gambia: 'Dama feebar',
-        category: 'health',
+        category: 'health'
     },
     {
         id: 'health_headache',
         english: 'My head hurts',
         senegal: 'Sama bopp dafay metti',
         gambia: 'Sama bopp dafay metti',
-        category: 'health',
+        category: 'health'
     },
     {
         id: 'health_doctor',
         english: 'Where is the doctor?',
         senegal: 'Ana doctoor bi?',
         gambia: 'Ana doctoor bi?',
-        category: 'health',
+        category: 'health'
     },
     {
         id: 'health_hospital',
         english: 'Take me to the hospital',
         senegal: 'Yobbu ma lopitan',
         gambia: 'Yobbu ma hospital',
-        category: 'health',
+        category: 'health'
     },
     {
         id: 'health_medicine',
         english: 'I need medicine',
         senegal: 'Dama soxla garab',
         gambia: 'Dama soxhla garab',
-        category: 'health',
+        category: 'health'
     },
     {
         id: 'health_tired',
         english: 'I am tired',
         senegal: 'Dama sonn',
         gambia: 'Dama sonn',
-        category: 'health',
-    },
+        category: 'health'
+    }
 ]

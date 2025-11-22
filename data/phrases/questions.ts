@@ -8,7 +8,7 @@ export const questionPhrases: WolofPhrase[] = [
         gambia: 'Nanga tudd?',
         category: 'questions',
         tags: ['introductions'],
-        notes: 'Literally "How are you called?". The reply is often "Maa ngi tudd [name]." or "[Name] laa."',
+        notes: 'Literally "How are you called?". The reply is often "Maa ngi tudd [name]." or "[Name] laa."'
     },
     {
         id: 'questions-2',
@@ -16,7 +16,7 @@ export const questionPhrases: WolofPhrase[] = [
         senegal: 'Fan ngay dëkk?',
         gambia: 'Fan nga dekk?',
         category: 'questions',
-        notes: 'Fan (where), ngay/nga (you are), dëkk/dekk (live).',
+        notes: 'Fan (where), ngay/nga (you are), dëkk/dekk (live).'
     },
     {
         id: 'questions-3',
@@ -24,7 +24,7 @@ export const questionPhrases: WolofPhrase[] = [
         senegal: 'Fan ngay dem?',
         gambia: 'Fan nga dem?',
         category: 'questions',
-        notes: 'Common street greeting to strangers. Fan (where), dem (go).',
+        notes: 'Common street greeting to strangers. Fan (where), dem (go).'
     },
     {
         id: 'questions-4',
@@ -33,7 +33,7 @@ export const questionPhrases: WolofPhrase[] = [
         gambia: 'Ñaata wahtu la?',
         category: 'questions',
         tags: ['time'],
-        notes: 'Literally "How many hours is it?".',
+        notes: 'Literally "How many hours is it?".'
     },
     {
         id: 'questions-5',
@@ -41,6 +41,6 @@ export const questionPhrases: WolofPhrase[] = [
         senegal: 'Mën nga ma dimbali?', // Corrected to use the modal verb "can"
         gambia: 'Mën nga ma dimbali?',
         category: 'questions',
-        notes: 'Mën nga (Can you), ma (me), dimbali (help).',
-    },
+        notes: 'Mën nga (Can you), ma (me), dimbali (help).'
+    }
 ]

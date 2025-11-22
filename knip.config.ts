@@ -6,10 +6,10 @@ const config: KnipConfig = {
         '**/*.{ts,tsx,js,jsx}',
         '**/*.css',
         '!**/*.d.ts',
-        '!{node_modules,.next,dist,build,coverage,.turbo,.vercel}/**/*',
+        '!{node_modules,.next,dist,build,coverage,.turbo,.vercel}/**/*'
     ],
     ignore: ['**/*.{test,spec}.{ts,tsx,js,jsx}', '**/__tests__/**', '**/*.stories.{ts,tsx,js,jsx}'],
-    ignoreDependencies: ['postcss', 'tailwindcss'],
+    ignoreDependencies: ['postcss', 'tailwindcss']
 }
 
 export default config

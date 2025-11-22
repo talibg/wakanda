@@ -8,8 +8,8 @@ export function JsonLdWebSite() {
         url: 'https://learnwolof.com',
         potentialAction: {
             '@type': 'SearchAction',
-            target: 'https://learnwolof.com/search?q={search_term_string}',
-        },
+            target: 'https://learnwolof.com/search?q={search_term_string}'
+        }
     }
 
     return <script dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} type="application/ld+json" />
@@ -28,8 +28,8 @@ export function JsonLdBreadcrumb({ items }: { items: BreadcrumbItem[] }) {
             '@type': 'ListItem',
             position: index + 1,
             name: item.name,
-            item: `https://learnwolof.com${item.item}`,
-        })),
+            item: `https://learnwolof.com${item.item}`
+        }))
     }
 
     return <script dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} type="application/ld+json" />
@@ -49,9 +49,9 @@ export function JsonLdFaq({ items }: { items: FaqItem[] }) {
             name: item.question,
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: item.answer,
-            },
-        })),
+                text: item.answer
+            }
+        }))
     }
 
     return <script dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} type="application/ld+json" />
@@ -67,7 +67,7 @@ export function JsonLdCollectionPage({
     name,
     description,
     url,
-    items,
+    items
 }: {
     name: string
     description: string
@@ -87,9 +87,9 @@ export function JsonLdCollectionPage({
                 position: index + 1,
                 url: item.url,
                 name: item.name,
-                description: item.description,
-            })),
-        },
+                description: item.description
+            }))
+        }
     }
 
     return <script dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} type="application/ld+json" />
@@ -116,20 +116,20 @@ export function JsonLdArticle({ item, url }: { item: ArticleItem; url: string })
         author: {
             '@type': 'Person',
             name: item.authorName || 'Learn Wolof Team',
-            url: 'https://learnwolof.com',
+            url: 'https://learnwolof.com'
         },
         publisher: {
             '@type': 'Organization',
             name: 'Learn Wolof',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://learnwolof.com/icon.png',
-            },
+                url: 'https://learnwolof.com/icon.png'
+            }
         },
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': url,
-        },
+            '@id': url
+        }
     }
 
     return <script dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} type="application/ld+json" />

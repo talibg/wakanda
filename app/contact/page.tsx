@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     title: 'Contact Us | Learn Wolof',
     description: 'Contact information for Learn Wolof. Connect with us on GitHub or X (Twitter).',
     alternates: {
-        canonical: buildCanonicalUrl('/contact'),
+        canonical: buildCanonicalUrl('/contact')
     },
     openGraph: {
         title: 'Contact Us | Learn Wolof',
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
         url: 'https://learnwolof.com/contact',
         siteName: 'Learn Wolof',
         locale: 'en_US',
-        type: 'website',
-    },
+        type: 'website'
+    }
 }
 
 export default function ContactPage() {
@@ -29,8 +29,8 @@ export default function ContactPage() {
         mainEntity: {
             '@type': 'Person',
             name: 'Talib Guyani',
-            sameAs: ['https://x.com/talibguyani', 'https://github.com/talibg'],
-        },
+            sameAs: ['https://x.com/talibguyani', 'https://github.com/talibg']
+        }
     }
 
     return (

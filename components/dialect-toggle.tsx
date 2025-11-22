@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils'
 
 const flagSource = {
     senegal: { src: '/sn.svg', alt: 'Senegal flag' },
-    gambia: { src: '/gm.svg', alt: 'Gambia flag' },
+    gambia: { src: '/gm.svg', alt: 'Gambia flag' }
 } as const
 
 type FlagKey = keyof typeof flagSource
@@ -18,12 +18,12 @@ const modes: WolofDialectMode[] = ['both', 'senegal', 'gambia']
 const labels: Record<WolofDialectMode, string> = {
     both: 'Show both dialects',
     senegal: 'Show Senegalese Wolof',
-    gambia: 'Show Gambian Wolof',
+    gambia: 'Show Gambian Wolof'
 }
 
 const clipPaths = {
     left: 'polygon(0 0, 50% 0, 50% 100%, 0 100%)',
-    right: 'polygon(50% 0, 100% 0, 100% 100%, 50% 100%)',
+    right: 'polygon(50% 0, 100% 0, 100% 100%, 50% 100%)'
 }
 
 function SingleFlagIcon({ flag }: { flag: FlagKey }) {
@@ -87,7 +87,7 @@ export function DialectToggle() {
                     aria-label={labels[currentMode]}
                     className={cn(
                         'inline-flex h-9 w-9 items-center justify-center rounded-full border text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40',
-                        currentMode === 'both' ? 'border-border bg-muted/60' : 'border-primary bg-primary/10 shadow-sm',
+                        currentMode === 'both' ? 'border-border bg-muted/60' : 'border-primary bg-primary/10 shadow-sm'
                     )}
                     onClick={handleToggle}
                     type="button"

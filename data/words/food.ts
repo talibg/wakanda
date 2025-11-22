@@ -11,7 +11,7 @@ export const foodWords: WolofWord[] = [
         tags: ['staple'],
         exampleSentenceEnglish: 'I like rice.',
         exampleSentenceSenegal: 'Bëgg naa ceeb.',
-        exampleSentenceGambia: 'Bëgg naa cheb.',
+        exampleSentenceGambia: 'Bëgg naa cheb.'
     },
     {
         id: 'food-2',
@@ -22,7 +22,7 @@ export const foodWords: WolofWord[] = [
         tags: ['staple', 'protein'],
         exampleSentenceEnglish: 'The fish is fresh.',
         exampleSentenceSenegal: 'Jën wi dafa bees.',
-        exampleSentenceGambia: 'Jen wi dafa bees.',
+        exampleSentenceGambia: 'Jen wi dafa bees.'
     },
     {
         id: 'food-3',
@@ -32,7 +32,7 @@ export const foodWords: WolofWord[] = [
         category: 'food',
         exampleSentenceEnglish: 'Please give me water.',
         exampleSentenceSenegal: 'Bu la neexee, jox ma ndox.',
-        exampleSentenceGambia: 'Bu la neexee, jox ma ndokh.',
+        exampleSentenceGambia: 'Bu la neexee, jox ma ndokh.'
     },
     {
         id: 'food-4',
@@ -43,7 +43,7 @@ export const foodWords: WolofWord[] = [
         tags: ['breakfast'],
         exampleSentenceEnglish: 'Buy some bread.',
         exampleSentenceSenegal: 'Jëndal mburu.',
-        exampleSentenceGambia: 'Jëndal mburu.',
+        exampleSentenceGambia: 'Jëndal mburu.'
     },
     {
         id: 'food-5',
@@ -55,7 +55,7 @@ export const foodWords: WolofWord[] = [
         tags: ['drink'],
         exampleSentenceEnglish: "Let's drink tea.",
         exampleSentenceSenegal: 'Na nu naan ataaya.',
-        exampleSentenceGambia: 'Na ñu naan ataya.',
+        exampleSentenceGambia: 'Na ñu naan ataya.'
     },
     {
         id: 'food-6',
@@ -67,7 +67,7 @@ export const foodWords: WolofWord[] = [
         notes: 'Kani refers specifically to chili or hot peppers. "Pim" (from French \'piment\') is also widely used.',
         exampleSentenceEnglish: 'The pepper is hot.',
         exampleSentenceSenegal: 'Kani gi dafa saf.',
-        exampleSentenceGambia: 'Kani gi dafa saf.',
+        exampleSentenceGambia: 'Kani gi dafa saf.'
     },
     {
         id: 'food-7',
@@ -78,7 +78,7 @@ export const foodWords: WolofWord[] = [
         notes: 'Used specifically for cooking oil.',
         exampleSentenceEnglish: 'Put oil in the pot.',
         exampleSentenceSenegal: 'Defal sawara ci cin li.',
-        exampleSentenceGambia: 'Defal sawara chi cin li.',
+        exampleSentenceGambia: 'Defal sawara chi cin li.'
     },
     {
         id: 'food-8',
@@ -89,7 +89,7 @@ export const foodWords: WolofWord[] = [
         notes: 'A common borrowing from French ("légumes"), this is very widely used.',
         exampleSentenceEnglish: 'Eat your vegetables.',
         exampleSentenceSenegal: 'Lekkal say legum.',
-        exampleSentenceGambia: 'Lekkal say legum.',
+        exampleSentenceGambia: 'Lekkal say legum.'
     },
     {
         id: 'food-9',
@@ -101,7 +101,7 @@ export const foodWords: WolofWord[] = [
         notes: 'Borrowed from French "fruit", this is the most common marketplace term.',
         exampleSentenceEnglish: 'The fruit is sweet.',
         exampleSentenceSenegal: 'Frugi bi dafa neex.',
-        exampleSentenceGambia: 'Frugi bi dafa neex.',
+        exampleSentenceGambia: 'Frugi bi dafa neex.'
     },
     {
         id: 'food-10',
@@ -112,6 +112,6 @@ export const foodWords: WolofWord[] = [
         notes: 'Senegalese standard often doubles the vowel sound in this loanword.',
         exampleSentenceEnglish: 'Too much sugar is bad.',
         exampleSentenceSenegal: 'Suukar bu bare baaxul.',
-        exampleSentenceGambia: 'Sukar bu bare baakhul.',
-    },
+        exampleSentenceGambia: 'Sukar bu bare baakhul.'
+    }
 ]

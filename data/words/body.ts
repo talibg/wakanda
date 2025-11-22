@@ -9,7 +9,7 @@ export const bodyWords: WolofWord[] = [
         category: 'body',
         exampleSentenceEnglish: 'My head hurts.',
         exampleSentenceSenegal: 'Sama bopp dafay metti.',
-        exampleSentenceGambia: 'Sama bopp dafay metti.',
+        exampleSentenceGambia: 'Sama bopp dafay metti.'
     },
     {
         id: 'eye',
@@ -19,7 +19,7 @@ export const bodyWords: WolofWord[] = [
         category: 'body',
         exampleSentenceEnglish: 'Open your eyes.',
         exampleSentenceSenegal: 'Ubbi sa bët.',
-        exampleSentenceGambia: 'Ubbi sa bët.',
+        exampleSentenceGambia: 'Ubbi sa bët.'
     },
     {
         id: 'ear',
@@ -29,7 +29,7 @@ export const bodyWords: WolofWord[] = [
         category: 'body',
         exampleSentenceEnglish: 'I have two ears.',
         exampleSentenceSenegal: 'Am naa ñaari nopp.',
-        exampleSentenceGambia: 'Am naa nyari nopp.',
+        exampleSentenceGambia: 'Am naa nyari nopp.'
     },
     {
         id: 'nose',
@@ -39,7 +39,7 @@ export const bodyWords: WolofWord[] = [
         category: 'body',
         exampleSentenceEnglish: 'Touch your nose.',
         exampleSentenceSenegal: 'Laal sa bakkan.',
-        exampleSentenceGambia: 'Laal sa bakkan.',
+        exampleSentenceGambia: 'Laal sa bakkan.'
     },
     {
         id: 'mouth',
@@ -49,7 +49,7 @@ export const bodyWords: WolofWord[] = [
         category: 'body',
         exampleSentenceEnglish: 'Close your mouth.',
         exampleSentenceSenegal: 'Tëjal sa gémmiñ.',
-        exampleSentenceGambia: 'Tëjal sa gémminy.',
+        exampleSentenceGambia: 'Tëjal sa gémminy.'
     },
     {
         id: 'hand',
@@ -59,7 +59,7 @@ export const bodyWords: WolofWord[] = [
         category: 'body',
         exampleSentenceEnglish: 'Wash your hands.',
         exampleSentenceSenegal: 'Raxasal say loxo.',
-        exampleSentenceGambia: 'Rakhasal say lokho.',
+        exampleSentenceGambia: 'Rakhasal say lokho.'
     },
     {
         id: 'foot',
@@ -69,7 +69,7 @@ export const bodyWords: WolofWord[] = [
         category: 'body',
         exampleSentenceEnglish: 'My foot is swollen.',
         exampleSentenceSenegal: 'Sama tank dafau ruus.',
-        exampleSentenceGambia: 'Sama tank dafa ruus.',
+        exampleSentenceGambia: 'Sama tank dafa ruus.'
     },
     {
         id: 'stomach',
@@ -79,6 +79,6 @@ export const bodyWords: WolofWord[] = [
         category: 'body',
         exampleSentenceEnglish: 'My stomach is full.',
         exampleSentenceSenegal: 'Sama biir dafa fees.',
-        exampleSentenceGambia: 'Sama biir dafa fees.',
-    },
+        exampleSentenceGambia: 'Sama biir dafa fees.'
+    }
 ]

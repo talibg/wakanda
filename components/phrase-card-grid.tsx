@@ -24,7 +24,7 @@ export function PhraseCardGrid({ phrases }: PhraseCardGridProps) {
                     mode === 'both'
                         ? [
                               { label: 'Senegal', value: phrase.senegal },
-                              { label: 'Gambia', value: phrase.gambia },
+                              { label: 'Gambia', value: phrase.gambia }
                           ]
                         : mode === 'senegal'
                           ? [{ label: 'Senegal', value: phrase.senegal }]

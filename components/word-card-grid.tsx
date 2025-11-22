@@ -14,7 +14,7 @@ type WordCardGridProps = {
 
 const dialectLabel = {
     senegal: 'Senegal',
-    gambia: 'Gambia',
+    gambia: 'Gambia'
 } as const
 
 export function WordCardGrid({ words }: WordCardGridProps) {

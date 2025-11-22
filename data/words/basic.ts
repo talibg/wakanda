@@ -10,7 +10,7 @@ export const basicWords: WolofWord[] = [
         tags: ['polite'],
         exampleSentenceEnglish: 'Yes, I understand.',
         exampleSentenceSenegal: 'Waaw, dégg naa.',
-        exampleSentenceGambia: 'Waaw, dégg naa.',
+        exampleSentenceGambia: 'Waaw, dégg naa.'
     },
     {
         id: 'basic-2',
@@ -21,7 +21,7 @@ export const basicWords: WolofWord[] = [
         notes: 'Senegalese speakers emphasize the long vowels (déedéet). Gambian spelling is often simplified.',
         exampleSentenceEnglish: "No, I don't want it.",
         exampleSentenceSenegal: 'Déedéet, bëgguma ko.',
-        exampleSentenceGambia: 'Dedet, bëgguma ko.',
+        exampleSentenceGambia: 'Dedet, bëgguma ko.'
     },
     {
         id: 'basic-3',
@@ -32,7 +32,7 @@ export const basicWords: WolofWord[] = [
         notes: 'Literally "if it pleases you". Used when making a request.',
         exampleSentenceEnglish: 'Please wait for me.',
         exampleSentenceSenegal: 'Bu la neexee, xaar ma.',
-        exampleSentenceGambia: 'Bu la neekhee, haar ma.',
+        exampleSentenceGambia: 'Bu la neekhee, haar ma.'
     },
     {
         id: 'basic-4',
@@ -44,7 +44,7 @@ export const basicWords: WolofWord[] = [
         notes: 'Spelling often differs, but pronunciation is similar. The "ë" is a central vowel.',
         exampleSentenceEnglish: 'Thank you very much.',
         exampleSentenceSenegal: 'Jërëjëf bu baax.',
-        exampleSentenceGambia: 'Jerrejef bu baakh.',
+        exampleSentenceGambia: 'Jerrejef bu baakh.'
     },
     {
         id: 'basic-5',
@@ -55,7 +55,7 @@ export const basicWords: WolofWord[] = [
         notes: 'Means "forgive me" or "excuse me". Can be used before a request, like "Excuse me, ..."',
         exampleSentenceEnglish: 'Sorry, I am late.',
         exampleSentenceSenegal: 'Baal ma, dama yéex.',
-        exampleSentenceGambia: 'Baal ma, dama yéex.',
+        exampleSentenceGambia: 'Baal ma, dama yéex.'
     },
     {
         id: 'basic-6',
@@ -67,7 +67,7 @@ export const basicWords: WolofWord[] = [
         notes: 'The universal Arabic greeting "peace be with you". The reply is "maleekum salaam". "Nanga def?" (How are you?) is also very common as a first greeting.',
         exampleSentenceEnglish: 'Hello, how are you?',
         exampleSentenceSenegal: 'Salaam aleekum, nanga def?',
-        exampleSentenceGambia: 'Salaam aleekum, nanga def?',
+        exampleSentenceGambia: 'Salaam aleekum, nanga def?'
     },
     {
         id: 'basic-7',
@@ -78,7 +78,7 @@ export const basicWords: WolofWord[] = [
         notes: 'Literally “until another time”. Also common: "mangi dem" (I am going).',
         exampleSentenceEnglish: 'Goodbye, see you soon.',
         exampleSentenceSenegal: 'Ba beneen yoon, ci lu gàtt.',
-        exampleSentenceGambia: 'Ba beneen yoon, chi lu gatt.',
+        exampleSentenceGambia: 'Ba beneen yoon, chi lu gatt.'
     },
     {
         id: 'basic-8',
@@ -89,7 +89,7 @@ export const basicWords: WolofWord[] = [
         notes: 'Means "come in" or "arrive". Use "agsileen" for a group. "Dalal-jamm" (host in peace) is also common.',
         exampleSentenceEnglish: 'Welcome to my house.',
         exampleSentenceSenegal: 'Agsil ci sama kër.',
-        exampleSentenceGambia: 'Agsil chi sama ker.',
+        exampleSentenceGambia: 'Agsil chi sama ker.'
     },
     {
         id: 'basic-9',
@@ -100,7 +100,7 @@ export const basicWords: WolofWord[] = [
         notes: 'This is the noun "help". The verb is "dimbali".',
         exampleSentenceEnglish: 'Help me!',
         exampleSentenceSenegal: 'Dimbali ma!',
-        exampleSentenceGambia: 'Dimbali ma!',
+        exampleSentenceGambia: 'Dimbali ma!'
     },
     {
         id: 'basic-10',
@@ -111,6 +111,6 @@ export const basicWords: WolofWord[] = [
         notes: 'Teranga is the famous Wolof value of hospitality and generosity.',
         exampleSentenceEnglish: 'Senegal is the land of hospitality.',
         exampleSentenceSenegal: 'Senegal mooy réewum teranga.',
-        exampleSentenceGambia: 'Senegal mooy réewum teranga.',
-    },
+        exampleSentenceGambia: 'Senegal mooy réewum teranga.'
+    }
 ]

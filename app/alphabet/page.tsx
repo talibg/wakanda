@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description:
         'Learn the Wolof alphabet with our comprehensive pronunciation guide. Master the sounds of Senegal and The Gambia.',
     alternates: {
-        canonical: buildCanonicalUrl('/alphabet'),
+        canonical: buildCanonicalUrl('/alphabet')
     },
     openGraph: {
         title: 'Wolof Alphabet — Pronunciation Guide | Learn Wolof',
@@ -23,16 +23,16 @@ export const metadata: Metadata = {
                 url: 'https://learnwolof.com/og-learn-wolof.png',
                 width: 1200,
                 height: 630,
-                alt: 'Learn Wolof words and phrases from Senegal and The Gambia',
-            },
-        ],
+                alt: 'Learn Wolof words and phrases from Senegal and The Gambia'
+            }
+        ]
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Wolof Alphabet — Pronunciation Guide | Learn Wolof',
         description:
             'Learn the Wolof alphabet with our comprehensive pronunciation guide. Master the sounds of Senegal and The Gambia.',
-        images: ['https://learnwolof.com/og-learn-wolof.png'],
+        images: ['https://learnwolof.com/og-learn-wolof.png']
     },
     robots: {
         index: true,
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
             follow: true,
             'max-video-preview': -1,
             'max-image-preview': 'large',
-            'max-snippet': -1,
-        },
-    },
+            'max-snippet': -1
+        }
+    }
 }
 
 import { JsonLdBreadcrumb } from '@/components/json-ld'
@@ -55,7 +55,7 @@ export default function AlphabetPage() {
             <JsonLdBreadcrumb
                 items={[
                     { name: 'Home', item: '/' },
-                    { name: 'Alphabet', item: '/alphabet' },
+                    { name: 'Alphabet', item: '/alphabet' }
                 ]}
             />
             <header className="space-y-3">

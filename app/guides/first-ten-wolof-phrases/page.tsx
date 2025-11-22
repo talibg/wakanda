@@ -11,7 +11,7 @@ export const metadata = {
     description:
         'Start your Wolof journey with these 10 essential phrases. Learn greetings, polite expressions, and how to connect with people in Senegal and The Gambia.',
     alternates: {
-        canonical: buildCanonicalUrl('/guides/first-ten-wolof-phrases'),
+        canonical: buildCanonicalUrl('/guides/first-ten-wolof-phrases')
     },
     openGraph: {
         title: 'The First 10 Wolof Phrases You Need to Know | Learn Wolof',
@@ -20,8 +20,8 @@ export const metadata = {
         type: 'article',
         publishedTime: '2023-10-27T00:00:00.000Z',
         authors: ['Learn Wolof Team'],
-        url: buildCanonicalUrl('/guides/first-ten-wolof-phrases'),
-    },
+        url: buildCanonicalUrl('/guides/first-ten-wolof-phrases')
+    }
 }
 
 export default function FirstTenPhrasesPage() {
@@ -33,7 +33,7 @@ export default function FirstTenPhrasesPage() {
                     description:
                         'Start your Wolof journey with these 10 essential phrases. Learn greetings, polite expressions, and how to connect with people in Senegal and The Gambia.',
                     datePublished: '2023-10-27T00:00:00.000Z',
-                    authorName: 'Learn Wolof Team',
+                    authorName: 'Learn Wolof Team'
                 }}
                 url="https://learnwolof.com/guides/first-ten-wolof-phrases"
             />
@@ -41,7 +41,7 @@ export default function FirstTenPhrasesPage() {
                 items={[
                     { name: 'Home', item: '/' },
                     { name: 'Guides', item: '/guides' },
-                    { name: 'First 10 Wolof Phrases', item: '/guides/first-ten-wolof-phrases' },
+                    { name: 'First 10 Wolof Phrases', item: '/guides/first-ten-wolof-phrases' }
                 ]}
             />
             <div className="space-y-6 text-center mb-12">
@@ -145,51 +145,51 @@ const phrases = [
     {
         wolof: 'Salaam Aleekum',
         english: 'Peace be with you (Hello)',
-        context: 'The universal greeting. Always start here.',
+        context: 'The universal greeting. Always start here.'
     },
     {
         wolof: 'Na nga def?',
         english: 'How are you?',
-        context: 'Used to ask one person how they are doing.',
+        context: 'Used to ask one person how they are doing.'
     },
     {
         wolof: 'Mangi fi rekk',
         english: 'I am fine (literally: I am here only)',
-        context: "The standard response to 'Na nga def?'",
+        context: "The standard response to 'Na nga def?'"
     },
     {
         wolof: 'Jërëjëf',
         english: 'Thank you',
-        context: 'Express gratitude sincerely.',
+        context: 'Express gratitude sincerely.'
     },
     {
         wolof: 'Waaw / Déedéet',
         english: 'Yes / No',
-        context: 'Essential for basic communication.',
+        context: 'Essential for basic communication.'
     },
     {
         wolof: 'Jàmm nga fanaan',
         english: 'Did you sleep in peace? (Good morning)',
-        context: 'Used specifically in the morning.',
+        context: 'Used specifically in the morning.'
     },
     {
         wolof: 'Agsiileen',
         english: 'Welcome (plural)',
-        context: 'Inviting people into your home or space.',
+        context: 'Inviting people into your home or space.'
     },
     {
         wolof: 'Baal ma',
         english: 'Sorry / Excuse me',
-        context: 'Used to apologize or get attention politely.',
+        context: 'Used to apologize or get attention politely.'
     },
     {
         wolof: 'Naka suba si?',
         english: 'How is the morning?',
-        context: 'Small talk is very important.',
+        context: 'Small talk is very important.'
     },
     {
         wolof: 'Ba beneen yoon',
         english: 'Goodbye (Until next time)',
-        context: 'A polite way to part ways.',
-    },
+        context: 'A polite way to part ways.'
+    }
 ]

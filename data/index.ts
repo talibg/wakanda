@@ -21,91 +21,91 @@ export const wordCategories: { id: WordCategory; label: string; description: str
     {
         id: 'numbers',
         label: 'Numbers',
-        description: 'Learn Wolof numbers for counting money, time, and everyday items.',
+        description: 'Learn Wolof numbers for counting money, time, and everyday items.'
     },
     {
         id: 'family',
         label: 'Family & People',
-        description: 'Talk about your relatives, friends, and the people in your household.',
+        description: 'Talk about your relatives, friends, and the people in your household.'
     },
     {
         id: 'food',
         label: 'Food & Drink',
-        description: 'Essential food vocabulary for Senegalese and Gambian meals.',
+        description: 'Essential food vocabulary for Senegalese and Gambian meals.'
     },
     {
         id: 'basic',
         label: 'Everyday Basics',
-        description: 'Greetings, polite expressions, and useful small talk phrases.',
+        description: 'Greetings, polite expressions, and useful small talk phrases.'
     },
     {
         id: 'time',
         label: 'Time & Schedule',
-        description: 'Words for days, hours, and talking about the moment.',
+        description: 'Words for days, hours, and talking about the moment.'
     },
     {
         id: 'animals',
         label: 'Animals & Nature',
-        description: 'Common animals you might see in Senegal and The Gambia.',
+        description: 'Common animals you might see in Senegal and The Gambia.'
     },
     {
         id: 'colors',
         label: 'Colors',
-        description: 'Describe the world around you with basic color vocabulary.',
+        description: 'Describe the world around you with basic color vocabulary.'
     },
     {
         id: 'places',
         label: 'Places',
-        description: 'Important locations like the market, school, and home.',
+        description: 'Important locations like the market, school, and home.'
     },
     {
         id: 'body',
         label: 'Body Parts',
-        description: 'Common body parts and anatomy.',
-    },
+        description: 'Common body parts and anatomy.'
+    }
 ]
 
 export const phraseCategories: { id: PhraseCategory; label: string; description: string }[] = [
     {
         id: 'greetings',
         label: 'Greetings & Introductions',
-        description: 'Start conversations the Wolof way with respectful greetings.',
+        description: 'Start conversations the Wolof way with respectful greetings.'
     },
     {
         id: 'travel',
         label: 'Travel & Transport',
-        description: 'Get around in Dakar, Thiès, Banjul or Serrekunda with confidence.',
+        description: 'Get around in Dakar, Thiès, Banjul or Serrekunda with confidence.'
     },
     {
         id: 'market',
         label: 'Market & Shopping',
-        description: 'Negotiate prices and understand market slang.',
+        description: 'Negotiate prices and understand market slang.'
     },
     {
         id: 'everyday',
         label: 'Everyday Life',
-        description: 'Useful sentences for your daily routines and interactions.',
+        description: 'Useful sentences for your daily routines and interactions.'
     },
     {
         id: 'questions',
         label: 'Questions & Clarifications',
-        description: 'Ask for directions, information, and help in Wolof.',
+        description: 'Ask for directions, information, and help in Wolof.'
     },
     {
         id: 'health',
         label: 'Health & Emergency',
-        description: 'Express how you feel and ask for medical help.',
+        description: 'Express how you feel and ask for medical help.'
     },
     {
         id: 'dining',
         label: 'Dining & Eating',
-        description: 'Order food, ask for water, and compliment the chef.',
+        description: 'Order food, ask for water, and compliment the chef.'
     },
     {
         id: 'romance',
         label: 'Romance & Relationships',
-        description: 'Express love and affection in Wolof.',
-    },
+        description: 'Express love and affection in Wolof.'
+    }
 ]
 
 const wordMap: Record<WordCategory, WolofWord[]> = {
@@ -117,7 +117,7 @@ const wordMap: Record<WordCategory, WolofWord[]> = {
     animals: animalsWords,
     colors: colorsWords,
     places: placesWords,
-    body: bodyWords,
+    body: bodyWords
 }
 
 const phraseMap: Record<PhraseCategory, WolofPhrase[]> = {
@@ -128,7 +128,7 @@ const phraseMap: Record<PhraseCategory, WolofPhrase[]> = {
     questions: questionPhrases,
     health: healthPhrases,
     dining: diningPhrases,
-    romance: romancePhrases,
+    romance: romancePhrases
 }
 
 export const getWordsByCategory = (category: WordCategory): WolofWord[] => {

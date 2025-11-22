@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     description:
         'The ultimate guide to learning Wolof. Explore our dictionary, phrasebook, and grammar lessons to start speaking Wolof with confidence.',
     alternates: {
-        canonical: buildCanonicalUrl('/'),
-    },
+        canonical: buildCanonicalUrl('/')
+    }
 }
 
 const highlights = [
@@ -22,41 +22,41 @@ const highlights = [
         title: 'Master the Alphabet',
         description: 'Learn the sounds of Wolof, from the gutteral "X" to the nasal "Ñ", with audio examples.',
         href: '/alphabet',
-        action: 'Start Alphabet',
+        action: 'Start Alphabet'
     },
     {
         title: 'Explore Wolof Words',
         description:
             'Browse numbers, family members, food, and time vocabulary with both Senegalese and Gambian spellings.',
         href: '/words',
-        action: 'Go to Words',
+        action: 'Go to Words'
     },
     {
         title: 'Practice Real Phrases',
         description:
             'Study greetings, market talk, travel questions, and everyday expressions for real-life conversations.',
         href: '/phrases',
-        action: 'Go to Phrases',
-    },
+        action: 'Go to Phrases'
+    }
 ]
 
 const faqs = [
     {
         question: 'Is Wolof hard to learn?',
-        answer: 'Wolof is considered moderately easy for English speakers. The pronunciation is phonetic, and the grammar is relatively straightforward. With consistent practice, you can start having basic conversations within a few weeks.',
+        answer: 'Wolof is considered moderately easy for English speakers. The pronunciation is phonetic, and the grammar is relatively straightforward. With consistent practice, you can start having basic conversations within a few weeks.'
     },
     {
         question: 'Where is Wolof spoken?',
-        answer: 'Wolof is primarily spoken in Senegal, where it is the lingua franca, and in The Gambia. It is also spoken by diaspora communities in Mauritania, Mali, and around the world.',
+        answer: 'Wolof is primarily spoken in Senegal, where it is the lingua franca, and in The Gambia. It is also spoken by diaspora communities in Mauritania, Mali, and around the world.'
     },
     {
         question: 'What is the difference between Senegalese and Gambian Wolof?',
-        answer: 'The main differences are in spelling and some vocabulary. Senegal uses letters like C, X, Ñ, and Ŋ, while Gambia uses Ch, Kh, Ny, and Ng. The spoken language is largely mutually intelligible.',
+        answer: 'The main differences are in spelling and some vocabulary. Senegal uses letters like C, X, Ñ, and Ŋ, while Gambia uses Ch, Kh, Ny, and Ng. The spoken language is largely mutually intelligible.'
     },
     {
         question: 'Do I need to learn both dialects?',
-        answer: 'No, you can focus on one dialect based on where you plan to travel or who you want to communicate with. Our app lets you switch between dialects so you can learn either or both.',
-    },
+        answer: 'No, you can focus on one dialect based on where you plan to travel or who you want to communicate with. Our app lets you switch between dialects so you can learn either or both.'
+    }
 ]
 
 export default function HomePage() {

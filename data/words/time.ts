@@ -10,7 +10,7 @@ export const timeWords: WolofWord[] = [
         tags: ['time'],
         exampleSentenceEnglish: 'I am working today.',
         exampleSentenceSenegal: 'Mangi liggéey tay.',
-        exampleSentenceGambia: 'Mangi liggéey tay.',
+        exampleSentenceGambia: 'Mangi liggéey tay.'
     },
     {
         id: 'time-2',
@@ -20,7 +20,7 @@ export const timeWords: WolofWord[] = [
         category: 'time',
         exampleSentenceEnglish: 'See you tomorrow.',
         exampleSentenceSenegal: 'Ba suba.',
-        exampleSentenceGambia: 'Ba suba.',
+        exampleSentenceGambia: 'Ba suba.'
     },
     {
         id: 'time-3',
@@ -31,7 +31,7 @@ export const timeWords: WolofWord[] = [
         notes: 'Senegalese standard orthography uses the acute accent.',
         exampleSentenceEnglish: 'I came yesterday.',
         exampleSentenceSenegal: 'Démb laa ñëw.',
-        exampleSentenceGambia: 'Demb laa ñëw.',
+        exampleSentenceGambia: 'Demb laa ñëw.'
     },
     {
         id: 'time-4',
@@ -42,7 +42,7 @@ export const timeWords: WolofWord[] = [
         notes: 'Also means "tomorrow". The full term for the time period is often "suba gi" (Senegal) or "suba si" (Gambia), but "suba" is used generally.',
         exampleSentenceEnglish: 'Good morning.',
         exampleSentenceSenegal: 'Jàmm nga fanaan.',
-        exampleSentenceGambia: 'Jàmm nga fanaan.',
+        exampleSentenceGambia: 'Jàmm nga fanaan.'
     },
     {
         id: 'time-5',
@@ -53,7 +53,7 @@ export const timeWords: WolofWord[] = [
         notes: 'Used for late afternoon visits (3 PM to 6 PM).',
         exampleSentenceEnglish: 'I will come in the evening.',
         exampleSentenceSenegal: 'Dinaa ñëw ci ngoon si.',
-        exampleSentenceGambia: 'Dinaa ñëw chi ngoon si.',
+        exampleSentenceGambia: 'Dinaa ñëw chi ngoon si.'
     },
     {
         id: 'time-6',
@@ -64,7 +64,7 @@ export const timeWords: WolofWord[] = [
         notes: 'Senegalese standard often uses double consonants to indicate vowel length.',
         exampleSentenceEnglish: 'Good night.',
         exampleSentenceSenegal: 'Fanaanal ak jàmm.',
-        exampleSentenceGambia: 'Fanaanal ak jàmm.',
+        exampleSentenceGambia: 'Fanaanal ak jàmm.'
     },
     {
         id: 'time-7',
@@ -74,7 +74,7 @@ export const timeWords: WolofWord[] = [
         category: 'time',
         exampleSentenceEnglish: 'We are leaving now.',
         exampleSentenceSenegal: 'Nu ngi génn léegi.',
-        exampleSentenceGambia: 'Ñu ngi dem léegi.',
+        exampleSentenceGambia: 'Ñu ngi dem léegi.'
     },
     {
         id: 'time-8',
@@ -85,7 +85,7 @@ export const timeWords: WolofWord[] = [
         notes: 'Literally "in front." Also common is "leegi-leegi" (in a little bit).',
         exampleSentenceEnglish: 'See you later.',
         exampleSentenceSenegal: 'Ba ci kanam.',
-        exampleSentenceGambia: 'Ba chi kanam.',
+        exampleSentenceGambia: 'Ba chi kanam.'
     },
     {
         id: 'time-9',
@@ -96,7 +96,7 @@ export const timeWords: WolofWord[] = [
         notes: 'Literally "in a short thing/time".',
         exampleSentenceEnglish: 'Come back soon.',
         exampleSentenceSenegal: 'Dellusi ci lu gàtt.',
-        exampleSentenceGambia: 'Dellusi chi lu gatt.',
+        exampleSentenceGambia: 'Dellusi chi lu gatt.'
     },
     {
         id: 'time-10',
@@ -108,6 +108,6 @@ export const timeWords: WolofWord[] = [
         notes: 'A common difference in pronunciation/spelling (x vs h).',
         exampleSentenceEnglish: 'What time is it?',
         exampleSentenceSenegal: 'Ban waxtu moo jot?',
-        exampleSentenceGambia: 'Ban wahtu moo jot?',
-    },
+        exampleSentenceGambia: 'Ban wahtu moo jot?'
+    }
 ]

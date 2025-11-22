@@ -7,7 +7,7 @@ import {
     NavigationMenu,
     NavigationMenuItem,
     NavigationMenuLink,
-    NavigationMenuList,
+    NavigationMenuList
 } from '@/components/ui/navigation-menu'
 import { primaryNavItems } from '@/lib/navigation'
 import { cn } from '@/lib/utils'
@@ -33,7 +33,7 @@ export function PrimaryNavMenu() {
                                 <Link
                                     className={cn(
                                         'rounded-md px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-accent hover:text-accent-foreground',
-                                        active && 'bg-accent text-accent-foreground',
+                                        active && 'bg-accent text-accent-foreground'
                                     )}
                                     href={item.href}
                                 >

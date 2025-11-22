@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 
-import { phraseCategories, wordCategories } from '@/data/index'
+import { phraseCategories } from '@/app/data/phrases'
+import { wordCategories } from '@/app/data/words'
 
 const siteUrl = 'https://learnwolof.com'
 
@@ -16,21 +17,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: buildUrl('/phrases'), lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
         { url: buildUrl('/privacy'), lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
         { url: buildUrl('/terms'), lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-        { url: buildUrl('/contact'), lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+        { url: buildUrl('/contact'), lastModified: now, changeFrequency: 'monthly', priority: 0.5 }
     ]
 
-    const wordRoutes: MetadataRoute.Sitemap = wordCategories.map((category) => ({
-        url: buildUrl(`/words/${category.id}`),
+    const wordRoutes: MetadataRoute.Sitemap = wordCategories.map(category => ({
+        url: buildUrl(`/words/${category.slug}`),
         lastModified: now,
         changeFrequency: 'weekly',
-        priority: 0.8,
+        priority: 0.8
     }))
 
-    const phraseRoutes: MetadataRoute.Sitemap = phraseCategories.map((category) => ({
-        url: buildUrl(`/phrases/${category.id}`),
+    const phraseRoutes: MetadataRoute.Sitemap = phraseCategories.map(category => ({
+        url: buildUrl(`/phrases/${category.slug}`),
         lastModified: now,
         changeFrequency: 'weekly',
-        priority: 0.8,
+        priority: 0.8
     }))
 
     const guideRoutes: MetadataRoute.Sitemap = [
@@ -38,20 +39,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: buildUrl('/phrases/romance'),
             lastModified: now,
             changeFrequency: 'monthly',
-            priority: 0.7,
+            priority: 0.7
         },
         {
             url: buildUrl('/guides/first-ten-wolof-phrases'),
             lastModified: now,
             changeFrequency: 'monthly',
-            priority: 0.9,
+            priority: 0.9
         },
         {
             url: buildUrl('/guides/wolof-travel-survival-guide'),
             lastModified: now,
             changeFrequency: 'monthly',
-            priority: 0.9,
-        },
+            priority: 0.9
+        }
     ]
 
     return [...baseRoutes, ...wordRoutes, ...phraseRoutes, ...guideRoutes]

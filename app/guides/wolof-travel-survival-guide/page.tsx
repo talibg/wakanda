@@ -11,7 +11,7 @@ export const metadata = {
     description:
         'Essential Wolof phrases for travelers in Senegal and The Gambia. Learn how to take taxis, bargain in markets, order food, and handle emergencies.',
     alternates: {
-        canonical: buildCanonicalUrl('/guides/wolof-travel-survival-guide'),
+        canonical: buildCanonicalUrl('/guides/wolof-travel-survival-guide')
     },
     openGraph: {
         title: 'The Ultimate Wolof Travel Survival Guide | Learn Wolof',
@@ -20,8 +20,8 @@ export const metadata = {
         type: 'article',
         publishedTime: '2023-11-15T00:00:00.000Z',
         authors: ['Learn Wolof Team'],
-        url: buildCanonicalUrl('/guides/wolof-travel-survival-guide'),
-    },
+        url: buildCanonicalUrl('/guides/wolof-travel-survival-guide')
+    }
 }
 
 export default function TravelSurvivalGuidePage() {
@@ -33,7 +33,7 @@ export default function TravelSurvivalGuidePage() {
                     description:
                         'Essential Wolof phrases for travelers in Senegal and The Gambia. Learn how to take taxis, bargain in markets, order food, and handle emergencies.',
                     datePublished: '2023-11-15T00:00:00.000Z',
-                    authorName: 'Learn Wolof Team',
+                    authorName: 'Learn Wolof Team'
                 }}
                 url="https://learnwolof.com/guides/wolof-travel-survival-guide"
             />
@@ -41,7 +41,7 @@ export default function TravelSurvivalGuidePage() {
                 items={[
                     { name: 'Home', item: '/' },
                     { name: 'Guides', item: '/guides' },
-                    { name: 'Travel Survival Guide', item: '/guides/wolof-travel-survival-guide' },
+                    { name: 'Travel Survival Guide', item: '/guides/wolof-travel-survival-guide' }
                 ]}
             />
             <div className="space-y-6 text-center mb-12">

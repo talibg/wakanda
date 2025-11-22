@@ -9,7 +9,7 @@ export const placesWords: WolofWord[] = [
         category: 'places',
         exampleSentenceEnglish: 'I am going home.',
         exampleSentenceSenegal: 'Mangi ñibbi kër ga.',
-        exampleSentenceGambia: 'Mangi ñibbi ker ga.',
+        exampleSentenceGambia: 'Mangi ñibbi ker ga.'
     },
     {
         id: 'place_school',
@@ -19,7 +19,7 @@ export const placesWords: WolofWord[] = [
         category: 'places',
         exampleSentenceEnglish: 'The children are at school.',
         exampleSentenceSenegal: 'Xale yi ño ngi ci ekol bi.',
-        exampleSentenceGambia: 'Khale yi ñu ngi chi school bi.',
+        exampleSentenceGambia: 'Khale yi ñu ngi chi school bi.'
     },
     {
         id: 'place_market',
@@ -29,7 +29,7 @@ export const placesWords: WolofWord[] = [
         category: 'places',
         exampleSentenceEnglish: 'I am going to the market.',
         exampleSentenceSenegal: 'Mangi dem marse.',
-        exampleSentenceGambia: 'Mangi dem market.',
+        exampleSentenceGambia: 'Mangi dem market.'
     },
     {
         id: 'place_beach',
@@ -39,7 +39,7 @@ export const placesWords: WolofWord[] = [
         category: 'places',
         exampleSentenceEnglish: "Let's go to the beach.",
         exampleSentenceSenegal: 'Kaay nu dem teefes.',
-        exampleSentenceGambia: 'Kaay ñu dem teefes.',
+        exampleSentenceGambia: 'Kaay ñu dem teefes.'
     },
     {
         id: 'place_hospital',
@@ -49,7 +49,7 @@ export const placesWords: WolofWord[] = [
         category: 'places',
         exampleSentenceEnglish: 'He is at the hospital.',
         exampleSentenceSenegal: 'Mungi ci lopitan bi.',
-        exampleSentenceGambia: 'Mungi chi hospital bi.',
+        exampleSentenceGambia: 'Mungi chi hospital bi.'
     },
     {
         id: 'place_mosque',
@@ -59,7 +59,7 @@ export const placesWords: WolofWord[] = [
         category: 'places',
         exampleSentenceEnglish: 'The mosque is big.',
         exampleSentenceSenegal: 'Jàkka ji dafa mag.',
-        exampleSentenceGambia: 'Jakka ji dafa mag.',
+        exampleSentenceGambia: 'Jakka ji dafa mag.'
     },
     {
         id: 'place_room',
@@ -69,6 +69,6 @@ export const placesWords: WolofWord[] = [
         category: 'places',
         exampleSentenceEnglish: 'Clean your room.',
         exampleSentenceSenegal: 'Setalal sa neg.',
-        exampleSentenceGambia: 'Setalal sa neg.',
-    },
+        exampleSentenceGambia: 'Setalal sa neg.'
+    }
 ]

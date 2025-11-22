@@ -6,8 +6,8 @@ export const metadata: Metadata = {
     title: 'Privacy Policy | Learn Wolof',
     description: 'Privacy Policy for Learn Wolof. We respect your privacy and do not collect personal data.',
     alternates: {
-        canonical: buildCanonicalUrl('/privacy'),
-    },
+        canonical: buildCanonicalUrl('/privacy')
+    }
 }
 
 export default function PrivacyPage() {
@@ -16,7 +16,7 @@ export default function PrivacyPage() {
         '@type': 'WebPage',
         name: 'Privacy Policy',
         description: 'Privacy Policy for Learn Wolof',
-        url: 'https://learnwolof.com/privacy',
+        url: 'https://learnwolof.com/privacy'
     }
 
     return (

@@ -7,7 +7,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'ah',
         soundsLike: 'a in father',
         exampleWord: 'am',
-        exampleTranslation: 'to have',
+        exampleTranslation: 'to have'
     },
     {
         id: 'b',
@@ -15,7 +15,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'beh',
         soundsLike: 'b in boy',
         exampleWord: 'baay',
-        exampleTranslation: 'father',
+        exampleTranslation: 'father'
     },
     {
         id: 'c',
@@ -24,7 +24,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'ceh',
         soundsLike: 'ch in chair',
         exampleWord: 'caabi',
-        exampleTranslation: 'key',
+        exampleTranslation: 'key'
     },
     {
         id: 'd',
@@ -32,7 +32,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'deh',
         soundsLike: 'd in dog',
         exampleWord: 'daan',
-        exampleTranslation: 'to fall',
+        exampleTranslation: 'to fall'
     },
     {
         id: 'e',
@@ -40,7 +40,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'eh',
         soundsLike: 'e in bet',
         exampleWord: 'enn',
-        exampleTranslation: 'one',
+        exampleTranslation: 'one'
     },
     {
         id: 'ee',
@@ -48,7 +48,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'uh',
         soundsLike: 'a in ago',
         exampleWord: 'bëgg',
-        exampleTranslation: 'to want',
+        exampleTranslation: 'to want'
     },
     {
         id: 'f',
@@ -56,7 +56,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'ef',
         soundsLike: 'f in fish',
         exampleWord: 'fanaanal',
-        exampleTranslation: 'goodnight',
+        exampleTranslation: 'goodnight'
     },
     {
         id: 'g',
@@ -64,7 +64,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'geh',
         soundsLike: 'g in go (always hard)',
         exampleWord: 'gorgui',
-        exampleTranslation: 'the man',
+        exampleTranslation: 'the man'
     },
     {
         id: 'i',
@@ -72,7 +72,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'ee',
         soundsLike: 'i in machine',
         exampleWord: 'init',
-        exampleTranslation: 'hope',
+        exampleTranslation: 'hope'
     },
     {
         id: 'j',
@@ -80,7 +80,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'jeh',
         soundsLike: 'j in joy',
         exampleWord: 'jamm',
-        exampleTranslation: 'peace',
+        exampleTranslation: 'peace'
     },
     {
         id: 'k',
@@ -88,7 +88,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'ka',
         soundsLike: 'k in kite',
         exampleWord: 'kaay',
-        exampleTranslation: 'come',
+        exampleTranslation: 'come'
     },
     {
         id: 'l',
@@ -96,7 +96,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'el',
         soundsLike: 'l in love',
         exampleWord: 'leket',
-        exampleTranslation: 'calabash',
+        exampleTranslation: 'calabash'
     },
     {
         id: 'm',
@@ -104,7 +104,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'em',
         soundsLike: 'm in mom',
         exampleWord: 'man',
-        exampleTranslation: 'me / I',
+        exampleTranslation: 'me / I'
     },
     {
         id: 'n',
@@ -112,7 +112,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'en',
         soundsLike: 'n in no',
         exampleWord: 'naan',
-        exampleTranslation: 'drink',
+        exampleTranslation: 'drink'
     },
     {
         id: 'ny',
@@ -121,7 +121,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'enye',
         soundsLike: 'ny in canyon',
         exampleWord: 'ñuul',
-        exampleTranslation: 'black',
+        exampleTranslation: 'black'
     },
     {
         id: 'ng',
@@ -130,7 +130,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'eng',
         soundsLike: 'ng in sing',
         exampleWord: 'ŋaay',
-        exampleTranslation: 'to be stingy',
+        exampleTranslation: 'to be stingy'
     },
     {
         id: 'o',
@@ -138,7 +138,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'oh',
         soundsLike: 'o in so',
         exampleWord: 'oto',
-        exampleTranslation: 'car',
+        exampleTranslation: 'car'
     },
     {
         id: 'oo',
@@ -146,7 +146,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'aw',
         soundsLike: 'aw in law',
         exampleWord: 'wóór',
-        exampleTranslation: 'sure / certain',
+        exampleTranslation: 'sure / certain'
     },
     {
         id: 'p',
@@ -154,7 +154,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'peh',
         soundsLike: 'p in pen',
         exampleWord: 'pare',
-        exampleTranslation: 'ready',
+        exampleTranslation: 'ready'
     },
     {
         id: 'q',
@@ -162,7 +162,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'kah',
         soundsLike: 'like k but deeper in throat',
         exampleWord: 'qol',
-        exampleTranslation: 'heart (poetic)',
+        exampleTranslation: 'heart (poetic)'
     },
     {
         id: 'r',
@@ -170,7 +170,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'er',
         soundsLike: 'rolled r',
         exampleWord: 'rafet',
-        exampleTranslation: 'beautiful',
+        exampleTranslation: 'beautiful'
     },
     {
         id: 's',
@@ -178,7 +178,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'es',
         soundsLike: 's in sun',
         exampleWord: 'salaam',
-        exampleTranslation: 'peace',
+        exampleTranslation: 'peace'
     },
     {
         id: 't',
@@ -186,7 +186,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'teh',
         soundsLike: 't in top',
         exampleWord: 'tang',
-        exampleTranslation: 'hot',
+        exampleTranslation: 'hot'
     },
     {
         id: 'u',
@@ -194,7 +194,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'oo',
         soundsLike: 'u in rule',
         exampleWord: 'ubbi',
-        exampleTranslation: 'to open',
+        exampleTranslation: 'to open'
     },
     {
         id: 'w',
@@ -202,7 +202,7 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'weh',
         soundsLike: 'w in win',
         exampleWord: 'waaw',
-        exampleTranslation: 'yes',
+        exampleTranslation: 'yes'
     },
     {
         id: 'x',
@@ -212,7 +212,7 @@ export const alphabet: WolofLetter[] = [
         soundsLike: 'ch in bach (gutteral)',
         soundsLikeGambia: 'kh in khan',
         exampleWord: 'xale',
-        exampleTranslation: 'child',
+        exampleTranslation: 'child'
     },
     {
         id: 'y',
@@ -220,6 +220,6 @@ export const alphabet: WolofLetter[] = [
         pronunciation: 'yeh',
         soundsLike: 'y in yes',
         exampleWord: 'yow',
-        exampleTranslation: 'you',
-    },
+        exampleTranslation: 'you'
+    }
 ]

@@ -1,20 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
+import { wordCategories } from '@/app/data/words'
+import { JsonLdBreadcrumb } from '@/components/json-ld'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { wordCategories } from '@/data/index'
-
-export const dynamic = 'force-dynamic'
-
 import { buildCanonicalUrl } from '@/lib/seo'
+
+export const dynamic = 'force-static'
 
 export const metadata: Metadata = {
     title: 'Wolof Vocabulary — Learn Wolof Words from Senegal and Gambia',
     description:
         'Study essential Wolof vocabulary for numbers, family, food, time, and daily basics. Compare Senegalese and Gambian word choices side-by-side.',
     alternates: {
-        canonical: buildCanonicalUrl('/words'),
+        canonical: buildCanonicalUrl('/words')
     },
     openGraph: {
         title: 'Wolof Vocabulary — Learn Wolof Words from Senegal and Gambia | Learn Wolof',
@@ -27,16 +27,16 @@ export const metadata: Metadata = {
                 url: 'https://learnwolof.com/og-learn-wolof.png',
                 width: 1200,
                 height: 630,
-                alt: 'Learn Wolof words and phrases from Senegal and The Gambia',
-            },
-        ],
+                alt: 'Learn Wolof words and phrases from Senegal and The Gambia'
+            }
+        ]
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Wolof Vocabulary — Learn Wolof Words from Senegal and Gambia | Learn Wolof',
         description:
             'Study essential Wolof vocabulary for numbers, family, food, time, and daily basics. Compare Senegalese and Gambian word choices side-by-side.',
-        images: ['https://learnwolof.com/og-learn-wolof.png'],
+        images: ['https://learnwolof.com/og-learn-wolof.png']
     },
     robots: {
         index: true,
@@ -46,12 +46,10 @@ export const metadata: Metadata = {
             follow: true,
             'max-video-preview': -1,
             'max-image-preview': 'large',
-            'max-snippet': -1,
-        },
-    },
+            'max-snippet': -1
+        }
+    }
 }
-
-import { JsonLdBreadcrumb } from '@/components/json-ld'
 
 export default function WordsIndexPage() {
     return (
@@ -59,7 +57,7 @@ export default function WordsIndexPage() {
             <JsonLdBreadcrumb
                 items={[
                     { name: 'Home', item: '/' },
-                    { name: 'Words', item: '/words' },
+                    { name: 'Words', item: '/words' }
                 ]}
             />
             <header className="space-y-3">
@@ -72,14 +70,14 @@ export default function WordsIndexPage() {
             </header>
             <section className="grid gap-4 sm:grid-cols-2">
                 {wordCategories.map((category) => (
-                    <Card className="h-full" key={category.id}>
+                    <Card className="h-full" key={category.slug}>
                         <CardHeader>
-                            <CardTitle>{category.label}</CardTitle>
+                            <CardTitle>{category.title}</CardTitle>
                             <CardDescription>{category.description}</CardDescription>
                         </CardHeader>
                         <CardContent>
                             <Button asChild variant="secondary">
-                                <Link href={`/words/${category.id}`}>Open {category.label}</Link>
+                                <Link href={`/words/${category.slug}`}>Open {category.title}</Link>
                             </Button>
                         </CardContent>
                     </Card>

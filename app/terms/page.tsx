@@ -6,8 +6,8 @@ export const metadata: Metadata = {
     title: 'Terms of Use | Learn Wolof',
     description: 'Terms and Conditions for using Learn Wolof. By using our site, you agree to these terms.',
     alternates: {
-        canonical: buildCanonicalUrl('/terms'),
-    },
+        canonical: buildCanonicalUrl('/terms')
+    }
 }
 
 export default function TermsPage() {
@@ -16,7 +16,7 @@ export default function TermsPage() {
         '@type': 'WebPage',
         name: 'Terms and Conditions',
         description: 'Terms and Conditions for Learn Wolof',
-        url: 'https://learnwolof.com/terms',
+        url: 'https://learnwolof.com/terms'
     }
 
     return (

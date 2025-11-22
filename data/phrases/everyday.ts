@@ -8,14 +8,14 @@ export const everydayPhrases: WolofPhrase[] = [
         gambia: 'Dama khiif.', // Corrected to 1st person singular ('I')
         category: 'everyday',
         tags: ['needs'],
-        notes: 'Literally "I have become hungry" or "I am in a state of hunger".',
+        notes: 'Literally "I have become hungry" or "I am in a state of hunger".'
     },
     {
         id: 'everyday-2',
         english: 'I am tired.',
         senegal: 'Dama sonn.', // Corrected to 1st person singular ('I')
         gambia: 'Dama sonn.', // Corrected to 1st person singular ('I')
-        category: 'everyday',
+        category: 'everyday'
     },
     {
         id: 'everyday-3',
@@ -23,7 +23,7 @@ export const everydayPhrases: WolofPhrase[] = [
         senegal: 'Maa ngi dëkk ci ...',
         gambia: 'Mangi dekk chi ...',
         category: 'everyday',
-        notes: 'Replace ellipsis with town or neighborhood. The Gambian spelling reflects a common simplification.',
+        notes: 'Replace ellipsis with town or neighborhood. The Gambian spelling reflects a common simplification.'
     },
     {
         id: 'everyday-4',
@@ -32,7 +32,7 @@ export const everydayPhrases: WolofPhrase[] = [
         gambia: 'Deguma.',
         category: 'everyday',
         tags: ['learning'],
-        notes: 'Uses the negative suffix -u-ma (understand-not-I).',
+        notes: 'Uses the negative suffix -u-ma (understand-not-I).'
     },
     {
         id: 'everyday-5',
@@ -40,7 +40,7 @@ export const everydayPhrases: WolofPhrase[] = [
         senegal: 'Danga wax angale?',
         gambia: 'Dang wakh angale?',
         category: 'everyday',
-        notes: 'Gambian speakers often shorten the prefix "Danga" to "Dang".',
+        notes: 'Gambian speakers often shorten the prefix "Danga" to "Dang".'
     },
     {
         id: 'everyday-6',
@@ -48,6 +48,6 @@ export const everydayPhrases: WolofPhrase[] = [
         senegal: 'Dama soxla ndimbal.', // Corrected to simple present tense 'Dama'
         gambia: 'Dama sohla ndimbal.',
         category: 'everyday',
-        notes: 'Soxla is the verb "to need". Ndmbal is the noun "help".',
-    },
+        notes: 'Soxla is the verb "to need". Ndmbal is the noun "help".'
+    }
 ]
