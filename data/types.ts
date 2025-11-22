@@ -1,6 +1,6 @@
-export type WordCategory = 'numbers' | 'family' | 'food' | 'basic' | 'time' | 'animals' | 'colors' | 'places'
+export type WordCategory = 'numbers' | 'family' | 'food' | 'basic' | 'time' | 'animals' | 'colors' | 'places' | 'body'
 
-export type PhraseCategory = 'greetings' | 'travel' | 'market' | 'everyday' | 'questions' | 'health' | 'dining'
+export type PhraseCategory = 'greetings' | 'travel' | 'market' | 'everyday' | 'questions' | 'health' | 'dining' | 'romance'
 
 export type WolofWord = {
     id: string

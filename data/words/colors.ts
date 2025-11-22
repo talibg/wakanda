@@ -7,6 +7,9 @@ export const colorsWords: WolofWord[] = [
         senegal: 'Ñuul',
         gambia: 'Nyuul',
         category: 'colors',
+        exampleSentenceEnglish: 'My shoes are black.',
+        exampleSentenceSenegal: 'Samay dall dafa ñuul.',
+        exampleSentenceGambia: 'Samay dall dafa nyuul.',
     },
     {
         id: 'color_white',
@@ -14,6 +17,9 @@ export const colorsWords: WolofWord[] = [
         senegal: 'Weex',
         gambia: 'Weekh',
         category: 'colors',
+        exampleSentenceEnglish: 'The paper is white.',
+        exampleSentenceSenegal: 'Kayit gi dafa weex.',
+        exampleSentenceGambia: 'Kayit gi dafa weekh.',
     },
     {
         id: 'color_red',
@@ -21,6 +27,9 @@ export const colorsWords: WolofWord[] = [
         senegal: 'Xonq',
         gambia: 'Khonq',
         category: 'colors',
+        exampleSentenceEnglish: 'The flower is red.',
+        exampleSentenceSenegal: 'Fleur bi dafa xonq.',
+        exampleSentenceGambia: 'Fleur bi dafa khonq.',
     },
     {
         id: 'color_green',
@@ -29,6 +38,9 @@ export const colorsWords: WolofWord[] = [
         gambia: 'Vert',
         category: 'colors',
         notes: 'Borrowed from French',
+        exampleSentenceEnglish: 'The grass is green.',
+        exampleSentenceSenegal: 'Ñax mi dafa vert.',
+        exampleSentenceGambia: 'Nyakh mi dafa vert.',
     },
     {
         id: 'color_blue',
@@ -36,6 +48,9 @@ export const colorsWords: WolofWord[] = [
         senegal: 'Ble',
         gambia: 'Blue',
         category: 'colors',
+        exampleSentenceEnglish: 'The sky is blue.',
+        exampleSentenceSenegal: 'Asamaan si dafa ble.',
+        exampleSentenceGambia: 'Asamaan si dafa blue.',
     },
     {
         id: 'color_yellow',
@@ -43,5 +58,8 @@ export const colorsWords: WolofWord[] = [
         senegal: 'Jaune',
         gambia: 'Yellow',
         category: 'colors',
+        exampleSentenceEnglish: 'The sun is yellow.',
+        exampleSentenceSenegal: 'Jant bi dafa jaune.',
+        exampleSentenceGambia: 'Jant bi dafa yellow.',
     },
 ]

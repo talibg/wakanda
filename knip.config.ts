@@ -1,10 +1,7 @@
 import type { KnipConfig } from 'knip'
 
 const config: KnipConfig = {
-    entry: [
-        'app/**/{page,layout,template,loading,error,not-found}.tsx',
-        'next.config.{js,ts,mjs,cjs}',
-    ],
+    entry: ['app/**/{page,layout,template,loading,error,not-found}.tsx', 'next.config.{js,ts,mjs,cjs}'],
     project: [
         '**/*.{ts,tsx,js,jsx}',
         '**/*.css',

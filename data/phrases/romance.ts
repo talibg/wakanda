@@ -1,0 +1,75 @@
+import type { WolofPhrase } from '@/data/types'
+
+export const romancePhrases: WolofPhrase[] = [
+    {
+        id: 'romance-1',
+        english: 'I love you',
+        senegal: 'Nob naa la',
+        gambia: 'Nob naa la',
+        category: 'romance',
+    },
+    {
+        id: 'romance-2',
+        english: 'I miss you',
+        senegal: 'Nam naa la',
+        gambia: 'Nam naa la',
+        category: 'romance',
+    },
+    {
+        id: 'romance-3',
+        english: 'You are beautiful',
+        senegal: 'Danga rafet',
+        gambia: 'Danga rafet',
+        category: 'romance',
+    },
+    {
+        id: 'romance-4',
+        english: 'My love',
+        senegal: 'Sama xol',
+        gambia: 'Sama khol',
+        category: 'romance',
+        notes: 'Literally "my heart".',
+    },
+    {
+        id: 'romance-5',
+        english: 'I am thinking of you',
+        senegal: 'Mangi lay xalaat',
+        gambia: 'Mangi lay khalaat',
+        category: 'romance',
+    },
+    {
+        id: 'romance-6',
+        english: 'Do you love me?',
+        senegal: 'Danga ma nob?',
+        gambia: 'Danga ma nob?',
+        category: 'romance',
+    },
+    {
+        id: 'romance-7',
+        english: 'I like you a lot',
+        senegal: 'Bëgg naa la lool',
+        gambia: 'Bëgg naa la lool',
+        category: 'romance',
+    },
+    {
+        id: 'romance-8',
+        english: 'You are sweet',
+        senegal: 'Danga neex',
+        gambia: 'Danga neex',
+        category: 'romance',
+    },
+    {
+        id: 'romance-9',
+        english: 'Marry me',
+        senegal: 'Takka ma',
+        gambia: 'Takka ma',
+        category: 'romance',
+    },
+    {
+        id: 'romance-10',
+        english: 'My sweetheart',
+        senegal: 'Sama soppe',
+        gambia: 'Sama soppe',
+        category: 'romance',
+    },
+]

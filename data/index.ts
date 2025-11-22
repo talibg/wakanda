@@ -5,6 +5,7 @@ import { healthPhrases } from '@/data/phrases/health'
 import { marketPhrases } from '@/data/phrases/market'
 import { questionPhrases } from '@/data/phrases/questions'
 import { travelPhrases } from '@/data/phrases/travel'
+import { romancePhrases } from '@/data/phrases/romance'
 import type { PhraseCategory, WolofPhrase, WolofWord, WordCategory } from '@/data/types'
 import { animalsWords } from '@/data/words/animals'
 import { basicWords } from '@/data/words/basic'
@@ -14,6 +15,7 @@ import { foodWords } from '@/data/words/food'
 import { numbersWords } from '@/data/words/numbers'
 import { placesWords } from '@/data/words/places'
 import { timeWords } from '@/data/words/time'
+import { bodyWords } from '@/data/words/body'
 
 export const wordCategories: { id: WordCategory; label: string; description: string }[] = [
     {
@@ -56,6 +58,11 @@ export const wordCategories: { id: WordCategory; label: string; description: str
         label: 'Places',
         description: 'Important locations like the market, school, and home.',
     },
+    {
+        id: 'body',
+        label: 'Body Parts',
+        description: 'Common body parts and anatomy.',
+    },
 ]
 
 export const phraseCategories: { id: PhraseCategory; label: string; description: string }[] = [
@@ -94,6 +101,11 @@ export const phraseCategories: { id: PhraseCategory; label: string; description:
         label: 'Dining & Eating',
         description: 'Order food, ask for water, and compliment the chef.',
     },
+    {
+        id: 'romance',
+        label: 'Romance & Relationships',
+        description: 'Express love and affection in Wolof.',
+    },
 ]
 
 const wordMap: Record<WordCategory, WolofWord[]> = {
@@ -105,6 +117,7 @@ const wordMap: Record<WordCategory, WolofWord[]> = {
     animals: animalsWords,
     colors: colorsWords,
     places: placesWords,
+    body: bodyWords,
 }
 
 const phraseMap: Record<PhraseCategory, WolofPhrase[]> = {
@@ -115,6 +128,7 @@ const phraseMap: Record<PhraseCategory, WolofPhrase[]> = {
     questions: questionPhrases,
     health: healthPhrases,
     dining: diningPhrases,
+    romance: romancePhrases,
 }
 
 export const getWordsByCategory = (category: WordCategory): WolofWord[] => {

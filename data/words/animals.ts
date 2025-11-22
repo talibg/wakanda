@@ -17,6 +17,9 @@ export const animalsWords: WolofWord[] = [
         senegal: 'Muus',
         gambia: 'Muus',
         category: 'animals',
+        exampleSentenceEnglish: 'The cat is sleeping.',
+        exampleSentenceSenegal: 'Muus bi dafay nelaw.',
+        exampleSentenceGambia: 'Muus bi dafay nelaw.',
     },
     {
         id: 'animal_bird',
@@ -24,6 +27,9 @@ export const animalsWords: WolofWord[] = [
         senegal: 'Picc',
         gambia: 'Pich',
         category: 'animals',
+        exampleSentenceEnglish: 'The bird is flying.',
+        exampleSentenceSenegal: 'Picc bi dafay naaw.',
+        exampleSentenceGambia: 'Pich bi dafay naaw.',
     },
     {
         id: 'animal_lion',
@@ -31,6 +37,9 @@ export const animalsWords: WolofWord[] = [
         senegal: 'Gaynde',
         gambia: 'Gaynde',
         category: 'animals',
+        exampleSentenceEnglish: 'The lion is strong.',
+        exampleSentenceSenegal: 'Gaynde gi dafa am doole.',
+        exampleSentenceGambia: 'Gaynde gi dafa am doole.',
     },
     {
         id: 'animal_horse',
@@ -38,6 +47,9 @@ export const animalsWords: WolofWord[] = [
         senegal: 'Fas',
         gambia: 'Fas',
         category: 'animals',
+        exampleSentenceEnglish: 'I ride a horse.',
+        exampleSentenceSenegal: 'Dama war fas.',
+        exampleSentenceGambia: 'Dama war fas.',
     },
     {
         id: 'animal_cow',
@@ -45,6 +57,9 @@ export const animalsWords: WolofWord[] = [
         senegal: 'Nag',
         gambia: 'Nag',
         category: 'animals',
+        exampleSentenceEnglish: 'The cow eats grass.',
+        exampleSentenceSenegal: 'Nag wi dafay lekk ñax.',
+        exampleSentenceGambia: 'Nag wi dafay lekk nyakh.',
     },
     {
         id: 'animal_sheep',
@@ -52,6 +67,9 @@ export const animalsWords: WolofWord[] = [
         senegal: 'Xar',
         gambia: 'Khar',
         category: 'animals',
+        exampleSentenceEnglish: 'The sheep is white.',
+        exampleSentenceSenegal: 'Xar mi dafa weex.',
+        exampleSentenceGambia: 'Khar mi dafa weekh.',
     },
     {
         id: 'animal_goat',
@@ -59,6 +77,9 @@ export const animalsWords: WolofWord[] = [
         senegal: 'Bëy',
         gambia: 'Bey',
         category: 'animals',
+        exampleSentenceEnglish: 'The goat climbs.',
+        exampleSentenceSenegal: 'Bëy wi dafay yéeg.',
+        exampleSentenceGambia: 'Bey wi dafay yéeg.',
     },
     {
         id: 'animal_fish',
@@ -66,6 +87,9 @@ export const animalsWords: WolofWord[] = [
         senegal: 'Jën',
         gambia: 'Jen',
         category: 'animals',
+        exampleSentenceEnglish: 'Fish live in water.',
+        exampleSentenceSenegal: 'Jën ci ndox lay dëkk.',
+        exampleSentenceGambia: 'Jen chi ndokh lay dëkk.',
     },
     {
         id: 'animal_chicken',
@@ -73,5 +97,8 @@ export const animalsWords: WolofWord[] = [
         senegal: 'Ginaar',
         gambia: 'Ginaar',
         category: 'animals',
+        exampleSentenceEnglish: 'The chicken lays eggs.',
+        exampleSentenceSenegal: 'Ginaar gi dafay nen.',
+        exampleSentenceGambia: 'Ginaar gi dafay nen.',
     },
 ]

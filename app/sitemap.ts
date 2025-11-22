@@ -33,5 +33,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
     }))
 
-    return [...baseRoutes, ...wordRoutes, ...phraseRoutes]
+    const guideRoutes: MetadataRoute.Sitemap = [
+        {
+            url: buildUrl('/phrases/romance'),
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: buildUrl('/guides/first-ten-wolof-phrases'),
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: buildUrl('/guides/wolof-travel-survival-guide'),
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+    ]
+
+    return [...baseRoutes, ...wordRoutes, ...phraseRoutes, ...guideRoutes]
 }

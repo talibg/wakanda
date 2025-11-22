@@ -9,8 +9,8 @@ export const familyWords: WolofWord[] = [
         category: 'family',
         tags: ['family'],
         exampleSentenceEnglish: 'My mother is at home.',
-        exampleSentenceSenegal: 'Sama yaay nekk na ci kër gi.', // "Sama" (my), not "Samay" (my plural)
-        exampleSentenceGambia: 'Sama yaay nekk na kër ga.', // "Sama" (my), not "Sunu" (our)
+        exampleSentenceSenegal: 'Sama yaay nekk na ci kër gi.',
+        exampleSentenceGambia: 'Sama yaay nekk na kër ga.',
     },
     {
         id: 'family-2',
@@ -19,6 +19,9 @@ export const familyWords: WolofWord[] = [
         gambia: 'baay',
         category: 'family',
         tags: ['family'],
+        exampleSentenceEnglish: 'My father is working.',
+        exampleSentenceSenegal: 'Sama baay mungi liggéey.',
+        exampleSentenceGambia: 'Sama baay mungi liggéey.',
     },
     {
         id: 'family-3',
@@ -27,6 +30,9 @@ export const familyWords: WolofWord[] = [
         gambia: 'mag bu góor',
         category: 'family',
         notes: 'Mag means “older sibling”.',
+        exampleSentenceEnglish: 'He is my older brother.',
+        exampleSentenceSenegal: 'Mooy sama mag bu góor.',
+        exampleSentenceGambia: 'Mo sama mag bu góor la.',
     },
     {
         id: 'family-4',
@@ -35,6 +41,9 @@ export const familyWords: WolofWord[] = [
         gambia: 'rakk bu jigéen',
         category: 'family',
         notes: 'Rakk means "younger sibling".',
+        exampleSentenceEnglish: 'She is my younger sister.',
+        exampleSentenceSenegal: 'Mooy sama rakk bu jigéen.',
+        exampleSentenceGambia: 'Mo sama rakk bu jigéen la.',
     },
     {
         id: 'family-5',
@@ -44,6 +53,9 @@ export const familyWords: WolofWord[] = [
         category: 'family',
         notes: 'Gambian pronunciation may add a final “h” sound. "Xale" means a child (a young person), while "doom" means one\'s offspring (son/daughter).',
         tags: ['everyday'],
+        exampleSentenceEnglish: 'The child is playing.',
+        exampleSentenceSenegal: 'Xale bi dafay fo.',
+        exampleSentenceGambia: 'Khale bi dafay fo.',
     },
     {
         id: 'family-6',
@@ -58,10 +70,13 @@ export const familyWords: WolofWord[] = [
     {
         id: 'family-7',
         english: 'wife',
-        senegal: 'jabar', // Corrected. "Jàkkar" means husband.
+        senegal: 'jabar',
         gambia: 'jabar',
         category: 'family',
         notes: '"Jabar" is the standard word for "wife".',
+        exampleSentenceEnglish: 'His wife is beautiful.',
+        exampleSentenceSenegal: 'Jabaram dafa rafet.',
+        exampleSentenceGambia: 'Jabaram dafa rafet.',
     },
     {
         id: 'family-8',
@@ -70,6 +85,9 @@ export const familyWords: WolofWord[] = [
         gambia: 'jekker',
         category: 'family',
         notes: 'The "ë" vowel is common in Senegalese spelling. "Jàkkar" is also used in Senegal.',
+        exampleSentenceEnglish: 'Her husband is tall.',
+        exampleSentenceSenegal: 'Jékkëram dafa njool.',
+        exampleSentenceGambia: 'Jekkeram dafa njool.',
     },
     {
         id: 'family-9',
@@ -79,13 +97,19 @@ export const familyWords: WolofWord[] = [
         category: 'family',
         tags: ['household'],
         notes: 'Literally "the people of the house" (household). "Njëbót" is also used to mean family/lineage.',
+        exampleSentenceEnglish: 'My family is big.',
+        exampleSentenceSenegal: 'Sama wa kër dañoo bare.',
+        exampleSentenceGambia: 'Sama wa kër dañoo bare.',
     },
     {
         id: 'family-10',
         english: 'neighbor',
-        senegal: 'dëkkandoo', // Corrected. "Deret" means "blood".
+        senegal: 'dëkkandoo',
         gambia: 'dekkandoo',
         category: 'family',
         notes: 'Literally "one who lives with (you)".',
+        exampleSentenceEnglish: 'My neighbor is kind.',
+        exampleSentenceSenegal: 'Sama dëkkandoo dafa baax.',
+        exampleSentenceGambia: 'Sama dekkandoo dafa baakh.',
     },
 ]

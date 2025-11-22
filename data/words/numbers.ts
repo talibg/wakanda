@@ -10,7 +10,7 @@ export const numbersWords: WolofWord[] = [
         tags: ['counting'],
         exampleSentenceEnglish: 'I have one mango.',
         exampleSentenceSenegal: 'Am naa benn mango.',
-        exampleSentenceGambia: 'Am naa benn mango.', // Corrected verb to standard 'Am naa'
+        exampleSentenceGambia: 'Am naa benn mango.',
     },
     {
         id: 'numbers-2',
@@ -21,8 +21,8 @@ export const numbersWords: WolofWord[] = [
         notes: 'The number takes an -i suffix (ñaari/ñari) when used to modify a noun.',
         tags: ['counting'],
         exampleSentenceEnglish: 'Give me two cups of tea.',
-        exampleSentenceSenegal: 'Jox ma ñaari ataaya.', // Corrected to include linker 'i'
-        exampleSentenceGambia: 'Jox ma ñari ataya.', // Corrected to include linker 'i'
+        exampleSentenceSenegal: 'Jox ma ñaari ataaya.',
+        exampleSentenceGambia: 'Jox ma ñari ataya.',
     },
     {
         id: 'numbers-3',
@@ -32,6 +32,9 @@ export const numbersWords: WolofWord[] = [
         category: 'numbers',
         notes: 'The number takes an -i suffix (ñetti) when used to modify a noun.',
         tags: ['counting'],
+        exampleSentenceEnglish: 'Three people came.',
+        exampleSentenceSenegal: 'Ñetti nit ñëw nañu.',
+        exampleSentenceGambia: 'Nyetti nit ñëw nañu.',
     },
     {
         id: 'numbers-4',
@@ -40,6 +43,9 @@ export const numbersWords: WolofWord[] = [
         gambia: 'nyent',
         category: 'numbers',
         notes: 'The number takes an -i suffix (ñenti) when used to modify a noun.',
+        exampleSentenceEnglish: 'I see four birds.',
+        exampleSentenceSenegal: 'Gis naa ñenti picc.',
+        exampleSentenceGambia: 'Gis naa nyenti pich.',
     },
     {
         id: 'numbers-5',
@@ -47,7 +53,10 @@ export const numbersWords: WolofWord[] = [
         senegal: 'juróom',
         gambia: 'juróom',
         category: 'numbers',
-        notes: 'Juróom is the base number for counting six through nine (e.g., 5+1, 5+2).', // Corrected note
+        notes: 'Juróom is the base number for counting six through nine (e.g., 5+1, 5+2).',
+        exampleSentenceEnglish: 'Give me five.',
+        exampleSentenceSenegal: 'Jox ma juróom.',
+        exampleSentenceGambia: 'Jox ma juróom.',
     },
     {
         id: 'numbers-6',
@@ -55,6 +64,9 @@ export const numbersWords: WolofWord[] = [
         senegal: 'juróom-benn',
         gambia: 'juróom-benn',
         category: 'numbers',
+        exampleSentenceEnglish: 'Six days.',
+        exampleSentenceSenegal: 'Juróom-benni fan.',
+        exampleSentenceGambia: 'Juróom-benni fan.',
     },
     {
         id: 'numbers-7',
@@ -63,6 +75,9 @@ export const numbersWords: WolofWord[] = [
         gambia: 'juróom-nyar',
         category: 'numbers',
         notes: 'Literally "five two".',
+        exampleSentenceEnglish: 'Seven o\'clock.',
+        exampleSentenceSenegal: 'Juróom-ñaari waxtu.',
+        exampleSentenceGambia: 'Juróom-nyari wahtu.',
     },
     {
         id: 'numbers-8',
@@ -71,6 +86,9 @@ export const numbersWords: WolofWord[] = [
         gambia: 'juróom-nyett',
         category: 'numbers',
         notes: 'Literally "five three".',
+        exampleSentenceEnglish: 'Eight years.',
+        exampleSentenceSenegal: 'Juróom-ñetti at.',
+        exampleSentenceGambia: 'Juróom-nyetti at.',
     },
     {
         id: 'numbers-9',
@@ -79,6 +97,9 @@ export const numbersWords: WolofWord[] = [
         gambia: 'juróom-nyent',
         category: 'numbers',
         notes: 'Literally "five four".',
+        exampleSentenceEnglish: 'Nine months.',
+        exampleSentenceSenegal: 'Juróom-ñenti weer.',
+        exampleSentenceGambia: 'Juróom-nyenti weer.',
     },
     {
         id: 'numbers-10',
@@ -86,6 +107,9 @@ export const numbersWords: WolofWord[] = [
         senegal: 'fukk',
         gambia: 'fukk',
         category: 'numbers',
+        exampleSentenceEnglish: 'Ten fingers.',
+        exampleSentenceSenegal: 'Fukki baaraam.',
+        exampleSentenceGambia: 'Fukki baaraam.',
     },
     {
         id: 'numbers-11',
@@ -94,15 +118,21 @@ export const numbersWords: WolofWord[] = [
         gambia: 'nyar fukk',
         category: 'numbers',
         notes: 'Literally “two tens”.',
+        exampleSentenceEnglish: 'Twenty people.',
+        exampleSentenceSenegal: 'Ñaar fukki nit.',
+        exampleSentenceGambia: 'Nyar fukki nit.',
     },
     {
         id: 'numbers-12',
         english: 'fifty',
-        senegal: 'juróom fukk', // Corrected from 70 (juróom ñaar fukk)
-        gambia: 'juróom fukk', // Corrected from 70 (juróom ñar fukk)
+        senegal: 'juróom fukk',
+        gambia: 'juróom fukk',
         category: 'numbers',
         tags: ['money'],
         notes: 'Literally "five tens".',
+        exampleSentenceEnglish: 'Fifty francs.',
+        exampleSentenceSenegal: 'Juróom fukki dëram.',
+        exampleSentenceGambia: 'Juróom fukki dalasi.',
     },
     {
         id: 'numbers-13',
@@ -111,7 +141,7 @@ export const numbersWords: WolofWord[] = [
         gambia: 'téeméer',
         category: 'numbers',
         exampleSentenceEnglish: 'The taxi costs one hundred francs.',
-        exampleSentenceSenegal: 'Clando bi jël na téeméer franc.', // Corrected verb to 'jël na' (costs/takes)
-        exampleSentenceGambia: 'Taxi bi jël na téeméer dalasi.', // Corrected verb to 'jël na' (costs/takes)
+        exampleSentenceSenegal: 'Clando bi jël na téeméer franc.',
+        exampleSentenceGambia: 'Taxi bi jël na téeméer dalasi.',
     },
 ]
