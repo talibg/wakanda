@@ -7,20 +7,26 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { buildCanonicalUrl } from '@/lib/seo'
 
 export const metadata = {
-    title: 'The First 10 Wolof Phrases You Need to Know | Learn Wolof',
+    title: 'The First 10 Wolof Phrases You Need to Know',
     description:
         'Start your Wolof journey with these 10 essential phrases. Learn greetings, polite expressions, and how to connect with people in Senegal and The Gambia.',
     alternates: {
         canonical: buildCanonicalUrl('/guides/first-ten-wolof-phrases')
     },
     openGraph: {
-        title: 'The First 10 Wolof Phrases You Need to Know | Learn Wolof',
+        title: 'The First 10 Wolof Phrases You Need to Know',
         description:
             'Start your Wolof journey with these 10 essential phrases. Learn greetings, polite expressions, and how to connect with people in Senegal and The Gambia.',
         type: 'article',
         publishedTime: '2023-10-27T00:00:00.000Z',
         authors: ['Learn Wolof Team'],
         url: buildCanonicalUrl('/guides/first-ten-wolof-phrases')
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'The First 10 Wolof Phrases You Need to Know',
+        description:
+            'Start your Wolof journey with these 10 essential phrases. Learn greetings, polite expressions, and how to connect with people in Senegal and The Gambia.'
     }
 }
 

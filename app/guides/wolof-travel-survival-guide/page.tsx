@@ -7,20 +7,26 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { buildCanonicalUrl } from '@/lib/seo'
 
 export const metadata = {
-    title: 'The Ultimate Wolof Travel Survival Guide | Learn Wolof',
+    title: 'The Ultimate Wolof Travel Survival Guide',
     description:
         'Essential Wolof phrases for travelers in Senegal and The Gambia. Learn how to take taxis, bargain in markets, order food, and handle emergencies.',
     alternates: {
         canonical: buildCanonicalUrl('/guides/wolof-travel-survival-guide')
     },
     openGraph: {
-        title: 'The Ultimate Wolof Travel Survival Guide | Learn Wolof',
+        title: 'The Ultimate Wolof Travel Survival Guide',
         description:
             'Essential Wolof phrases for travelers in Senegal and The Gambia. Learn how to take taxis, bargain in markets, order food, and handle emergencies.',
         type: 'article',
         publishedTime: '2023-11-15T00:00:00.000Z',
         authors: ['Learn Wolof Team'],
         url: buildCanonicalUrl('/guides/wolof-travel-survival-guide')
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'The Ultimate Wolof Travel Survival Guide',
+        description:
+            'Essential Wolof phrases for travelers in Senegal and The Gambia. Learn how to take taxis, bargain in markets, order food, and handle emergencies.'
     }
 }
 

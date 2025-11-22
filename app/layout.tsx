@@ -31,14 +31,6 @@ export const metadata: Metadata = {
     },
     description:
         'Master Wolof with our comprehensive online guide. Learn essential phrases, vocabulary, and grammar from Senegal and The Gambia. Start speaking Wolof today!',
-    keywords: [
-        'Learn Wolof',
-        'Wolof Language',
-        'Senegal Language',
-        'Gambia Language',
-        'Wolof Phrases',
-        'Wolof Vocabulary'
-    ],
     authors: [{ name: 'Talib Guyani', url: 'https://github.com/talibg' }],
     creator: 'Talib Guyani',
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://learnwolof.com'),
