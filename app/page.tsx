@@ -6,10 +6,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 
 export const dynamic = 'force-dynamic'
 
+import { buildCanonicalUrl } from '@/lib/seo'
+
 export const metadata: Metadata = {
     title: 'Learn Wolof Online — Free Wolof Lessons for Beginners',
     description:
-        'Master Wolof words and phrases from Senegal and The Gambia with side-by-side dialect comparisons, authentic pronunciations, and practical study tips.',
+        'The ultimate guide to learning Wolof. Explore our dictionary, phrasebook, and grammar lessons to start speaking Wolof with confidence.',
+    alternates: {
+        canonical: buildCanonicalUrl('/'),
+    },
 }
 
 const highlights = [

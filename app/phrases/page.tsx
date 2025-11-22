@@ -7,10 +7,15 @@ import { phraseCategories } from '@/data/index'
 
 export const dynamic = 'force-dynamic'
 
+import { buildCanonicalUrl } from '@/lib/seo'
+
 export const metadata: Metadata = {
-    title: 'Wolof Phrases — Useful Wolof Sentences for Everyday Situations',
+    title: 'Wolof Phrases — Essential Expressions for Daily Life',
     description:
-        'Master Wolof greetings, travel tips, market bargaining, questions, and everyday expressions with Senegalese and Gambian dialect notes.',
+        'Learn essential Wolof phrases for greetings, travel, shopping, and more. Compare Senegalese and Gambian variations.',
+    alternates: {
+        canonical: buildCanonicalUrl('/phrases'),
+    },
 }
 
 import { JsonLdBreadcrumb } from '@/components/json-ld'

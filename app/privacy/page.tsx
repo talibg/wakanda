@@ -1,9 +1,13 @@
 import type { Metadata } from 'next'
 
+import { buildCanonicalUrl } from '@/lib/seo'
+
 export const metadata: Metadata = {
     title: 'Privacy Policy | Learn Wolof',
-    description:
-        'Privacy Policy for Learn Wolof. Understand how we collect, use, and protect your personal information.',
+    description: 'Privacy Policy for Learn Wolof. We respect your privacy and do not collect personal data.',
+    alternates: {
+        canonical: buildCanonicalUrl('/privacy'),
+    },
 }
 
 export default function PrivacyPage() {

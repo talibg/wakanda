@@ -3,10 +3,15 @@ import type { Metadata } from 'next'
 import { AlphabetCard } from '@/components/alphabet-card'
 import { alphabet } from '@/data/alphabet'
 
+import { buildCanonicalUrl } from '@/lib/seo'
+
 export const metadata: Metadata = {
     title: 'Wolof Alphabet — Pronunciation Guide',
     description:
-        'Master the Wolof alphabet with our guide to pronunciation, special characters, and sounds. Includes audio examples and comparisons.',
+        'Learn the Wolof alphabet with our comprehensive pronunciation guide. Master the sounds of Senegal and The Gambia.',
+    alternates: {
+        canonical: buildCanonicalUrl('/alphabet'),
+    },
 }
 
 import { JsonLdBreadcrumb } from '@/components/json-ld'

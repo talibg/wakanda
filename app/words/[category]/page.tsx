@@ -19,6 +19,10 @@ type PageParams = {
     }>
 }
 
+import { buildCanonicalUrl } from '@/lib/seo'
+
+// ... imports
+
 export const generateMetadata = async ({ params }: PageParams): Promise<Metadata> => {
     const { category } = await params
 
@@ -26,6 +30,9 @@ export const generateMetadata = async ({ params }: PageParams): Promise<Metadata
         return {
             title: 'Wolof Vocabulary',
             description: 'Detailed Wolof vocabulary lessons for Senegal and The Gambia.',
+            alternates: {
+                canonical: buildCanonicalUrl('/words'),
+            },
         }
     }
 
@@ -34,12 +41,18 @@ export const generateMetadata = async ({ params }: PageParams): Promise<Metadata
         return {
             title: 'Wolof Vocabulary',
             description: 'Detailed Wolof vocabulary lessons for Senegal and The Gambia.',
+            alternates: {
+                canonical: buildCanonicalUrl('/words'),
+            },
         }
     }
 
     return {
         title: `Wolof ${descriptor.label} — ${descriptor.description}`,
         description: `Learn Wolof ${descriptor.label.toLowerCase()} with authentic Senegalese and Gambian spellings, example sentences, and pronunciation notes.`,
+        alternates: {
+            canonical: buildCanonicalUrl(`/words/${descriptor.id}`),
+        },
     }
 }
 

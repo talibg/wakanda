@@ -1,4 +1,4 @@
-import type { BreadcrumbList, CollectionPage, FAQPage, WebSite, WithContext } from 'schema-dts'
+import type { Article, BreadcrumbList, CollectionPage, FAQPage, WebSite, WithContext } from 'schema-dts'
 
 export function JsonLdWebSite() {
     const schema: WithContext<WebSite> = {
@@ -89,6 +89,46 @@ export function JsonLdCollectionPage({
                 name: item.name,
                 description: item.description,
             })),
+        },
+    }
+
+    return <script dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} type="application/ld+json" />
+}
+
+type ArticleItem = {
+    headline: string
+    description: string
+    image?: string
+    datePublished?: string
+    dateModified?: string
+    authorName?: string
+}
+
+export function JsonLdArticle({ item, url }: { item: ArticleItem; url: string }) {
+    const schema: WithContext<Article> = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: item.headline,
+        description: item.description,
+        image: item.image ? [item.image] : undefined,
+        datePublished: item.datePublished,
+        dateModified: item.dateModified,
+        author: {
+            '@type': 'Person',
+            name: item.authorName || 'Learn Wolof Team',
+            url: 'https://learnwolof.com',
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: 'Learn Wolof',
+            logo: {
+                '@type': 'ImageObject',
+                url: 'https://learnwolof.com/icon.png',
+            },
+        },
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': url,
         },
     }
 

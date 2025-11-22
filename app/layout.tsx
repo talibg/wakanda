@@ -18,46 +18,41 @@ const geistMono = Geist_Mono({
     subsets: ['latin'],
 })
 
-const siteUrl = new URL('https://learnwolof.com')
+const _siteUrl = new URL('https://learnwolof.com')
 
 import { JsonLdWebSite } from '@/components/json-ld'
 
+import { buildCanonicalUrl } from '@/lib/seo'
+
 export const metadata: Metadata = {
-    metadataBase: siteUrl,
-    title: 'Learn Wolof — Words and Phrases from Senegal and The Gambia',
+    title: {
+        default: 'Learn Wolof | The Best Way to Learn Wolof Online',
+        template: '%s | Learn Wolof',
+    },
     description:
-        'Learn authentic Wolof with side-by-side Senegalese and Gambian variants. Study words, phrases, greetings, numbers, and everyday expressions with clear English explanations.',
+        'Master Wolof with our comprehensive online guide. Learn essential phrases, vocabulary, and grammar from Senegal and The Gambia. Start speaking Wolof today!',
     keywords: [
-        'Wolof',
         'Learn Wolof',
+        'Wolof Language',
         'Senegal Language',
         'Gambia Language',
-        'Wolof Dictionary',
         'Wolof Phrases',
-        'Wolof Alphabet',
+        'Wolof Vocabulary',
     ],
+    authors: [{ name: 'Talib Guyani', url: 'https://github.com/talibg' }],
+    creator: 'Talib Guyani',
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://learnwolof.com'),
     alternates: {
-        canonical: 'https://learnwolof.com',
-    },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
-        },
+        canonical: buildCanonicalUrl('/'),
     },
     openGraph: {
-        // ... existing OG
-        title: 'Learn Wolof — Words and Phrases from Senegal and The Gambia',
-        siteName: 'Learn Wolof',
-        description:
-            'Learn authentic Wolof with side-by-side Senegalese and Gambian variants. Study words, phrases, greetings, numbers, and everyday expressions with clear English explanations.',
-        url: 'https://learnwolof.com',
         type: 'website',
+        locale: 'en_US',
+        url: buildCanonicalUrl('/'),
+        title: 'Learn Wolof | The Best Way to Learn Wolof Online',
+        description:
+            'Master Wolof with our comprehensive online guide. Learn essential phrases, vocabulary, and grammar from Senegal and The Gambia.',
+        siteName: 'Learn Wolof',
         images: [
             {
                 url: '/og-learn-wolof.png',
@@ -69,10 +64,22 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Learn Wolof — Words and Phrases from Senegal and The Gambia',
+        title: 'Learn Wolof | The Best Way to Learn Wolof Online',
         description:
-            'Learn authentic Wolof with side-by-side Senegalese and Gambian variants. Study words, phrases, greetings, numbers, and everyday expressions with clear English explanations.',
+            'Master Wolof with our comprehensive online guide. Learn essential phrases, vocabulary, and grammar from Senegal and The Gambia.',
+        creator: '@talibguyani',
         images: ['/og-learn-wolof.png'],
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
     },
 }
 

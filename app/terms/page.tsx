@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
 
+import { buildCanonicalUrl } from '@/lib/seo'
+
 export const metadata: Metadata = {
-    title: 'Terms and Conditions | Learn Wolof',
-    description: 'Terms and Conditions for Learn Wolof. Please read these terms carefully before using our service.',
+    title: 'Terms of Use | Learn Wolof',
+    description: 'Terms and Conditions for using Learn Wolof. By using our site, you agree to these terms.',
+    alternates: {
+        canonical: buildCanonicalUrl('/terms'),
+    },
 }
 
 export default function TermsPage() {

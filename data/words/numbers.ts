@@ -75,7 +75,7 @@ export const numbersWords: WolofWord[] = [
         gambia: 'juróom-nyar',
         category: 'numbers',
         notes: 'Literally "five two".',
-        exampleSentenceEnglish: 'Seven o\'clock.',
+        exampleSentenceEnglish: "Seven o'clock.",
         exampleSentenceSenegal: 'Juróom-ñaari waxtu.',
         exampleSentenceGambia: 'Juróom-nyari wahtu.',
     },

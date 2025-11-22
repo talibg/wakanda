@@ -53,7 +53,7 @@ export const foodWords: WolofWord[] = [
         category: 'food',
         notes: 'Refers to the traditional mint tea. Senegalese spelling often retains the double "aa" sound.',
         tags: ['drink'],
-        exampleSentenceEnglish: 'Let\'s drink tea.',
+        exampleSentenceEnglish: "Let's drink tea.",
         exampleSentenceSenegal: 'Na nu naan ataaya.',
         exampleSentenceGambia: 'Na ñu naan ataya.',
     },

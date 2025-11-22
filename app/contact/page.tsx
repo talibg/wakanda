@@ -1,9 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
+import { buildCanonicalUrl } from '@/lib/seo'
+
 export const metadata: Metadata = {
     title: 'Contact Us | Learn Wolof',
-    description: 'Contact Learn Wolof. Reach out to us via X (Twitter) or GitHub.',
+    description: 'Contact information for Learn Wolof. Connect with us on GitHub or X (Twitter).',
+    alternates: {
+        canonical: buildCanonicalUrl('/contact'),
+    },
     openGraph: {
         title: 'Contact Us | Learn Wolof',
         description: 'Contact Learn Wolof. Reach out to us via X (Twitter) or GitHub.',

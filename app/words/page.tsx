@@ -7,10 +7,15 @@ import { wordCategories } from '@/data/index'
 
 export const dynamic = 'force-dynamic'
 
+import { buildCanonicalUrl } from '@/lib/seo'
+
 export const metadata: Metadata = {
     title: 'Wolof Vocabulary — Learn Wolof Words from Senegal and Gambia',
     description:
         'Study essential Wolof vocabulary for numbers, family, food, time, and daily basics. Compare Senegalese and Gambian word choices side-by-side.',
+    alternates: {
+        canonical: buildCanonicalUrl('/words'),
+    },
 }
 
 import { JsonLdBreadcrumb } from '@/components/json-ld'

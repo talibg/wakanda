@@ -1,16 +1,49 @@
+import { AlertCircle, ArrowRight, Bus, MapPin, ShoppingBag, Utensils } from 'lucide-react'
 import Link from 'next/link'
-import { ArrowRight, Bus, MapPin, ShoppingBag, AlertCircle, Utensils } from 'lucide-react'
+import { JsonLdArticle, JsonLdBreadcrumb } from '@/components/json-ld'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
+import { buildCanonicalUrl } from '@/lib/seo'
+
 export const metadata = {
     title: 'The Ultimate Wolof Travel Survival Guide | Learn Wolof',
-    description: 'Essential Wolof phrases for travelers in Senegal and The Gambia. Learn how to take taxis, bargain in markets, order food, and handle emergencies.',
+    description:
+        'Essential Wolof phrases for travelers in Senegal and The Gambia. Learn how to take taxis, bargain in markets, order food, and handle emergencies.',
+    alternates: {
+        canonical: buildCanonicalUrl('/guides/wolof-travel-survival-guide'),
+    },
+    openGraph: {
+        title: 'The Ultimate Wolof Travel Survival Guide | Learn Wolof',
+        description:
+            'Essential Wolof phrases for travelers in Senegal and The Gambia. Learn how to take taxis, bargain in markets, order food, and handle emergencies.',
+        type: 'article',
+        publishedTime: '2023-11-15T00:00:00.000Z',
+        authors: ['Learn Wolof Team'],
+        url: buildCanonicalUrl('/guides/wolof-travel-survival-guide'),
+    },
 }
 
 export default function TravelSurvivalGuidePage() {
     return (
         <div className="container mx-auto px-4 py-12 max-w-4xl">
+            <JsonLdArticle
+                item={{
+                    headline: 'The Ultimate Wolof Travel Survival Guide',
+                    description:
+                        'Essential Wolof phrases for travelers in Senegal and The Gambia. Learn how to take taxis, bargain in markets, order food, and handle emergencies.',
+                    datePublished: '2023-11-15T00:00:00.000Z',
+                    authorName: 'Learn Wolof Team',
+                }}
+                url="https://learnwolof.com/guides/wolof-travel-survival-guide"
+            />
+            <JsonLdBreadcrumb
+                items={[
+                    { name: 'Home', item: '/' },
+                    { name: 'Guides', item: '/guides' },
+                    { name: 'Travel Survival Guide', item: '/guides/wolof-travel-survival-guide' },
+                ]}
+            />
             <div className="space-y-6 text-center mb-12">
                 <div className="inline-flex items-center justify-center p-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
                     <MapPin className="w-4 h-4 mr-2" />
@@ -20,7 +53,8 @@ export default function TravelSurvivalGuidePage() {
                     The Ultimate Wolof Travel Survival Guide
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                    Navigate Senegal and The Gambia with confidence. From bargaining at the market to catching a Ndiaga Ndiaye bus, these phrases will get you where you need to go.
+                    Navigate Senegal and The Gambia with confidence. From bargaining at the market to catching a Ndiaga
+                    Ndiaye bus, these phrases will get you where you need to go.
                 </p>
             </div>
 
@@ -35,29 +69,31 @@ export default function TravelSurvivalGuidePage() {
                     </div>
                     <div className="grid gap-4 md:grid-cols-2">
                         <PhraseCard
-                            wolof="Fan la garage bus bi nekk?"
-                            english="Where is the bus station?"
                             context="Use 'garage' for transport depots."
+                            english="Where is the bus station?"
+                            wolof="Fan la garage bus bi nekk?"
                         />
                         <PhraseCard
-                            wolof="Bëgg naa dem Dakar."
-                            english="I want to go to Dakar."
                             context="Replace 'Dakar' with your destination."
+                            english="I want to go to Dakar."
+                            wolof="Bëgg naa dem Dakar."
                         />
                         <PhraseCard
-                            wolof="Ñaata la tiket bi?"
-                            english="How much is the ticket?"
                             context="Always ask the price before boarding."
+                            english="How much is the ticket?"
+                            wolof="Ñaata la tiket bi?"
                         />
                         <PhraseCard
-                            wolof="Bu la neexee, taagal fi."
-                            english="Please stop here."
                             context="Say this loudly when you reach your stop."
+                            english="Please stop here."
+                            wolof="Bu la neexee, taagal fi."
                         />
                     </div>
                     <div className="mt-4">
                         <Button asChild variant="outline">
-                            <Link href="/phrases/travel">View All Travel Phrases <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                            <Link href="/phrases/travel">
+                                View All Travel Phrases <ArrowRight className="ml-2 w-4 h-4" />
+                            </Link>
                         </Button>
                     </div>
                 </section>
@@ -72,32 +108,36 @@ export default function TravelSurvivalGuidePage() {
                     </div>
                     <div className="grid gap-4 md:grid-cols-2">
                         <PhraseCard
-                            wolof="Ñaata la?"
-                            english="How much is this?"
                             context="The most important phrase for shopping."
+                            english="How much is this?"
+                            wolof="Ñaata la?"
                         />
                         <PhraseCard
-                            wolof="Dafa seer."
-                            english="It is expensive."
                             context="Use this to start negotiating."
+                            english="It is expensive."
+                            wolof="Dafa seer."
                         />
                         <PhraseCard
-                            wolof="Mën nga ci waññi?"
-                            english="Can you reduce the price?"
                             context="Bargaining is expected in markets."
+                            english="Can you reduce the price?"
+                            wolof="Mën nga ci waññi?"
                         />
                         <PhraseCard
-                            wolof="Am nga monéet?"
-                            english="Do you have change?"
                             context="Small change is often scarce."
+                            english="Do you have change?"
+                            wolof="Am nga monéet?"
                         />
                     </div>
                     <div className="mt-4 flex gap-4">
                         <Button asChild variant="outline">
-                            <Link href="/phrases/market">Market Phrases <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                            <Link href="/phrases/market">
+                                Market Phrases <ArrowRight className="ml-2 w-4 h-4" />
+                            </Link>
                         </Button>
                         <Button asChild variant="ghost">
-                            <Link href="/words/numbers">Learn Numbers <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                            <Link href="/words/numbers">
+                                Learn Numbers <ArrowRight className="ml-2 w-4 h-4" />
+                            </Link>
                         </Button>
                     </div>
                 </section>
@@ -112,29 +152,27 @@ export default function TravelSurvivalGuidePage() {
                     </div>
                     <div className="grid gap-4 md:grid-cols-2">
                         <PhraseCard
-                            wolof="Am naa ndox?"
-                            english="Is there water?"
                             context="Essential for staying hydrated."
+                            english="Is there water?"
+                            wolof="Am naa ndox?"
                         />
+                        <PhraseCard context="Xiif = hungry." english="I am hungry." wolof="Dama xiif." />
                         <PhraseCard
-                            wolof="Dama xiif."
-                            english="I am hungry."
-                            context="Xiif = hungry."
-                        />
-                        <PhraseCard
-                            wolof="Fan la wanag wi nekk?"
-                            english="Where is the toilet?"
                             context="Wanag = toilet."
+                            english="Where is the toilet?"
+                            wolof="Fan la wanag wi nekk?"
                         />
                         <PhraseCard
-                            wolof="Jërëjëf, sur naa."
-                            english="Thank you, I am full."
                             context="Polite way to decline more food."
+                            english="Thank you, I am full."
+                            wolof="Jërëjëf, sur naa."
                         />
                     </div>
                     <div className="mt-4">
                         <Button asChild variant="outline">
-                            <Link href="/words/food">Food Vocabulary <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                            <Link href="/words/food">
+                                Food Vocabulary <ArrowRight className="ml-2 w-4 h-4" />
+                            </Link>
                         </Button>
                     </div>
                 </section>
@@ -148,25 +186,17 @@ export default function TravelSurvivalGuidePage() {
                         <h2 className="text-3xl font-bold">Help & Emergency</h2>
                     </div>
                     <div className="grid gap-4 md:grid-cols-2">
+                        <PhraseCard context="Use in urgent situations." english="Help me!" wolof="Dimbali ma!" />
+                        <PhraseCard context="Feebar = sick." english="I am sick." wolof="Dama feebar." />
                         <PhraseCard
-                            wolof="Dimbali ma!"
-                            english="Help me!"
-                            context="Use in urgent situations."
-                        />
-                        <PhraseCard
-                            wolof="Dama feebar."
-                            english="I am sick."
-                            context="Feebar = sick."
-                        />
-                        <PhraseCard
-                            wolof="Wooyal doktoor."
-                            english="Call a doctor."
                             context="Wooyal = call for someone."
+                            english="Call a doctor."
+                            wolof="Wooyal doktoor."
                         />
                         <PhraseCard
-                            wolof="Maa ngi dem lopitaan."
-                            english="I am going to the hospital."
                             context="Lopitaan = hospital."
+                            english="I am going to the hospital."
+                            wolof="Maa ngi dem lopitaan."
                         />
                     </div>
                 </section>
@@ -189,7 +219,7 @@ export default function TravelSurvivalGuidePage() {
     )
 }
 
-function PhraseCard({ wolof, english, context }: { wolof: string, english: string, context: string }) {
+function PhraseCard({ wolof, english, context }: { wolof: string; english: string; context: string }) {
     return (
         <Card className="bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/30 transition-colors">
             <CardHeader className="pb-2">

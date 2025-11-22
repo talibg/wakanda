@@ -37,7 +37,7 @@ export const placesWords: WolofWord[] = [
         senegal: 'Teefes',
         gambia: 'Teefes',
         category: 'places',
-        exampleSentenceEnglish: 'Let\'s go to the beach.',
+        exampleSentenceEnglish: "Let's go to the beach.",
         exampleSentenceSenegal: 'Kaay nu dem teefes.',
         exampleSentenceGambia: 'Kaay ñu dem teefes.',
     },

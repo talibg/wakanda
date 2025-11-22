@@ -1,16 +1,49 @@
+import { ArrowRight, BookOpen, Heart, MessageCircle } from 'lucide-react'
 import Link from 'next/link'
-import { ArrowRight, BookOpen, Heart, MessageCircle, Sun } from 'lucide-react'
+import { JsonLdArticle, JsonLdBreadcrumb } from '@/components/json-ld'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+
+import { buildCanonicalUrl } from '@/lib/seo'
 
 export const metadata = {
     title: 'The First 10 Wolof Phrases You Need to Know | Learn Wolof',
-    description: 'Start your Wolof journey with these 10 essential phrases. Learn greetings, polite expressions, and how to connect with people in Senegal and The Gambia.',
+    description:
+        'Start your Wolof journey with these 10 essential phrases. Learn greetings, polite expressions, and how to connect with people in Senegal and The Gambia.',
+    alternates: {
+        canonical: buildCanonicalUrl('/guides/first-ten-wolof-phrases'),
+    },
+    openGraph: {
+        title: 'The First 10 Wolof Phrases You Need to Know | Learn Wolof',
+        description:
+            'Start your Wolof journey with these 10 essential phrases. Learn greetings, polite expressions, and how to connect with people in Senegal and The Gambia.',
+        type: 'article',
+        publishedTime: '2023-10-27T00:00:00.000Z',
+        authors: ['Learn Wolof Team'],
+        url: buildCanonicalUrl('/guides/first-ten-wolof-phrases'),
+    },
 }
 
 export default function FirstTenPhrasesPage() {
     return (
         <div className="container mx-auto px-4 py-12 max-w-4xl">
+            <JsonLdArticle
+                item={{
+                    headline: 'The First 10 Wolof Phrases You Need to Know',
+                    description:
+                        'Start your Wolof journey with these 10 essential phrases. Learn greetings, polite expressions, and how to connect with people in Senegal and The Gambia.',
+                    datePublished: '2023-10-27T00:00:00.000Z',
+                    authorName: 'Learn Wolof Team',
+                }}
+                url="https://learnwolof.com/guides/first-ten-wolof-phrases"
+            />
+            <JsonLdBreadcrumb
+                items={[
+                    { name: 'Home', item: '/' },
+                    { name: 'Guides', item: '/guides' },
+                    { name: 'First 10 Wolof Phrases', item: '/guides/first-ten-wolof-phrases' },
+                ]}
+            />
             <div className="space-y-6 text-center mb-12">
                 <div className="inline-flex items-center justify-center p-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
                     <BookOpen className="w-4 h-4 mr-2" />
@@ -20,8 +53,8 @@ export default function FirstTenPhrasesPage() {
                     The First 10 Wolof Phrases You Need to Know
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                    Unlock the heart of Senegalese and Gambian culture with these essential expressions.
-                    It&apos;s not just about words; it&apos;s about <em>Teranga</em> (hospitality).
+                    Unlock the heart of Senegalese and Gambian culture with these essential expressions. It&apos;s not
+                    just about words; it&apos;s about <em>Teranga</em> (hospitality).
                 </p>
             </div>
 
@@ -35,8 +68,8 @@ export default function FirstTenPhrasesPage() {
                     </CardHeader>
                     <CardContent>
                         <p className="text-muted-foreground">
-                            In Wolof culture, greeting is mandatory. Skipping a greeting is considered rude.
-                            Always start with "Salaam Aleekum" before asking a question or starting a conversation.
+                            In Wolof culture, greeting is mandatory. Skipping a greeting is considered rude. Always
+                            start with "Salaam Aleekum" before asking a question or starting a conversation.
                         </p>
                     </CardContent>
                 </Card>
@@ -61,7 +94,10 @@ export default function FirstTenPhrasesPage() {
 
                 <div className="grid gap-4">
                     {phrases.map((phrase, index) => (
-                        <div key={index} className="group relative overflow-hidden rounded-xl border bg-card p-6 transition-all hover:shadow-lg hover:border-primary/20">
+                        <div
+                            className="group relative overflow-hidden rounded-xl border bg-card p-6 transition-all hover:shadow-lg hover:border-primary/20"
+                            key={index}
+                        >
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                                 <div className="space-y-1">
                                     <div className="flex items-center gap-3">
@@ -84,7 +120,8 @@ export default function FirstTenPhrasesPage() {
             <div className="mt-16 p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/10 text-center">
                 <h2 className="text-2xl font-bold mb-4">Ready to learn more?</h2>
                 <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                    This is just the beginning. Explore our full collection of words and phrases to deepen your understanding.
+                    This is just the beginning. Explore our full collection of words and phrases to deepen your
+                    understanding.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                     <Button asChild size="lg" variant="default">
@@ -93,14 +130,10 @@ export default function FirstTenPhrasesPage() {
                         </Link>
                     </Button>
                     <Button asChild size="lg" variant="outline">
-                        <Link href="/words/basic">
-                            View Basic Words
-                        </Link>
+                        <Link href="/words/basic">View Basic Words</Link>
                     </Button>
                     <Button asChild size="lg" variant="ghost">
-                        <Link href="/phrases/romance">
-                            Learn Romance Phrases
-                        </Link>
+                        <Link href="/phrases/romance">Learn Romance Phrases</Link>
                     </Button>
                 </div>
             </div>
@@ -110,53 +143,53 @@ export default function FirstTenPhrasesPage() {
 
 const phrases = [
     {
-        wolof: "Salaam Aleekum",
-        english: "Peace be with you (Hello)",
-        context: "The universal greeting. Always start here."
+        wolof: 'Salaam Aleekum',
+        english: 'Peace be with you (Hello)',
+        context: 'The universal greeting. Always start here.',
     },
     {
-        wolof: "Na nga def?",
-        english: "How are you?",
-        context: "Used to ask one person how they are doing."
+        wolof: 'Na nga def?',
+        english: 'How are you?',
+        context: 'Used to ask one person how they are doing.',
     },
     {
-        wolof: "Mangi fi rekk",
-        english: "I am fine (literally: I am here only)",
-        context: "The standard response to 'Na nga def?'"
+        wolof: 'Mangi fi rekk',
+        english: 'I am fine (literally: I am here only)',
+        context: "The standard response to 'Na nga def?'",
     },
     {
-        wolof: "Jërëjëf",
-        english: "Thank you",
-        context: "Express gratitude sincerely."
+        wolof: 'Jërëjëf',
+        english: 'Thank you',
+        context: 'Express gratitude sincerely.',
     },
     {
-        wolof: "Waaw / Déedéet",
-        english: "Yes / No",
-        context: "Essential for basic communication."
+        wolof: 'Waaw / Déedéet',
+        english: 'Yes / No',
+        context: 'Essential for basic communication.',
     },
     {
-        wolof: "Jàmm nga fanaan",
-        english: "Did you sleep in peace? (Good morning)",
-        context: "Used specifically in the morning."
+        wolof: 'Jàmm nga fanaan',
+        english: 'Did you sleep in peace? (Good morning)',
+        context: 'Used specifically in the morning.',
     },
     {
-        wolof: "Agsiileen",
-        english: "Welcome (plural)",
-        context: "Inviting people into your home or space."
+        wolof: 'Agsiileen',
+        english: 'Welcome (plural)',
+        context: 'Inviting people into your home or space.',
     },
     {
-        wolof: "Baal ma",
-        english: "Sorry / Excuse me",
-        context: "Used to apologize or get attention politely."
+        wolof: 'Baal ma',
+        english: 'Sorry / Excuse me',
+        context: 'Used to apologize or get attention politely.',
     },
     {
-        wolof: "Naka suba si?",
-        english: "How is the morning?",
-        context: "Small talk is very important."
+        wolof: 'Naka suba si?',
+        english: 'How is the morning?',
+        context: 'Small talk is very important.',
     },
     {
-        wolof: "Ba beneen yoon",
-        english: "Goodbye (Until next time)",
-        context: "A polite way to part ways."
+        wolof: 'Ba beneen yoon',
+        english: 'Goodbye (Until next time)',
+        context: 'A polite way to part ways.',
     },
 ]

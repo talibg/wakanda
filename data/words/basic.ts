@@ -19,7 +19,7 @@ export const basicWords: WolofWord[] = [
         gambia: 'dedet',
         category: 'basic',
         notes: 'Senegalese speakers emphasize the long vowels (déedéet). Gambian spelling is often simplified.',
-        exampleSentenceEnglish: 'No, I don\'t want it.',
+        exampleSentenceEnglish: "No, I don't want it.",
         exampleSentenceSenegal: 'Déedéet, bëgguma ko.',
         exampleSentenceGambia: 'Dedet, bëgguma ko.',
     },
