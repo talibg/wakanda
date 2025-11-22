@@ -2,10 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import { JsonLdCollectionPage } from '@/components/json-ld'
+import { JsonLdBreadcrumb, JsonLdCollectionPage } from '@/components/json-ld'
 import { WordCategoryBrowser } from '@/components/word-category-browser'
 import { getWordsByCategory, wordCategories } from '@/data/index'
 import type { WordCategory } from '@/data/types'
+import { buildCanonicalUrl } from '@/lib/seo'
 
 export const dynamic = 'force-dynamic'
 
@@ -18,10 +19,6 @@ type PageParams = {
         category: string
     }>
 }
-
-import { buildCanonicalUrl } from '@/lib/seo'
-
-// ... imports
 
 export const generateMetadata = async ({ params }: PageParams): Promise<Metadata> => {
     const { category } = await params
@@ -47,11 +44,46 @@ export const generateMetadata = async ({ params }: PageParams): Promise<Metadata
         }
     }
 
+    const title = `${descriptor.label} Wolof Vocabulary`
+    const description = `Learn Wolof ${descriptor.label.toLowerCase()} with authentic Senegalese and Gambian spellings, example sentences, and pronunciation notes.`
+    const url = buildCanonicalUrl(`/words/${descriptor.id}`)
+
     return {
-        title: `Wolof ${descriptor.label} — ${descriptor.description}`,
-        description: `Learn Wolof ${descriptor.label.toLowerCase()} with authentic Senegalese and Gambian spellings, example sentences, and pronunciation notes.`,
+        title,
+        description,
         alternates: {
-            canonical: buildCanonicalUrl(`/words/${descriptor.id}`),
+            canonical: url,
+        },
+        openGraph: {
+            title: `${title} | Learn Wolof`,
+            description,
+            url,
+            type: 'website',
+            images: [
+                {
+                    url: 'https://learnwolof.com/og-learn-wolof.png',
+                    width: 1200,
+                    height: 630,
+                    alt: 'Learn Wolof words and phrases from Senegal and The Gambia',
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${title} | Learn Wolof`,
+            description,
+            images: ['https://learnwolof.com/og-learn-wolof.png'],
+        },
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                'max-video-preview': -1,
+                'max-image-preview': 'large',
+                'max-snippet': -1,
+            },
         },
     }
 }
@@ -71,6 +103,13 @@ export default async function WordCategoryPage({ params }: PageParams) {
 
     return (
         <div className="space-y-8">
+            <JsonLdBreadcrumb
+                items={[
+                    { name: 'Home', item: '/' },
+                    { name: 'Words', item: '/words' },
+                    { name: descriptor.label, item: `/words/${descriptor.id}` },
+                ]}
+            />
             <JsonLdCollectionPage
                 description={descriptor.description}
                 items={words.map((word) => ({

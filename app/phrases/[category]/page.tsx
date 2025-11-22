@@ -2,10 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import { JsonLdCollectionPage } from '@/components/json-ld'
+import { JsonLdBreadcrumb, JsonLdCollectionPage } from '@/components/json-ld'
 import { PhraseCategoryBrowser } from '@/components/phrase-category-browser'
 import { getPhrasesByCategory, phraseCategories } from '@/data/index'
 import type { PhraseCategory } from '@/data/types'
+import { buildCanonicalUrl } from '@/lib/seo'
 
 export const dynamic = 'force-dynamic'
 
@@ -18,10 +19,6 @@ type PageParams = {
         category: string
     }>
 }
-
-import { buildCanonicalUrl } from '@/lib/seo'
-
-// ... imports
 
 export const generateMetadata = async ({ params }: PageParams): Promise<Metadata> => {
     const { category } = await params
@@ -47,11 +44,46 @@ export const generateMetadata = async ({ params }: PageParams): Promise<Metadata
         }
     }
 
+    const title = `${descriptor.label} Wolof Phrases`
+    const description = `Learn common Wolof ${descriptor.label.toLowerCase()} phrases from Senegal and The Gambia. Express yourself with clear English meanings and dialect variations.`
+    const url = buildCanonicalUrl(`/phrases/${descriptor.id}`)
+
     return {
-        title: `Wolof ${descriptor.label} — ${descriptor.description}`,
-        description: `Practice Wolof phrases about ${descriptor.label.toLowerCase()} with clear English explanations plus Senegalese and Gambian variants.`,
+        title,
+        description,
         alternates: {
-            canonical: buildCanonicalUrl(`/phrases/${descriptor.id}`),
+            canonical: url,
+        },
+        openGraph: {
+            title: `${title} | Learn Wolof`,
+            description,
+            url,
+            type: 'website',
+            images: [
+                {
+                    url: 'https://learnwolof.com/og-learn-wolof.png',
+                    width: 1200,
+                    height: 630,
+                    alt: 'Learn Wolof words and phrases from Senegal and The Gambia',
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${title} | Learn Wolof`,
+            description,
+            images: ['https://learnwolof.com/og-learn-wolof.png'],
+        },
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                'max-video-preview': -1,
+                'max-image-preview': 'large',
+                'max-snippet': -1,
+            },
         },
     }
 }
@@ -71,6 +103,13 @@ export default async function PhraseCategoryPage({ params }: PageParams) {
 
     return (
         <div className="space-y-8">
+            <JsonLdBreadcrumb
+                items={[
+                    { name: 'Home', item: '/' },
+                    { name: 'Phrases', item: '/phrases' },
+                    { name: descriptor.label, item: `/phrases/${descriptor.id}` },
+                ]}
+            />
             <JsonLdCollectionPage
                 description={descriptor.description}
                 items={phrases.map((phrase) => ({

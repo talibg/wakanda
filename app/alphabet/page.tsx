@@ -12,6 +12,39 @@ export const metadata: Metadata = {
     alternates: {
         canonical: buildCanonicalUrl('/alphabet'),
     },
+    openGraph: {
+        title: 'Wolof Alphabet — Pronunciation Guide | Learn Wolof',
+        description:
+            'Learn the Wolof alphabet with our comprehensive pronunciation guide. Master the sounds of Senegal and The Gambia.',
+        url: buildCanonicalUrl('/alphabet'),
+        type: 'website',
+        images: [
+            {
+                url: 'https://learnwolof.com/og-learn-wolof.png',
+                width: 1200,
+                height: 630,
+                alt: 'Learn Wolof words and phrases from Senegal and The Gambia',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Wolof Alphabet — Pronunciation Guide | Learn Wolof',
+        description:
+            'Learn the Wolof alphabet with our comprehensive pronunciation guide. Master the sounds of Senegal and The Gambia.',
+        images: ['https://learnwolof.com/og-learn-wolof.png'],
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
 }
 
 import { JsonLdBreadcrumb } from '@/components/json-ld'

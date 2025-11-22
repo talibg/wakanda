@@ -16,6 +16,39 @@ export const metadata: Metadata = {
     alternates: {
         canonical: buildCanonicalUrl('/words'),
     },
+    openGraph: {
+        title: 'Wolof Vocabulary — Learn Wolof Words from Senegal and Gambia | Learn Wolof',
+        description:
+            'Study essential Wolof vocabulary for numbers, family, food, time, and daily basics. Compare Senegalese and Gambian word choices side-by-side.',
+        url: buildCanonicalUrl('/words'),
+        type: 'website',
+        images: [
+            {
+                url: 'https://learnwolof.com/og-learn-wolof.png',
+                width: 1200,
+                height: 630,
+                alt: 'Learn Wolof words and phrases from Senegal and The Gambia',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Wolof Vocabulary — Learn Wolof Words from Senegal and Gambia | Learn Wolof',
+        description:
+            'Study essential Wolof vocabulary for numbers, family, food, time, and daily basics. Compare Senegalese and Gambian word choices side-by-side.',
+        images: ['https://learnwolof.com/og-learn-wolof.png'],
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
 }
 
 import { JsonLdBreadcrumb } from '@/components/json-ld'
