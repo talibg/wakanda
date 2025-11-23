@@ -37,6 +37,32 @@ export function SiteFooter() {
                         </ul>
                     </div>
                     <div className="space-y-4">
+                        <h3 className="text-sm font-medium text-foreground">Translate</h3>
+                        <ul className="space-y-3 text-sm text-muted-foreground">
+                            <li>
+                                <Link className="hover:text-foreground transition-colors" href="/translate">
+                                    Wolof Translator
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    className="hover:text-foreground transition-colors"
+                                    href="/translate/english-to-wolof"
+                                >
+                                    English to Wolof
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    className="hover:text-foreground transition-colors"
+                                    href="/translate/wolof-to-english"
+                                >
+                                    Wolof to English
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="space-y-4">
                         <h3 className="text-sm font-medium text-foreground">About</h3>
                         <ul className="space-y-3 text-sm text-muted-foreground">
                             <li>

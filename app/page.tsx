@@ -25,6 +25,13 @@ const highlights = [
         action: 'Start Alphabet'
     },
     {
+        title: 'Translate Words & Phrases',
+        description:
+            'Search our English-Wolof dictionary for instant translations with dialect variations and examples.',
+        href: '/translate',
+        action: 'Open Translator'
+    },
+    {
         title: 'Explore Wolof Words',
         description:
             'Browse numbers, family members, food, and time vocabulary with both Senegalese and Gambian spellings.',
