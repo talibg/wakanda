@@ -58,6 +58,10 @@ const sourceLabel: Record<TranslationSource, string> = {
     lexicon: 'Dictionary entry'
 }
 
+const entryMatchesQuery = (entry: TranslationEntry, queryLower: string) => {
+    return entry.english.toLowerCase() === queryLower || entry.wolofNormalized === queryLower
+}
+
 const curatedWordEntries: TranslationEntry[] = wordEntries.map((entry: WordEntry) => ({
     id: `word-${entry.id}`,
     english: normalizeSpaces(entry.english),
@@ -127,6 +131,7 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
     const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
     const inputRef = useRef<HTMLInputElement>(null)
     const debouncedQuery = useDebouncedValue(searchTerm)
+    const trimmedQuery = normalizeSpaces(debouncedQuery)
     const [recentSearches, setRecentSearches] = useState<RecentSearch[]>([])
 
     const focusInput = useCallback(() => {
@@ -153,18 +158,18 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
 
     useEffect(() => {
         const slugDirection = direction === 'en-wo' ? 'english-to-wolof' : 'wolof-to-english'
-        const path = debouncedQuery
-            ? `/translate/${slugDirection}/${encodeURIComponent(debouncedQuery)}`
+        const path = trimmedQuery
+            ? `/translate/${slugDirection}/${encodeURIComponent(trimmedQuery)}`
             : `/translate/${slugDirection}`
         router.replace(path, { scroll: false })
-    }, [debouncedQuery, direction, router])
+    }, [trimmedQuery, direction, router])
 
     useEffect(() => {
-        const trimmed = normalizeSpaces(debouncedQuery).toLowerCase()
-        if (!trimmed) return
+        const lowered = trimmedQuery.toLowerCase()
+        if (!lowered) return
         const update = (prev: RecentSearch[]) => {
-            const filtered = prev.filter((item) => item.query !== trimmed || item.direction !== direction)
-            return [{ query: trimmed, direction }, ...filtered].slice(0, 5)
+            const filtered = prev.filter((item) => item.query !== lowered || item.direction !== direction)
+            return [{ query: lowered, direction }, ...filtered].slice(0, 5)
         }
         setRecentSearches((prev) => {
             const next = update(prev)
@@ -179,7 +184,7 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
         const keys = direction === 'en-wo' ? ['english'] : ['wolofNormalized', 'wolof']
         return new Fuse(baseDictionary, {
             keys,
-            threshold: 0.32,
+            threshold: 0.22,
             ignoreLocation: true,
             includeScore: true,
             minMatchCharLength: 2
@@ -196,17 +201,22 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
     )
 
     const results = useMemo(() => {
-        const pool = debouncedQuery ? fuse.search(debouncedQuery).map((hit) => hit.item) : starterEntries
+        if (!trimmedQuery) return []
+        const queryLower = trimmedQuery.toLowerCase()
+        const pool = fuse.search(trimmedQuery).map((hit) => hit.item)
         return pool
             .filter((entry) => matchesDialect(entry, mode))
             .sort((a, b) => {
+                const aExact = entryMatchesQuery(a, queryLower)
+                const bExact = entryMatchesQuery(b, queryLower)
+                if (aExact !== bExact) return aExact ? -1 : 1
                 if (sourcePriority[a.source] !== sourcePriority[b.source]) {
                     return sourcePriority[a.source] - sourcePriority[b.source]
                 }
                 return a.english.localeCompare(b.english)
             })
-            .slice(0, debouncedQuery ? 80 : 40)
-    }, [debouncedQuery, fuse, mode, matchesDialect])
+            .slice(0, 80)
+    }, [trimmedQuery, fuse, mode, matchesDialect])
 
     const searchPlaceholder =
         direction === 'en-wo' ? 'Type an English word or phrase to translate…' : 'Type Wolof to see the English meaning…'
@@ -322,13 +332,23 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
                                 </CardContent>
                             </Card>
                         ))
-                    ) : (
+                    ) : debouncedQuery ? (
                         <Card>
                             <CardHeader>
                                 <CardTitle>No matches yet</CardTitle>
                                 <CardDescription>
                                     Try a simpler spelling (e.g., use &quot;x&quot; instead of &quot;kh&quot;) or switch
                                     the dialect toggle.
+                                </CardDescription>
+                            </CardHeader>
+                        </Card>
+                    ) : (
+                        <Card>
+                            <CardHeader>
+                                <CardTitle>Search to see translations</CardTitle>
+                                <CardDescription>
+                                    Type an English word or Wolof phrase above and we will show the best matches from
+                                    our core word lists, phrases, and full dictionary.
                                 </CardDescription>
                             </CardHeader>
                         </Card>
