@@ -2,6 +2,7 @@ export type WordCategory = 'numbers' | 'family' | 'food' | 'basic' | 'time' | 'a
 
 export type PhraseCategory =
     | 'greetings'
+    | 'introductions'
     | 'travel'
     | 'market'
     | 'everyday'

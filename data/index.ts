@@ -1,6 +1,7 @@
 import { diningPhrases } from '@/data/phrases/dining'
 import { everydayPhrases } from '@/data/phrases/everyday'
 import { greetingPhrases } from '@/data/phrases/greetings'
+import { introductionPhrases } from '@/data/phrases/introductions'
 import { healthPhrases } from '@/data/phrases/health'
 import { marketPhrases } from '@/data/phrases/market'
 import { questionPhrases } from '@/data/phrases/questions'
@@ -68,8 +69,13 @@ export const wordCategories: { id: WordCategory; label: string; description: str
 export const phraseCategories: { id: PhraseCategory; label: string; description: string }[] = [
     {
         id: 'greetings',
-        label: 'Greetings & Introductions',
+        label: 'Greetings',
         description: 'Start conversations the Wolof way with respectful greetings.'
+    },
+    {
+        id: 'introductions',
+        label: 'Introductions',
+        description: 'Introduce yourself and ask for names or hometowns.'
     },
     {
         id: 'travel',
@@ -122,6 +128,7 @@ const wordMap: Record<WordCategory, WolofWord[]> = {
 
 const phraseMap: Record<PhraseCategory, WolofPhrase[]> = {
     greetings: greetingPhrases,
+    introductions: introductionPhrases,
     travel: travelPhrases,
     market: marketPhrases,
     everyday: everydayPhrases,

@@ -1,6 +1,7 @@
 import { diningPhrases } from '@/data/phrases/dining'
 import { everydayPhrases } from '@/data/phrases/everyday'
 import { greetingPhrases } from '@/data/phrases/greetings'
+import { introductionPhrases } from '@/data/phrases/introductions'
 import { healthPhrases } from '@/data/phrases/health'
 import { marketPhrases } from '@/data/phrases/market'
 import { questionPhrases } from '@/data/phrases/questions'
@@ -19,6 +20,7 @@ export type PhraseCategory = {
 
 const phrasesByCategory: Record<PhraseCategorySlug, PhraseItem[]> = {
     greetings: greetingPhrases,
+    introductions: introductionPhrases,
     travel: travelPhrases,
     market: marketPhrases,
     everyday: everydayPhrases,
@@ -31,9 +33,15 @@ const phrasesByCategory: Record<PhraseCategorySlug, PhraseItem[]> = {
 export const phraseCategories: PhraseCategory[] = [
     {
         slug: 'greetings',
-        title: 'Greetings & Introductions',
+        title: 'Greetings',
         description: 'Start conversations the Wolof way with respectful greetings.',
         items: phrasesByCategory.greetings
+    },
+    {
+        slug: 'introductions',
+        title: 'Introductions',
+        description: 'Introduce yourself, ask for names, and share where you are from.',
+        items: phrasesByCategory.introductions
     },
     {
         slug: 'travel',

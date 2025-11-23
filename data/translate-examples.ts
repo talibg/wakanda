@@ -2,7 +2,7 @@ export const englishToWolofExamples: string[] = [
     'hello',
     'thank you',
     'good morning',
-    'good night',
+    'good evening',
     'please',
     'sorry',
     'yes',

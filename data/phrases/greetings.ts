@@ -13,7 +13,7 @@ export const greetingPhrases: WolofPhrase[] = [
     {
         id: 'greetings-2',
         english: 'I am fine, thank you.',
-        senegal: 'Maa ngi ci jàmm, jërëjëf.', // Corrected to the standard reply: "I am in peace"
+        senegal: 'Maa ngi ci jàmm, jërëjëf.',
         gambia: 'Mangi ci jam, jerrejef.',
         category: 'greetings',
         notes: 'Literally "I am in peace, thank you." "Maa ngi fii rek" (I am just here) is also common.'
@@ -22,7 +22,7 @@ export const greetingPhrases: WolofPhrase[] = [
         id: 'greetings-3',
         english: 'Good morning',
         senegal: 'Jàmm nga fanane?',
-        gambia: 'Jam nga fanane?',
+        gambia: 'Nanga fanaane?',
         category: 'greetings',
         notes: 'Literally “Did you spend the night in peace?” The reply is "Jàmm rekk" (Peace only).'
     },
@@ -37,7 +37,7 @@ export const greetingPhrases: WolofPhrase[] = [
     {
         id: 'greetings-5',
         english: 'Welcome',
-        senegal: 'Dalal ak jàmm', // Removed "Nio far"
+        senegal: 'Dalal ak jàmm',
         gambia: 'Dalal ak jam',
         category: 'greetings',
         tags: ['hospitality'],
