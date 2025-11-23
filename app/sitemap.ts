@@ -2,10 +2,12 @@ import type { MetadataRoute } from 'next'
 
 import { phraseCategories } from '@/app/data/phrases'
 import { wordCategories } from '@/app/data/words'
+import { englishToWolofExamples, wolofToEnglishExamples } from '@/data/translate-examples'
 
 const siteUrl = 'https://learnwolof.com'
 
 const buildUrl = (path: string) => `${siteUrl}${path}`
+const slugifyTerm = (term: string) => term.trim().toLowerCase().replace(/\s+/g, '-')
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const now = new Date()
@@ -36,12 +38,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const guideRoutes: MetadataRoute.Sitemap = [
         {
-            url: buildUrl('/phrases/romance'),
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.7
-        },
-        {
             url: buildUrl('/guides/first-ten-wolof-phrases'),
             lastModified: now,
             changeFrequency: 'monthly',
@@ -55,5 +51,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }
     ]
 
-    return [...baseRoutes, ...wordRoutes, ...phraseRoutes, ...guideRoutes]
+    const translateBase: MetadataRoute.Sitemap = [
+        { url: buildUrl('/translate'), lastModified: now, changeFrequency: 'daily' as const, priority: 0.95 },
+        {
+            url: buildUrl('/translate/english-to-wolof'),
+            lastModified: now,
+            changeFrequency: 'daily' as const,
+            priority: 0.9
+        },
+        {
+            url: buildUrl('/translate/wolof-to-english'),
+            lastModified: now,
+            changeFrequency: 'daily' as const,
+            priority: 0.9
+        }
+    ]
+
+    const translateExamples: MetadataRoute.Sitemap = [
+        ...englishToWolofExamples.map(term => ({
+            url: buildUrl(`/translate/english-to-wolof/${encodeURIComponent(slugifyTerm(term))}`),
+            lastModified: now,
+            changeFrequency: 'weekly' as const,
+            priority: 0.8
+        })),
+        ...wolofToEnglishExamples.map(term => ({
+            url: buildUrl(`/translate/wolof-to-english/${encodeURIComponent(slugifyTerm(term))}`),
+            lastModified: now,
+            changeFrequency: 'weekly' as const,
+            priority: 0.8
+        }))
+    ]
+
+    return [...baseRoutes, ...wordRoutes, ...phraseRoutes, ...guideRoutes, ...translateBase, ...translateExamples]
 }

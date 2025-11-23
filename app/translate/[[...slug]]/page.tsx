@@ -9,7 +9,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params
     const direction = slug?.[0]
-    const term = slug?.[1] ? decodeURIComponent(slug[1]) : ''
+    const term = slug?.[1] ? decodeURIComponent(slug[1]).replace(/-/g, ' ') : ''
     const slugPath = slug?.length ? `/translate/${slug.map((part) => encodeURIComponent(part)).join('/')}` : '/translate'
     const canonical = buildCanonicalUrl(slugPath)
 
@@ -59,7 +59,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function TranslatePage({ params }: Props) {
     const { slug } = await params
     const initialDirection = slug?.[0] === 'wolof-to-english' ? 'wo-en' : 'en-wo'
-    const initialSearchTerm = slug?.[1] ? decodeURIComponent(slug[1]) : ''
+    const rawTerm = slug?.[1] ? decodeURIComponent(slug[1]) : ''
+    const initialSearchTerm = rawTerm.replace(/-/g, ' ')
     const slugPath = slug?.length ? `/translate/${slug.map((part) => encodeURIComponent(part)).join('/')}` : '/translate'
     const canonical = buildCanonicalUrl(slugPath)
 

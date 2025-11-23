@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { JsonLdFaq } from '@/components/json-ld'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { englishToWolofExamples, wolofToEnglishExamples } from '@/data/translate-examples'
 
 export const dynamic = 'force-dynamic'
 
@@ -16,6 +18,8 @@ export const metadata: Metadata = {
         canonical: buildCanonicalUrl('/')
     }
 }
+
+const slugifyTerm = (term: string) => term.trim().toLowerCase().replace(/\s+/g, '-')
 
 const highlights = [
     {
@@ -105,6 +109,27 @@ export default function HomePage() {
                         English explanations, practical usage notes, and optional search to help you remember new
                         vocabulary quickly.
                     </p>
+                    <div className="mt-6 space-y-3">
+                        <p className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+                            Quick translate links
+                        </p>
+                        <div className="flex flex-wrap gap-3">
+                            {[
+                                ...englishToWolofExamples.map((term) => ({
+                                    label: term,
+                                    href: `/translate/english-to-wolof/${encodeURIComponent(slugifyTerm(term))}`
+                                })),
+                                ...wolofToEnglishExamples.map((term) => ({
+                                    label: term,
+                                    href: `/translate/wolof-to-english/${encodeURIComponent(slugifyTerm(term))}`
+                                }))
+                            ].map((item) => (
+                                <Badge asChild key={item.href} variant="secondary" className="cursor-pointer">
+                                    <Link href={item.href}>{item.label}</Link>
+                                </Badge>
+                            ))}
+                        </div>
+                    </div>
                 </article>
                 <div className="grid gap-4">
                     {highlights.map((item) => (
