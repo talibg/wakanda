@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import TranslatorClient from './translator-client'
+import { buildCanonicalUrl } from '@/lib/seo'
 
 type Props = {
     params: Promise<{ slug?: string[] }>
@@ -9,6 +10,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params
     const direction = slug?.[0]
     const term = slug?.[1] ? decodeURIComponent(slug[1]) : ''
+    const slugPath = slug?.length ? `/translate/${slug.map((part) => encodeURIComponent(part)).join('/')}` : '/translate'
+    const canonical = buildCanonicalUrl(slugPath)
 
     let title = 'Wolof Translator | English to Wolof & Wolof to English'
     let description =
@@ -30,7 +33,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         openGraph: {
             title,
             description,
-            type: 'website'
+            type: 'website',
+            url: canonical,
+            images: [
+                {
+                    url: '/og-learn-wolof.png',
+                    width: 1200,
+                    height: 630,
+                    alt: 'Learn Wolof words and phrases from Senegal and The Gambia'
+                }
+            ]
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description,
+            images: ['/og-learn-wolof.png']
+        },
+        alternates: {
+            canonical
         }
     }
 }
@@ -39,6 +60,8 @@ export default async function TranslatePage({ params }: Props) {
     const { slug } = await params
     const initialDirection = slug?.[0] === 'wolof-to-english' ? 'wo-en' : 'en-wo'
     const initialSearchTerm = slug?.[1] ? decodeURIComponent(slug[1]) : ''
+    const slugPath = slug?.length ? `/translate/${slug.map((part) => encodeURIComponent(part)).join('/')}` : '/translate'
+    const canonical = buildCanonicalUrl(slugPath)
 
     const jsonLd = {
         '@context': 'https://schema.org',
@@ -51,14 +74,41 @@ export default async function TranslatePage({ params }: Props) {
                   initialDirection === 'en-wo' ? 'English to Wolof' : 'Wolof to English'
               }.`
             : 'Translate between English and Wolof (Gambian & Senegalese dialects).',
-        url: `https://wakanda.com/translate/${slug?.join('/') || ''}`,
+        url: canonical,
         applicationCategory: 'EducationalApplication',
         operatingSystem: 'Web'
     }
 
+    const definedTerm = initialSearchTerm
+        ? {
+              '@context': 'https://schema.org',
+              '@type': 'DefinedTerm',
+              name: initialSearchTerm,
+              inLanguage: initialDirection === 'en-wo' ? 'wo' : 'en',
+              inDefinedTermSet: canonical,
+              description:
+                  initialDirection === 'en-wo'
+                      ? `Translation of "${initialSearchTerm}" from English to Wolof.`
+                      : `Translation of "${initialSearchTerm}" from Wolof to English.`,
+              url: canonical
+          }
+        : null
+
+    const jsonLdPayload = definedTerm ? [jsonLd, definedTerm] : jsonLd
+    const heading = initialSearchTerm
+        ? `${initialDirection === 'en-wo' ? 'English to Wolof' : 'Wolof to English'} — ${initialSearchTerm}`
+        : 'Wolof Translator'
+    const subheading = initialSearchTerm
+        ? `Translation from ${initialDirection === 'en-wo' ? 'English to Wolof' : 'Wolof to English'}.`
+        : 'Search Wolof ↔ English with dialect-aware results.'
+
     return (
         <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            <div className="mb-6 space-y-2 text-center">
+                <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">{heading}</h1>
+                <p className="text-sm text-muted-foreground md:text-base">{subheading}</p>
+            </div>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPayload) }} />
             <TranslatorClient initialDirection={initialDirection} initialSearchTerm={initialSearchTerm} />
         </>
     )
