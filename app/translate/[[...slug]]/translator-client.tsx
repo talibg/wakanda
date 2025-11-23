@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Fuse from 'fuse.js'
-import { ArrowLeftRight, MessageSquareHeart } from 'lucide-react'
+import { MessageSquareHeart } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -11,6 +11,7 @@ import { useDialect } from '@/context/dialect-context'
 import lexicon from '@/data/lexicon.json'
 import type { WolofDialectMode } from '@/context/dialect-context'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 import phraseEntries, { type PhraseEntry } from '../phrase-data'
 import wordEntries, { type WordEntry } from '../word-data'
@@ -62,6 +63,13 @@ const entryMatchesQuery = (entry: TranslationEntry, queryLower: string) => {
     return entry.english.toLowerCase() === queryLower || entry.wolofNormalized === queryLower
 }
 
+const categoryHref = (entry: TranslationEntry) => {
+    if (!entry.category) return null
+    if (entry.source === 'word') return `/words/${entry.category}`
+    if (entry.source === 'phrase') return `/phrases/${entry.category}`
+    return null
+}
+
 const curatedWordEntries: TranslationEntry[] = wordEntries.map((entry: WordEntry) => ({
     id: `word-${entry.id}`,
     english: normalizeSpaces(entry.english),
@@ -101,7 +109,7 @@ const sourcePriority: Record<TranslationSource, number> = {
     lexicon: 2
 }
 
-function useDebouncedValue<T>(value: T, delay = 250) {
+function useDebouncedValue<T>(value: T, delay = 350) {
     const [debounced, setDebounced] = useState(value)
 
     useEffect(() => {
@@ -130,7 +138,7 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
     const [direction, setDirection] = useState<TranslateDirection>(initialDirection)
     const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
     const inputRef = useRef<HTMLInputElement>(null)
-    const debouncedQuery = useDebouncedValue(searchTerm)
+    const debouncedQuery = useDebouncedValue(searchTerm, 350)
     const trimmedQuery = normalizeSpaces(debouncedQuery)
     const [recentSearches, setRecentSearches] = useState<RecentSearch[]>([])
 
@@ -229,8 +237,8 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
     return (
         <div className="space-y-8">
             <div className="space-y-4 rounded-2xl border bg-card p-6 shadow-sm">
-                <div className="flex flex-wrap items-center gap-2">
-                    <div className="flex items-center gap-1 rounded-full border bg-background p-1">
+                <div className="flex justify-center">
+                    <div className="flex items-center gap-2 rounded-full border bg-background px-2 py-1.5 shadow-sm">
                         <DirectionButton
                             isActive={direction === 'en-wo'}
                             label="English → Wolof"
@@ -242,27 +250,17 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
                             onClick={() => handleDirectionChange('wo-en')}
                         />
                     </div>
-                    <Badge variant="secondary" className="gap-1">
-                        <ArrowLeftRight className="h-3.5 w-3.5" />
-                        Switch direction to see dialect spelling differences.
-                    </Badge>
                 </div>
-                <div className="grid gap-3 md:grid-cols-[2fr,1fr] md:items-center">
-                    <Input
-                        aria-label="Search translations"
-                        autoFocus
-                        onChange={(event) => setSearchTerm(event.target.value)}
-                        placeholder={searchPlaceholder}
-                        ref={inputRef}
-                        value={searchTerm}
-                    />
-                    <p className="text-sm text-muted-foreground md:text-right">
-                        Showing {results.length} result{results.length === 1 ? '' : 's'} in{' '}
-                        {mode === 'both' ? 'both dialects' : mode === 'senegal' ? 'Senegalese' : 'Gambian'} Wolof.
-                    </p>
-                </div>
+                <Input
+                    aria-label="Search translations"
+                    autoFocus
+                    onChange={(event) => setSearchTerm(event.target.value)}
+                    placeholder={searchPlaceholder}
+                    ref={inputRef}
+                    value={searchTerm}
+                />
                 {recentSearches.length ? (
-                    <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
+                    <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
                         <span className="font-medium text-foreground">Recent:</span>
                         {recentSearches.map((recent) => (
                             <Button
@@ -276,11 +274,17 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
                                 variant="secondary"
                                 className="h-8 rounded-full"
                             >
-                                {recent.direction === 'en-wo' ? 'EN→WO' : 'WO→EN'} · {recent.query}
+                                {recent.query}
                             </Button>
                         ))}
                     </div>
                 ) : null}
+                <div className="flex justify-end">
+                    <p className="text-sm text-muted-foreground">
+                        Showing {results.length} result{results.length === 1 ? '' : 's'} in{' '}
+                        {mode === 'both' ? 'both dialects' : mode === 'senegal' ? 'Senegalese' : 'Gambian'} Wolof.
+                    </p>
+                </div>
             </div>
 
             <div className="grid gap-6 lg:grid-cols-[2fr,1fr]">
@@ -299,9 +303,17 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
                                             <CardDescription className="flex flex-wrap gap-2">
                                                 <Badge variant="secondary">{sourceLabel[entry.source]}</Badge>
                                                 {entry.category ? (
-                                                    <Badge variant="outline" className="capitalize">
-                                                        {entry.category}
-                                                    </Badge>
+                                                    categoryHref(entry) ? (
+                                                        <Link href={categoryHref(entry)!} className="inline-flex">
+                                                            <Badge variant="outline" className="capitalize">
+                                                                {entry.category}
+                                                            </Badge>
+                                                        </Link>
+                                                    ) : (
+                                                        <Badge variant="outline" className="capitalize">
+                                                            {entry.category}
+                                                        </Badge>
+                                                    )
                                                 ) : null}
                                                 {entry.pos ? (
                                                     <Badge variant="outline" className="font-semibold">
@@ -323,11 +335,6 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
                                                 ? toSentenceCase(entry.wolof)
                                                 : toSentenceCase(entry.english)}
                                         </p>
-                                    </div>
-                                    <div className="text-sm text-muted-foreground">
-                                        {direction === 'en-wo'
-                                            ? 'Tap the dialect toggle to compare spellings.'
-                                            : 'Reverse the direction to see how Wolof is written in each dialect.'}
                                     </div>
                                 </CardContent>
                             </Card>
@@ -369,8 +376,8 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
                         </CardHeader>
                         <CardContent className="space-y-3">
                             <Button asChild className="w-full">
-                                <a href="mailto:hello@learnwolof.com?subject=Translator%20feedback">
-                                    Email feedback
+                                <a href="https://x.com/talibguyani" rel="noreferrer" target="_blank">
+                                    Message on X
                                 </a>
                             </Button>
                             <Button asChild variant="secondary" className="w-full">
@@ -411,9 +418,9 @@ function DirectionButton({
     return (
         <Button
             onClick={onClick}
-            size="sm"
+            size="default"
             variant={isActive ? 'default' : 'ghost'}
-            className="rounded-full px-4"
+            className="rounded-full px-5"
         >
             {label}
         </Button>
