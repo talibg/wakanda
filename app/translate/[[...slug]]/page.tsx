@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import TranslatorClient from './translator-client'
 import { buildCanonicalUrl } from '@/lib/seo'
+import TranslatorClient from './translator-client'
 
 type Props = {
     params: Promise<{ slug?: string[] }>
@@ -10,7 +10,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params
     const direction = slug?.[0]
     const term = slug?.[1] ? decodeURIComponent(slug[1]).replace(/-/g, ' ') : ''
-    const slugPath = slug?.length ? `/translate/${slug.map((part) => encodeURIComponent(part)).join('/')}` : '/translate'
+    const slugPath = slug?.length
+        ? `/translate/${slug.map((part) => encodeURIComponent(part)).join('/')}`
+        : '/translate'
     const canonical = buildCanonicalUrl(slugPath)
 
     let title = 'Wolof Translator | English to Wolof & Wolof to English'
@@ -61,7 +63,9 @@ export default async function TranslatePage({ params }: Props) {
     const initialDirection = slug?.[0] === 'wolof-to-english' ? 'wo-en' : 'en-wo'
     const rawTerm = slug?.[1] ? decodeURIComponent(slug[1]) : ''
     const initialSearchTerm = rawTerm.replace(/-/g, ' ')
-    const slugPath = slug?.length ? `/translate/${slug.map((part) => encodeURIComponent(part)).join('/')}` : '/translate'
+    const slugPath = slug?.length
+        ? `/translate/${slug.map((part) => encodeURIComponent(part)).join('/')}`
+        : '/translate'
     const canonical = buildCanonicalUrl(slugPath)
 
     const jsonLd = {
@@ -109,7 +113,7 @@ export default async function TranslatePage({ params }: Props) {
                 <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">{heading}</h1>
                 <p className="text-sm text-muted-foreground md:text-base">{subheading}</p>
             </div>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPayload) }} />
+            <script dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPayload) }} type="application/ld+json" />
             <TranslatorClient initialDirection={initialDirection} initialSearchTerm={initialSearchTerm} />
         </>
     )

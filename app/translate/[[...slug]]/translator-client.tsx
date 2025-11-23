@@ -1,17 +1,17 @@
 'use client'
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Fuse from 'fuse.js'
 import { MessageSquareHeart } from 'lucide-react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
+import type { WolofDialectMode } from '@/context/dialect-context'
 import { useDialect } from '@/context/dialect-context'
 import lexicon from '@/data/lexicon.json'
-import type { WolofDialectMode } from '@/context/dialect-context'
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
 
 import phraseEntries, { type PhraseEntry } from '../phrase-data'
 import wordEntries, { type WordEntry } from '../word-data'
@@ -102,7 +102,7 @@ const lexiconEntries: TranslationEntry[] = (lexicon as LexiconRow[]).map((entry)
 }))
 
 const baseDictionary: TranslationEntry[] = [...curatedWordEntries, ...curatedPhraseEntries, ...lexiconEntries]
-const starterEntries: TranslationEntry[] = [...curatedWordEntries, ...curatedPhraseEntries]
+const _starterEntries: TranslationEntry[] = [...curatedWordEntries, ...curatedPhraseEntries]
 const sourcePriority: Record<TranslationSource, number> = {
     word: 0,
     phrase: 1,
@@ -186,7 +186,7 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
             }
             return next
         })
-    }, [debouncedQuery, direction])
+    }, [direction, trimmedQuery.toLowerCase])
 
     const fuse = useMemo(() => {
         const keys = direction === 'en-wo' ? ['english'] : ['wolofNormalized', 'wolof']
@@ -199,14 +199,11 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
         })
     }, [direction])
 
-    const matchesDialect = useCallback(
-        (entry: TranslationEntry, currentMode: WolofDialectMode) => {
-            if (currentMode === 'both') return true
-            if (entry.dialect === 'both') return true
-            return currentMode === 'senegal' ? entry.dialect === 'senegalese' : entry.dialect === 'gambian'
-        },
-        []
-    )
+    const matchesDialect = useCallback((entry: TranslationEntry, currentMode: WolofDialectMode) => {
+        if (currentMode === 'both') return true
+        if (entry.dialect === 'both') return true
+        return currentMode === 'senegal' ? entry.dialect === 'senegalese' : entry.dialect === 'gambian'
+    }, [])
 
     const results = useMemo(() => {
         if (!trimmedQuery) return []
@@ -227,7 +224,9 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
     }, [trimmedQuery, fuse, mode, matchesDialect])
 
     const searchPlaceholder =
-        direction === 'en-wo' ? 'Type an English word or phrase to translate…' : 'Type Wolof to see the English meaning…'
+        direction === 'en-wo'
+            ? 'Type an English word or phrase to translate…'
+            : 'Type Wolof to see the English meaning…'
 
     const handleDirectionChange = (next: TranslateDirection) => {
         setDirection(next)
@@ -264,6 +263,7 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
                         <span className="font-medium text-foreground">Recent:</span>
                         {recentSearches.map((recent) => (
                             <Button
+                                className="h-8 rounded-full"
                                 key={`${recent.query}-${recent.direction}`}
                                 onClick={() => {
                                     setDirection(recent.direction)
@@ -272,7 +272,6 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
                                 }}
                                 size="sm"
                                 variant="secondary"
-                                className="h-8 rounded-full"
                             >
                                 {recent.query}
                             </Button>
@@ -291,7 +290,7 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
                 <div className="space-y-4">
                     {results.length ? (
                         results.map((entry) => (
-                            <Card key={entry.id} className="border-border/70">
+                            <Card className="border-border/70" key={entry.id}>
                                 <CardHeader className="pb-2">
                                     <div className="flex items-start justify-between gap-3">
                                         <div className="space-y-1">
@@ -302,21 +301,27 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
                                             </CardTitle>
                                             <CardDescription className="flex flex-wrap gap-2">
                                                 <Badge variant="secondary">{sourceLabel[entry.source]}</Badge>
-                                                {entry.category ? (
-                                                    categoryHref(entry) ? (
-                                                        <Link href={categoryHref(entry)!} className="inline-flex">
-                                                            <Badge variant="outline" className="capitalize">
-                                                                {entry.category}
-                                                            </Badge>
-                                                        </Link>
-                                                    ) : (
-                                                        <Badge variant="outline" className="capitalize">
-                                                            {entry.category}
-                                                        </Badge>
-                                                    )
-                                                ) : null}
+                                                {entry.category
+                                                    ? (() => {
+                                                          const href = categoryHref(entry)
+                                                          if (!href) {
+                                                              return (
+                                                                  <Badge className="capitalize" variant="outline">
+                                                                      {entry.category}
+                                                                  </Badge>
+                                                              )
+                                                          }
+                                                          return (
+                                                              <Link className="inline-flex" href={href}>
+                                                                  <Badge className="capitalize" variant="outline">
+                                                                      {entry.category}
+                                                                  </Badge>
+                                                              </Link>
+                                                          )
+                                                      })()
+                                                    : null}
                                                 {entry.pos ? (
-                                                    <Badge variant="outline" className="font-semibold">
+                                                    <Badge className="font-semibold" variant="outline">
                                                         {entry.pos}
                                                     </Badge>
                                                 ) : null}
@@ -380,7 +385,7 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
                                     Message on X
                                 </a>
                             </Button>
-                            <Button asChild variant="secondary" className="w-full">
+                            <Button asChild className="w-full" variant="secondary">
                                 <a
                                     href="https://github.com/talibg/wakanda/issues/new?title=Translator%20feedback"
                                     rel="noreferrer"
@@ -406,22 +411,9 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
     )
 }
 
-function DirectionButton({
-    isActive,
-    label,
-    onClick
-}: {
-    isActive: boolean
-    label: string
-    onClick: () => void
-}) {
+function DirectionButton({ isActive, label, onClick }: { isActive: boolean; label: string; onClick: () => void }) {
     return (
-        <Button
-            onClick={onClick}
-            size="default"
-            variant={isActive ? 'default' : 'ghost'}
-            className="rounded-full px-5"
-        >
+        <Button className="rounded-full px-5" onClick={onClick} size="default" variant={isActive ? 'default' : 'ghost'}>
             {label}
         </Button>
     )

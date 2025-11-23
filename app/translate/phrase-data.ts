@@ -1,25 +1,29 @@
-import { diningPhrases } from "../../data/phrases/dining";
-import { everydayPhrases } from "../../data/phrases/everyday";
-import { greetingPhrases } from "../../data/phrases/greetings";
-import { healthPhrases } from "../../data/phrases/health";
-import { marketPhrases } from "../../data/phrases/market";
-import { questionPhrases } from "../../data/phrases/questions";
-import { romancePhrases } from "../../data/phrases/romance";
-import { travelPhrases } from "../../data/phrases/travel";
+import { diningPhrases } from '../../data/phrases/dining'
+import { everydayPhrases } from '../../data/phrases/everyday'
+import { greetingPhrases } from '../../data/phrases/greetings'
+import { healthPhrases } from '../../data/phrases/health'
+import { introductionPhrases } from '../../data/phrases/introductions'
+import { marketPhrases } from '../../data/phrases/market'
+import { questionPhrases } from '../../data/phrases/questions'
+import { romancePhrases } from '../../data/phrases/romance'
+import { travelPhrases } from '../../data/phrases/travel'
 
 export type PhraseEntry = {
-    id: string;
-    category: string;
-    wolof: string;
-    english: string;
-    dialect?: "gambian" | "senegalese" | "both";
-};
+    id: string
+    category: string
+    wolof: string
+    english: string
+    dialect?: 'gambian' | 'senegalese' | 'both'
+}
 
 // Helper to process phrases
-const processPhrases = (phrases: any[], category: string): PhraseEntry[] => {
+const processPhrases = (
+    phrases: { senegal: string; gambia: string; english: string }[],
+    category: string
+): PhraseEntry[] => {
     return phrases.flatMap((p, i) => {
-        const entries: PhraseEntry[] = [];
-        const baseId = `${category}-${i}`;
+        const entries: PhraseEntry[] = []
+        const baseId = `${category}-${i}`
 
         // If dialects are the same or only one provided (assuming same if not specified)
         if (p.senegal === p.gambia) {
@@ -28,8 +32,8 @@ const processPhrases = (phrases: any[], category: string): PhraseEntry[] => {
                 category,
                 wolof: p.senegal,
                 english: p.english,
-                dialect: "both",
-            });
+                dialect: 'both'
+            })
         } else {
             // Add Senegalese version
             if (p.senegal) {
@@ -38,8 +42,8 @@ const processPhrases = (phrases: any[], category: string): PhraseEntry[] => {
                     category,
                     wolof: p.senegal,
                     english: p.english,
-                    dialect: "senegalese",
-                });
+                    dialect: 'senegalese'
+                })
             }
             // Add Gambian version
             if (p.gambia) {
@@ -48,23 +52,24 @@ const processPhrases = (phrases: any[], category: string): PhraseEntry[] => {
                     category,
                     wolof: p.gambia,
                     english: p.english,
-                    dialect: "gambian",
-                });
+                    dialect: 'gambian'
+                })
             }
         }
-        return entries;
-    });
-};
+        return entries
+    })
+}
 
 const allPhrases: PhraseEntry[] = [
-    ...processPhrases(diningPhrases, "dining"),
-    ...processPhrases(everydayPhrases, "everyday"),
-    ...processPhrases(greetingPhrases, "greetings"),
-    ...processPhrases(healthPhrases, "health"),
-    ...processPhrases(marketPhrases, "market"),
-    ...processPhrases(questionPhrases, "questions"),
-    ...processPhrases(romancePhrases, "romance"),
-    ...processPhrases(travelPhrases, "travel"),
-];
+    ...processPhrases(diningPhrases, 'dining'),
+    ...processPhrases(everydayPhrases, 'everyday'),
+    ...processPhrases(greetingPhrases, 'greetings'),
+    ...processPhrases(introductionPhrases, 'introductions'),
+    ...processPhrases(healthPhrases, 'health'),
+    ...processPhrases(marketPhrases, 'market'),
+    ...processPhrases(questionPhrases, 'questions'),
+    ...processPhrases(romancePhrases, 'romance'),
+    ...processPhrases(travelPhrases, 'travel')
+]
 
-export default allPhrases;
+export default allPhrases

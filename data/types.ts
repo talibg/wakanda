@@ -1,4 +1,14 @@
-export type WordCategory = 'numbers' | 'family' | 'food' | 'basic' | 'time' | 'animals' | 'colors' | 'places' | 'body'
+export type WordCategory =
+    | 'numbers'
+    | 'family'
+    | 'food'
+    | 'basic'
+    | 'time'
+    | 'animals'
+    | 'colors'
+    | 'places'
+    | 'body'
+    | 'people'
 
 export type PhraseCategory =
     | 'greetings'

@@ -22,14 +22,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: buildUrl('/contact'), lastModified: now, changeFrequency: 'monthly', priority: 0.5 }
     ]
 
-    const wordRoutes: MetadataRoute.Sitemap = wordCategories.map(category => ({
+    const wordRoutes: MetadataRoute.Sitemap = wordCategories.map((category) => ({
         url: buildUrl(`/words/${category.slug}`),
         lastModified: now,
         changeFrequency: 'weekly',
         priority: 0.8
     }))
 
-    const phraseRoutes: MetadataRoute.Sitemap = phraseCategories.map(category => ({
+    const phraseRoutes: MetadataRoute.Sitemap = phraseCategories.map((category) => ({
         url: buildUrl(`/phrases/${category.slug}`),
         lastModified: now,
         changeFrequency: 'weekly',
@@ -68,13 +68,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ]
 
     const translateExamples: MetadataRoute.Sitemap = [
-        ...englishToWolofExamples.map(term => ({
+        ...englishToWolofExamples.map((term) => ({
             url: buildUrl(`/translate/english-to-wolof/${encodeURIComponent(slugifyTerm(term))}`),
             lastModified: now,
             changeFrequency: 'weekly' as const,
             priority: 0.8
         })),
-        ...wolofToEnglishExamples.map(term => ({
+        ...wolofToEnglishExamples.map((term) => ({
             url: buildUrl(`/translate/wolof-to-english/${encodeURIComponent(slugifyTerm(term))}`),
             lastModified: now,
             changeFrequency: 'weekly' as const,

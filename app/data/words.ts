@@ -6,6 +6,7 @@ import { colorsWords } from '@/data/words/colors'
 import { familyWords } from '@/data/words/family'
 import { foodWords } from '@/data/words/food'
 import { numbersWords } from '@/data/words/numbers'
+import { peopleWords } from '@/data/words/people'
 import { placesWords } from '@/data/words/places'
 import { timeWords } from '@/data/words/time'
 
@@ -27,7 +28,8 @@ const wordsByCategory: Record<WordCategorySlug, WordItem[]> = {
     animals: animalsWords,
     colors: colorsWords,
     places: placesWords,
-    body: bodyWords
+    body: bodyWords,
+    people: peopleWords
 }
 
 export const wordCategories: WordCategory[] = [
@@ -84,6 +86,12 @@ export const wordCategories: WordCategory[] = [
         title: 'Body Parts',
         description: 'Common body parts and anatomy.',
         items: wordsByCategory.body
+    },
+    {
+        slug: 'people',
+        title: 'People',
+        description: 'Talk about people, friends, and roles in the community.',
+        items: wordsByCategory.people
     }
 ]
 

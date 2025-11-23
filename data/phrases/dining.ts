@@ -42,5 +42,13 @@ export const diningPhrases: WolofPhrase[] = [
         senegal: 'Kaay lek',
         gambia: 'Kaay lek',
         category: 'dining'
+    },
+    {
+        id: 'dafay-ñor',
+        english: 'It is salty',
+        senegal: 'Dafay ñor',
+        gambia: 'Dafay nyor',
+        category: 'dining',
+        notes: 'Used to describe food being salty. Gambian spelling often represents ñ as ny.'
     }
 ]

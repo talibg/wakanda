@@ -25,6 +25,18 @@ export const foodWords: WolofWord[] = [
         exampleSentenceGambia: 'Jen wi dafa bees.'
     },
     {
+        id: 'ceeb-u-jen',
+        english: 'rice and fish (national dish)',
+        senegal: 'ceeb u jën',
+        gambia: 'ceebu jen',
+        category: 'food',
+        notes: 'National dish of Senegal and very common in The Gambia. Spelling varies slightly by dialect.',
+        tags: ['dish', 'national-dish'],
+        exampleSentenceEnglish: 'Rice and fish is the national dish.',
+        exampleSentenceSenegal: 'Ceeb u jën mooy lekku réew mi.',
+        exampleSentenceGambia: 'Ceebu jen moy lekku reew mi.'
+    },
+    {
         id: 'food-3',
         english: 'water',
         senegal: 'ndox',

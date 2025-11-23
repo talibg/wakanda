@@ -112,5 +112,17 @@ export const basicWords: WolofWord[] = [
         exampleSentenceEnglish: 'Senegal is the land of hospitality.',
         exampleSentenceSenegal: 'Senegal mooy réewum teranga.',
         exampleSentenceGambia: 'Senegal mooy réewum teranga.'
+    },
+    {
+        id: 'jotna',
+        english: 'enough',
+        senegal: 'jotna',
+        gambia: 'jotna',
+        category: 'basic',
+        notes: 'Often written as two words “jot na” in grammar explanations. Used to say something is sufficient.',
+        tags: ['expression'],
+        exampleSentenceEnglish: 'That is enough.',
+        exampleSentenceSenegal: 'Lii jotna.',
+        exampleSentenceGambia: 'Lii jotna.'
     }
 ]

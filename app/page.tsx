@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { JsonLdFaq } from '@/components/json-ld'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import { englishToWolofExamples, wolofToEnglishExamples } from '@/data/translate-examples'
 
 export const dynamic = 'force-dynamic'
@@ -124,7 +124,7 @@ export default function HomePage() {
                                     href: `/translate/wolof-to-english/${encodeURIComponent(slugifyTerm(term))}`
                                 }))
                             ].map((item) => (
-                                <Badge asChild key={item.href} variant="secondary" className="cursor-pointer">
+                                <Badge asChild className="cursor-pointer" key={item.href} variant="secondary">
                                     <Link href={item.href}>{item.label}</Link>
                                 </Badge>
                             ))}

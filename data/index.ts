@@ -1,8 +1,8 @@
 import { diningPhrases } from '@/data/phrases/dining'
 import { everydayPhrases } from '@/data/phrases/everyday'
 import { greetingPhrases } from '@/data/phrases/greetings'
-import { introductionPhrases } from '@/data/phrases/introductions'
 import { healthPhrases } from '@/data/phrases/health'
+import { introductionPhrases } from '@/data/phrases/introductions'
 import { marketPhrases } from '@/data/phrases/market'
 import { questionPhrases } from '@/data/phrases/questions'
 import { romancePhrases } from '@/data/phrases/romance'
@@ -15,6 +15,7 @@ import { colorsWords } from '@/data/words/colors'
 import { familyWords } from '@/data/words/family'
 import { foodWords } from '@/data/words/food'
 import { numbersWords } from '@/data/words/numbers'
+import { peopleWords } from '@/data/words/people'
 import { placesWords } from '@/data/words/places'
 import { timeWords } from '@/data/words/time'
 
@@ -63,6 +64,11 @@ export const wordCategories: { id: WordCategory; label: string; description: str
         id: 'body',
         label: 'Body Parts',
         description: 'Common body parts and anatomy.'
+    },
+    {
+        id: 'people',
+        label: 'People',
+        description: 'Talk about people and roles you meet every day.'
     }
 ]
 
@@ -123,7 +129,8 @@ const wordMap: Record<WordCategory, WolofWord[]> = {
     animals: animalsWords,
     colors: colorsWords,
     places: placesWords,
-    body: bodyWords
+    body: bodyWords,
+    people: peopleWords
 }
 
 const phraseMap: Record<PhraseCategory, WolofPhrase[]> = {

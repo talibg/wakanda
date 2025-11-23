@@ -49,5 +49,13 @@ export const everydayPhrases: WolofPhrase[] = [
         gambia: 'Dama sohla ndimbal.',
         category: 'everyday',
         notes: 'Soxla is the verb "to need". Ndmbal is the noun "help".'
+    },
+    {
+        id: 'jam-rekk',
+        english: 'I am fine / all good / peace only',
+        senegal: 'Jàmm rekk',
+        gambia: 'Jam rekk',
+        category: 'everyday',
+        notes: 'Very common reply to greetings such as “Nanga def?” or “Ana waa kër gi?”'
     }
 ]
