@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Learn Wolof
 
-## Getting Started
+A Next.js app for translating and learning Wolof (Senegal/Gambia). It includes:
+- Dialect-aware translator (English ⇄ Wolof) with curated phrases/words and a full lexicon
+- Words and phrases by category: greetings, introductions, travel, dining, romance, people, etc.
+- SEO-ready metadata, JSON-LD (including DefinedTerm on translate pages), and sitemaps with high-intent translate examples
 
-First, run the development server:
-
+## Quick start
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
+Open `http://localhost:3000`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Useful commands
+- `pnpm dev` – run the app
+- `pnpm typecheck` – type safety
+- `pnpm lint` – lint/format (Biome)
+- `pnpm build` – production build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Notable features
+- Translator deep links: `/translate/english-to-wolof/hello`, `/translate/wolof-to-english/na-nga-def`
+- Dialect toggle (Senegal / Gambia / both) shared across the site
+- Structured data: WebPage + DefinedTerm for translate pages; breadcrumbs/collections for content pages
+- Curated sitemaps for translator terms with hyphenated slugs for readability
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project layout
+- `app/translate` – translator page + client
+- `data/words`, `data/phrases` – content by category (includes people, introductions)
+- `components` – UI primitives and shared components
+- `app/sitemap.ts` – sitemap generation (translate examples included)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+- Issues: [GitHub Issues](https://github.com/talibg/wakanda/issues)
+- Contributions: PRs welcome for new words/phrases, translator improvements, or design tweaks. Please run `pnpm lint` and `pnpm typecheck` before opening a PR.
+- Feedback: DM on X at [@talibguyani](https://x.com/talibguyani).

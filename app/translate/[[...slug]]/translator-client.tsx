@@ -109,7 +109,7 @@ const sourcePriority: Record<TranslationSource, number> = {
     lexicon: 2
 }
 
-function useDebouncedValue<T>(value: T, delay = 350) {
+function useDebouncedValue<T>(value: T, delay = 1000) {
     const [debounced, setDebounced] = useState(value)
 
     useEffect(() => {
@@ -138,7 +138,7 @@ export default function TranslatorClient({ initialDirection, initialSearchTerm }
     const [direction, setDirection] = useState<TranslateDirection>(initialDirection)
     const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
     const inputRef = useRef<HTMLInputElement>(null)
-    const debouncedQuery = useDebouncedValue(searchTerm, 350)
+    const debouncedQuery = useDebouncedValue(searchTerm, 1000)
     const trimmedQuery = normalizeSpaces(debouncedQuery)
     const [recentSearches, setRecentSearches] = useState<RecentSearch[]>([])
 
