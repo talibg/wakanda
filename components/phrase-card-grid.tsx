@@ -6,10 +6,13 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { useDialect } from '@/context/dialect-context'
 import type { WolofPhrase } from '@/data/types'
-import { slugifyEnglish } from '@/lib/slugify'
+
+export type PhraseCardItem = WolofPhrase & {
+    href: string
+}
 
 type PhraseCardGridProps = {
-    phrases: WolofPhrase[]
+    phrases: PhraseCardItem[]
 }
 
 export function PhraseCardGrid({ phrases }: PhraseCardGridProps) {
@@ -35,7 +38,7 @@ export function PhraseCardGrid({ phrases }: PhraseCardGridProps) {
                 return (
                     <Link
                         className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                        href={`/phrases/${phrase.category}/${slugifyEnglish(phrase.english)}`}
+                        href={phrase.href}
                         key={phrase.id}
                     >
                         <Card className="h-full transition-colors hover:bg-muted/40">

@@ -82,13 +82,12 @@ export const generateMetadata = async ({ params }: PageParams): Promise<Metadata
 }
 
 const relatedPhraseCategories: Partial<Record<WordCategorySlug, PhraseCategorySlug[]>> = {
-    core: ['everyday', 'questions', 'introductions'],
+    core: ['everyday', 'questions', 'introductions', 'greetings', 'polite-expressions', 'farewells'],
     actions: ['travel', 'dining', 'everyday'],
     descriptors: ['everyday', 'market', 'dining'],
     numbers: ['market', 'travel'],
     family: ['family', 'introductions', 'romance'],
     food: ['dining', 'market'],
-    basic: ['greetings', 'polite-expressions', 'farewells'],
     time: ['greetings', 'farewells'],
     places: ['travel', 'questions', 'market'],
     body: ['health'],

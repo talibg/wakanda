@@ -199,7 +199,7 @@ const WolofGreetingsAndPolitePhrasesPage = () => {
                         <Link href="/phrases/greetings">Study greeting phrases</Link>
                     </Button>
                     <Button asChild variant="outline">
-                        <Link href="/words/basic">Learn basic words</Link>
+                        <Link href="/words/core">Learn core words</Link>
                     </Button>
                     <Button asChild variant="ghost">
                         <Link href="/translate">Use the translator</Link>
@@ -211,4 +211,3 @@ const WolofGreetingsAndPolitePhrasesPage = () => {
 }
 
 export default WolofGreetingsAndPolitePhrasesPage
-

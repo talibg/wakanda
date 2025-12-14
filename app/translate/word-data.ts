@@ -25,11 +25,12 @@ export type WordEntry = {
 // Helper to process words
 const processWords = (
     words: { senegal: string; gambia: string; english: string; pos?: string; wolofNormalized?: string }[],
-    category: string
+    category: string,
+    idPrefix = category
 ): WordEntry[] => {
     return words.flatMap((w, i) => {
         const entries: WordEntry[] = []
-        const baseId = `${category}-${i}`
+        const baseId = `${idPrefix}-${i}`
 
         // If dialects are the same or only one provided (assuming same if not specified)
         if (w.senegal === w.gambia) {
@@ -74,7 +75,7 @@ const allWords: WordEntry[] = [
     ...processWords(actionsWords, 'actions'),
     ...processWords(descriptorsWords, 'descriptors'),
     ...processWords(animalsWords, 'animals'),
-    ...processWords(basicWords, 'basic'),
+    ...processWords(basicWords, 'core', 'basic'),
     ...processWords(bodyWords, 'body'),
     ...processWords(colorsWords, 'colors'),
     ...processWords(familyWords, 'family'),

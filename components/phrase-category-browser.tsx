@@ -2,12 +2,11 @@
 
 import { useMemo, useState } from 'react'
 
-import { PhraseCardGrid } from '@/components/phrase-card-grid'
+import { PhraseCardGrid, type PhraseCardItem } from '@/components/phrase-card-grid'
 import { SearchInput } from '@/components/search-input'
-import type { WolofPhrase } from '@/data/types'
 
 type PhraseCategoryBrowserProps = {
-    phrases: WolofPhrase[]
+    phrases: PhraseCardItem[]
 }
 
 export function PhraseCategoryBrowser({ phrases }: PhraseCategoryBrowserProps) {

@@ -89,6 +89,15 @@ export const everydayPhrases: WolofPhrase[] = [
         notes: 'Uses the negative suffix -u-ma (understand-not-I).'
     },
     {
+        id: 'everyday-i-dont-understand',
+        english: 'I don\'t understand',
+        senegal: 'Degguma.',
+        gambia: 'Deguma.',
+        category: 'everyday',
+        tags: ['learning'],
+        notes: 'Common contracted English phrasing for the same meaning as "I do not understand".'
+    },
+    {
         id: 'everyday-5',
         english: 'Do you speak English?',
         senegal: 'Danga wax angale?',

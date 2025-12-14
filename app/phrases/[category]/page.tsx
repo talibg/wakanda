@@ -6,8 +6,8 @@ import { findPhraseCategory, phraseCategories } from '@/app/data/phrases'
 import { findWordCategory } from '@/app/data/words'
 import { JsonLdBreadcrumb, JsonLdCollectionPage } from '@/components/json-ld'
 import { PhraseCategoryBrowser } from '@/components/phrase-category-browser'
+import { getCanonicalPhraseLeafPathForPhrase } from '@/lib/phrase-seo'
 import { buildCanonicalUrl } from '@/lib/seo'
-import { slugifyEnglish } from '@/lib/slugify'
 import type { PhraseCategory as PhraseCategorySlug, WordCategory as WordCategorySlug } from '@/data/types'
 
 export const dynamic = 'force-static'
@@ -83,10 +83,10 @@ export const generateMetadata = async ({ params }: PageParams): Promise<Metadata
 }
 
 const relatedWordCategories: Partial<Record<PhraseCategorySlug, WordCategorySlug[]>> = {
-    greetings: ['basic', 'core'],
-    'polite-expressions': ['basic'],
+    greetings: ['core'],
+    'polite-expressions': ['core'],
     introductions: ['core', 'family'],
-    farewells: ['basic', 'time'],
+    farewells: ['core', 'time'],
     everyday: ['core', 'actions', 'descriptors'],
     questions: ['core', 'actions', 'places'],
     travel: ['places', 'numbers', 'actions'],
@@ -105,7 +105,10 @@ export default async function PhraseCategoryPage({ params }: PageParams) {
         notFound()
     }
 
-    const phrases = descriptor.items
+    const phrases = descriptor.items.map((phrase) => ({
+        ...phrase,
+        href: getCanonicalPhraseLeafPathForPhrase(phrase)
+    }))
 
     return (
         <div className="space-y-8">
@@ -121,7 +124,7 @@ export default async function PhraseCategoryPage({ params }: PageParams) {
                 items={phrases.map((phrase) => ({
                     name: phrase.english,
                     description: `Wolof translation for ${phrase.english}: ${phrase.senegal} (Senegal), ${phrase.gambia} (Gambia)`,
-                    url: `https://learnwolof.com/phrases/${descriptor.slug}/${slugifyEnglish(phrase.english)}`
+                    url: `https://learnwolof.com${phrase.href}`
                 }))}
                 name={`Wolof ${descriptor.title}`}
                 url={`https://learnwolof.com/phrases/${descriptor.slug}`}
@@ -155,7 +158,7 @@ export default async function PhraseCategoryPage({ params }: PageParams) {
                 <div className="mt-10 space-y-4">
                     <h2 className="text-2xl font-bold">Related Vocabulary</h2>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                        {(relatedWordCategories[descriptor.slug] ?? ['core', 'basic']).flatMap((slug) => {
+                        {(relatedWordCategories[descriptor.slug] ?? ['core']).flatMap((slug) => {
                             const wordCategory = findWordCategory(slug)
                             if (!wordCategory) return []
                             return [

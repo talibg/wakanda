@@ -136,7 +136,7 @@ export default function FirstTenPhrasesPage() {
                         </Link>
                     </Button>
                     <Button asChild size="lg" variant="outline">
-                        <Link href="/words/basic">View Basic Words</Link>
+                        <Link href="/words/core">View Core Words</Link>
                     </Button>
                     <Button asChild size="lg" variant="ghost">
                         <Link href="/phrases/romance">Learn Romance Phrases</Link>

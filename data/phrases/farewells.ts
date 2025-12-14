@@ -17,6 +17,14 @@ export const farewellPhrases: WolofPhrase[] = [
         category: 'farewells'
     },
     {
+        id: 'farewells-see-you-tomorrow',
+        english: 'See you tomorrow',
+        senegal: 'Ba suba.',
+        gambia: 'Ba suba.',
+        category: 'farewells',
+        notes: 'Suba can mean "tomorrow" and is also used in morning greetings.'
+    },
+    {
         id: 'farewells-good-night',
         english: 'Good night',
         senegal: 'Fanaanal ak jàmm.',
@@ -25,4 +33,3 @@ export const farewellPhrases: WolofPhrase[] = [
         notes: 'Literally "sleep in peace".'
     }
 ]
-

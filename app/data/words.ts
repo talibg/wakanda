@@ -22,8 +22,16 @@ export type WordCategory = {
     items: WordItem[]
 }
 
+const mergedCoreWords: WordItem[] = [
+    ...coreWords,
+    ...basicWords.map((word): WordItem => ({
+        ...word,
+        category: 'core'
+    }))
+]
+
 const wordsByCategory: Record<WordCategorySlug, WordItem[]> = {
-    core: coreWords,
+    core: mergedCoreWords,
     actions: actionsWords,
     descriptors: descriptorsWords,
     numbers: numbersWords,
@@ -42,7 +50,7 @@ export const wordCategories: WordCategory[] = [
     {
         slug: 'core',
         title: 'Core Words',
-        description: 'Pronouns and high-frequency building blocks for simple sentences.',
+        description: 'Pronouns plus everyday basics like yes, no, please, and thank you.',
         items: wordsByCategory.core
     },
     {
@@ -74,12 +82,6 @@ export const wordCategories: WordCategory[] = [
         title: 'Food & Drink',
         description: 'Essential food vocabulary for Senegalese and Gambian meals.',
         items: wordsByCategory.food
-    },
-    {
-        slug: 'basic',
-        title: 'Everyday Basics',
-        description: 'Greetings, polite expressions, and useful small talk phrases.',
-        items: wordsByCategory.basic
     },
     {
         slug: 'time',
