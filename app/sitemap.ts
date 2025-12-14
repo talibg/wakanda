@@ -3,6 +3,7 @@ import type { MetadataRoute } from 'next'
 import { phraseCategories } from '@/app/data/phrases'
 import { wordCategories } from '@/app/data/words'
 import { englishToWolofExamples, wolofToEnglishExamples } from '@/data/translate-examples'
+import { slugifyEnglish } from '@/lib/slugify'
 
 const siteUrl = 'https://learnwolof.com'
 
@@ -36,6 +37,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'weekly',
         priority: 0.8
     }))
+
+    const phraseDetailRoutes: MetadataRoute.Sitemap = phraseCategories.flatMap((category) => {
+        const seen = new Set<string>()
+        return category.items.flatMap((phrase) => {
+            const slug = slugifyEnglish(phrase.english)
+            const key = `${category.slug}/${slug}`
+            if (seen.has(key)) return []
+            seen.add(key)
+            return [
+                {
+                    url: buildUrl(`/phrases/${category.slug}/${slug}`),
+                    lastModified: now,
+                    changeFrequency: 'weekly' as const,
+                    priority: 0.7
+                }
+            ]
+        })
+    })
 
     const guideRoutes: MetadataRoute.Sitemap = [
         {
@@ -89,5 +108,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }))
     ]
 
-    return [...baseRoutes, ...wordRoutes, ...phraseRoutes, ...guideRoutes, ...translateBase, ...translateExamples]
+    return [
+        ...baseRoutes,
+        ...wordRoutes,
+        ...phraseRoutes,
+        ...phraseDetailRoutes,
+        ...guideRoutes,
+        ...translateBase,
+        ...translateExamples
+    ]
 }

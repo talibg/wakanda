@@ -1,7 +1,10 @@
+import { actionsWords } from '../../data/words/actions'
 import { animalsWords } from '../../data/words/animals'
 import { basicWords } from '../../data/words/basic'
 import { bodyWords } from '../../data/words/body'
 import { colorsWords } from '../../data/words/colors'
+import { coreWords } from '../../data/words/core'
+import { descriptorsWords } from '../../data/words/descriptors'
 import { familyWords } from '../../data/words/family'
 import { foodWords } from '../../data/words/food'
 import { numbersWords } from '../../data/words/numbers'
@@ -67,6 +70,9 @@ const processWords = (
 }
 
 const allWords: WordEntry[] = [
+    ...processWords(coreWords, 'core'),
+    ...processWords(actionsWords, 'actions'),
+    ...processWords(descriptorsWords, 'descriptors'),
     ...processWords(animalsWords, 'animals'),
     ...processWords(basicWords, 'basic'),
     ...processWords(bodyWords, 'body'),

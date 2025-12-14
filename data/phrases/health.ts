@@ -2,6 +2,14 @@ import type { WolofPhrase } from '@/data/types'
 
 export const healthPhrases: WolofPhrase[] = [
     {
+        id: 'health-help',
+        english: 'Help!',
+        senegal: 'Dimbali ma!',
+        gambia: 'Dimbali ma!',
+        category: 'health',
+        tags: ['emergency']
+    },
+    {
         id: 'health_sick',
         english: 'I am sick',
         senegal: 'Dama feebar',
@@ -21,6 +29,29 @@ export const healthPhrases: WolofPhrase[] = [
         senegal: 'Ana doctoor bi?',
         gambia: 'Ana doctoor bi?',
         category: 'health'
+    },
+    {
+        id: 'health-need-doctor',
+        english: 'I need a doctor',
+        senegal: 'Dama soxla doctoor.',
+        gambia: 'Dama soxhla doctoor.',
+        category: 'health'
+    },
+    {
+        id: 'health-call-police',
+        english: 'Call the police',
+        senegal: 'Wooyal police bi.',
+        gambia: 'Wooyal police bi.',
+        category: 'health',
+        tags: ['emergency']
+    },
+    {
+        id: 'health-where-hospital',
+        english: 'Where is the hospital?',
+        senegal: 'Ana lopitaan bi?',
+        gambia: 'Ana hospital bi?',
+        category: 'health',
+        tags: ['emergency']
     },
     {
         id: 'health_hospital',

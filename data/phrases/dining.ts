@@ -50,5 +50,28 @@ export const diningPhrases: WolofPhrase[] = [
         gambia: 'Dafay nyor',
         category: 'dining',
         notes: 'Used to describe food being salty. Gambian spelling often represents ñ as ny.'
+    },
+    {
+        id: 'dining-want-food',
+        english: 'I want food',
+        senegal: 'Bëgg naa lekk.',
+        gambia: 'Begg naa lekk.',
+        category: 'dining',
+        notes: 'Also understood as "I want to eat".'
+    },
+    {
+        id: 'dining-water-please',
+        english: 'Water, please',
+        senegal: 'Bu la neexee, jox ma ndox.',
+        gambia: 'Bu la neexee, jox ma ndokh.',
+        category: 'dining'
+    },
+    {
+        id: 'dining-how-much-food',
+        english: 'How much is this food?',
+        senegal: 'Ñaata la lekk bii?',
+        gambia: 'Ñaata la lekk bii?',
+        category: 'dining',
+        tags: ['money']
     }
 ]

@@ -2,6 +2,60 @@ import type { WolofPhrase } from '@/data/types'
 
 export const everydayPhrases: WolofPhrase[] = [
     {
+        id: 'everyday-yes',
+        english: 'Yes',
+        senegal: 'Waaw.',
+        gambia: 'Waaw.',
+        category: 'everyday'
+    },
+    {
+        id: 'everyday-no',
+        english: 'No',
+        senegal: 'Déedéet.',
+        gambia: 'Dedet.',
+        category: 'everyday'
+    },
+    {
+        id: 'everyday-ok',
+        english: 'Okay',
+        senegal: 'Baax na.',
+        gambia: 'Baakh na.',
+        category: 'everyday',
+        notes: 'Literally "it is good". Often used like "okay / alright".'
+    },
+    {
+        id: 'everyday-maybe',
+        english: 'Maybe',
+        senegal: 'Xanaa.',
+        gambia: 'Xanaa.',
+        category: 'everyday',
+        notes: 'Often used to express uncertainty, especially at the start of a sentence.'
+    },
+    {
+        id: 'everyday-i-understand',
+        english: 'I understand.',
+        senegal: 'Dégg naa.',
+        gambia: 'Degg naa.',
+        category: 'everyday',
+        tags: ['learning']
+    },
+    {
+        id: 'everyday-repeat',
+        english: 'Please repeat.',
+        senegal: 'Bu la neexee, waxaatal ko.',
+        gambia: 'Bu la neekhee, waxaatal ko.',
+        category: 'everyday',
+        tags: ['learning']
+    },
+    {
+        id: 'everyday-speak-slowly',
+        english: 'Speak slowly.',
+        senegal: 'Waxal ndànk ndànk.',
+        gambia: 'Wakhal ndank ndank.',
+        category: 'everyday',
+        tags: ['learning']
+    },
+    {
         id: 'everyday-1',
         english: 'I am hungry.',
         senegal: 'Dama xiif.', // Corrected to 1st person singular ('I')

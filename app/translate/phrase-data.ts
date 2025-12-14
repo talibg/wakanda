@@ -1,9 +1,12 @@
 import { diningPhrases } from '../../data/phrases/dining'
 import { everydayPhrases } from '../../data/phrases/everyday'
+import { farewellPhrases } from '../../data/phrases/farewells'
+import { familyPhrases } from '../../data/phrases/family'
 import { greetingPhrases } from '../../data/phrases/greetings'
 import { healthPhrases } from '../../data/phrases/health'
 import { introductionPhrases } from '../../data/phrases/introductions'
 import { marketPhrases } from '../../data/phrases/market'
+import { politeExpressionsPhrases } from '../../data/phrases/polite-expressions'
 import { questionPhrases } from '../../data/phrases/questions'
 import { romancePhrases } from '../../data/phrases/romance'
 import { travelPhrases } from '../../data/phrases/travel'
@@ -63,10 +66,13 @@ const processPhrases = (
 const allPhrases: PhraseEntry[] = [
     ...processPhrases(diningPhrases, 'dining'),
     ...processPhrases(everydayPhrases, 'everyday'),
+    ...processPhrases(farewellPhrases, 'farewells'),
+    ...processPhrases(familyPhrases, 'family'),
     ...processPhrases(greetingPhrases, 'greetings'),
     ...processPhrases(introductionPhrases, 'introductions'),
     ...processPhrases(healthPhrases, 'health'),
     ...processPhrases(marketPhrases, 'market'),
+    ...processPhrases(politeExpressionsPhrases, 'polite-expressions'),
     ...processPhrases(questionPhrases, 'questions'),
     ...processPhrases(romancePhrases, 'romance'),
     ...processPhrases(travelPhrases, 'travel')

@@ -70,5 +70,77 @@ export const placesWords: WolofWord[] = [
         exampleSentenceEnglish: 'Clean your room.',
         exampleSentenceSenegal: 'Setalal sa neg.',
         exampleSentenceGambia: 'Setalal sa neg.'
+    },
+    {
+        id: 'place_home',
+        english: 'Home',
+        senegal: 'Suwo',
+        gambia: 'Suwo',
+        category: 'places',
+        exampleSentenceEnglish: 'I am at home.',
+        exampleSentenceSenegal: 'Maa ngi ci suwo.',
+        exampleSentenceGambia: 'Maa ngi chi suwo.'
+    },
+    {
+        id: 'place_street',
+        english: 'Street',
+        senegal: 'Mbedd',
+        gambia: 'Mbedd',
+        category: 'places',
+        notes: 'Also written as "mbedda" for road/path/street.',
+        exampleSentenceEnglish: 'The street is busy.',
+        exampleSentenceSenegal: 'Mbedd bi dafa am nit.',
+        exampleSentenceGambia: 'Mbedd bi dafa am nit.'
+    },
+    {
+        id: 'place_town',
+        english: 'Town',
+        senegal: 'Dëkk',
+        gambia: 'Dekk',
+        category: 'places',
+        notes: 'Also used for city or place where someone lives.',
+        exampleSentenceEnglish: 'Which town are you from?',
+        exampleSentenceSenegal: 'Ban dëkk nga joge?',
+        exampleSentenceGambia: 'Ban dekk nga joge?'
+    },
+    {
+        id: 'direction_left',
+        english: 'Left',
+        senegal: 'Càmmooñ',
+        gambia: 'Cammoony',
+        category: 'places',
+        tags: ['direction']
+    },
+    {
+        id: 'direction_right',
+        english: 'Right',
+        senegal: 'Ndeyjoor',
+        gambia: 'Ndeyjoor',
+        category: 'places',
+        tags: ['direction']
+    },
+    {
+        id: 'direction_straight',
+        english: 'Straight',
+        senegal: 'Jub',
+        gambia: 'Jub',
+        category: 'places',
+        tags: ['direction']
+    },
+    {
+        id: 'direction_near',
+        english: 'Near',
+        senegal: 'Jëgé',
+        gambia: 'Jege',
+        category: 'places',
+        tags: ['direction']
+    },
+    {
+        id: 'direction_far',
+        english: 'Far',
+        senegal: 'Sore',
+        gambia: 'Sore',
+        category: 'places',
+        tags: ['direction']
     }
 ]

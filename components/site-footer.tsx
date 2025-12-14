@@ -9,6 +9,11 @@ export function SiteFooter() {
                         <h3 className="text-sm font-medium text-foreground">Explore</h3>
                         <ul className="space-y-3 text-sm text-muted-foreground">
                             <li>
+                                <Link className="hover:text-foreground transition-colors" href="/guides">
+                                    Wolof Guides
+                                </Link>
+                            </li>
+                            <li>
                                 <Link
                                     className="hover:text-foreground transition-colors"
                                     href="/guides/first-ten-wolof-phrases"

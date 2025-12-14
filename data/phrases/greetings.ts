@@ -2,6 +2,14 @@ import type { WolofPhrase } from '@/data/types'
 
 export const greetingPhrases: WolofPhrase[] = [
     {
+        id: 'greetings-hello',
+        english: 'Hello',
+        senegal: 'Salaam aleekum.',
+        gambia: 'Salaam aleekum.',
+        category: 'greetings',
+        notes: 'The universal greeting. The required reply is "Maleekum salaam".'
+    },
+    {
         id: 'greetings-1',
         english: 'How are you?',
         senegal: 'Nanga def?',

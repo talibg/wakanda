@@ -2,6 +2,14 @@ import type { WolofPhrase } from '@/data/types'
 
 export const questionPhrases: WolofPhrase[] = [
     {
+        id: 'questions-where-from',
+        english: 'Where are you from?',
+        senegal: 'Fan nga joge?',
+        gambia: 'Fo nga joge?',
+        category: 'questions',
+        tags: ['introductions']
+    },
+    {
         id: 'questions-1',
         english: 'What is your name?',
         senegal: 'Nanga tudd?', // Corrected to the standard question form
@@ -42,5 +50,21 @@ export const questionPhrases: WolofPhrase[] = [
         gambia: 'Mën nga ma dimbali?',
         category: 'questions',
         notes: 'Mën nga (Can you), ma (me), dimbali (help).'
+    },
+    {
+        id: 'questions-how-much',
+        english: 'How much is this?',
+        senegal: 'Ñaata la?',
+        gambia: 'Ñaata la?',
+        category: 'questions',
+        tags: ['money']
+    },
+    {
+        id: 'questions-where-is',
+        english: 'Where is ...?',
+        senegal: 'Ana ...?',
+        gambia: 'Ana ...?',
+        category: 'questions',
+        notes: 'Replace the ellipsis with the place or thing you are looking for.'
     }
 ]

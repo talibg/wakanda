@@ -1,17 +1,23 @@
 import { diningPhrases } from '@/data/phrases/dining'
 import { everydayPhrases } from '@/data/phrases/everyday'
+import { farewellPhrases } from '@/data/phrases/farewells'
+import { familyPhrases } from '@/data/phrases/family'
 import { greetingPhrases } from '@/data/phrases/greetings'
 import { healthPhrases } from '@/data/phrases/health'
 import { introductionPhrases } from '@/data/phrases/introductions'
 import { marketPhrases } from '@/data/phrases/market'
+import { politeExpressionsPhrases } from '@/data/phrases/polite-expressions'
 import { questionPhrases } from '@/data/phrases/questions'
 import { romancePhrases } from '@/data/phrases/romance'
 import { travelPhrases } from '@/data/phrases/travel'
 import type { PhraseCategory, WolofPhrase, WolofWord, WordCategory } from '@/data/types'
+import { actionsWords } from '@/data/words/actions'
 import { animalsWords } from '@/data/words/animals'
 import { basicWords } from '@/data/words/basic'
 import { bodyWords } from '@/data/words/body'
 import { colorsWords } from '@/data/words/colors'
+import { coreWords } from '@/data/words/core'
+import { descriptorsWords } from '@/data/words/descriptors'
 import { familyWords } from '@/data/words/family'
 import { foodWords } from '@/data/words/food'
 import { numbersWords } from '@/data/words/numbers'
@@ -20,6 +26,21 @@ import { placesWords } from '@/data/words/places'
 import { timeWords } from '@/data/words/time'
 
 export const wordCategories: { id: WordCategory; label: string; description: string }[] = [
+    {
+        id: 'core',
+        label: 'Core Words',
+        description: 'Pronouns and high-frequency building blocks for simple sentences.'
+    },
+    {
+        id: 'actions',
+        label: 'Actions (Verbs)',
+        description: 'Essential verbs for building useful phrases.'
+    },
+    {
+        id: 'descriptors',
+        label: 'Descriptors (Adjectives)',
+        description: 'Common adjectives for describing people, places, and things.'
+    },
     {
         id: 'numbers',
         label: 'Numbers',
@@ -57,8 +78,8 @@ export const wordCategories: { id: WordCategory; label: string; description: str
     },
     {
         id: 'places',
-        label: 'Places',
-        description: 'Important locations like the market, school, and home.'
+        label: 'Places & Directions',
+        description: 'Important locations plus direction words for getting around.'
     },
     {
         id: 'body',
@@ -79,9 +100,19 @@ export const phraseCategories: { id: PhraseCategory; label: string; description:
         description: 'Start conversations the Wolof way with respectful greetings.'
     },
     {
+        id: 'polite-expressions',
+        label: 'Polite Expressions',
+        description: 'Say thank you, please, and excuse me the Wolof way.'
+    },
+    {
         id: 'introductions',
         label: 'Introductions',
         description: 'Introduce yourself and ask for names or hometowns.'
+    },
+    {
+        id: 'farewells',
+        label: 'Farewells',
+        description: 'Wrap up conversations with respectful goodbyes and good nights.'
     },
     {
         id: 'travel',
@@ -114,6 +145,11 @@ export const phraseCategories: { id: PhraseCategory; label: string; description:
         description: 'Order food, ask for water, and compliment the chef.'
     },
     {
+        id: 'family',
+        label: 'Family & Social',
+        description: 'Talk about your family, friends, and relationships.'
+    },
+    {
         id: 'romance',
         label: 'Romance & Relationships',
         description: 'Express love and affection in Wolof.'
@@ -121,6 +157,9 @@ export const phraseCategories: { id: PhraseCategory; label: string; description:
 ]
 
 const wordMap: Record<WordCategory, WolofWord[]> = {
+    core: coreWords,
+    actions: actionsWords,
+    descriptors: descriptorsWords,
     numbers: numbersWords,
     family: familyWords,
     food: foodWords,
@@ -135,13 +174,16 @@ const wordMap: Record<WordCategory, WolofWord[]> = {
 
 const phraseMap: Record<PhraseCategory, WolofPhrase[]> = {
     greetings: greetingPhrases,
+    'polite-expressions': politeExpressionsPhrases,
     introductions: introductionPhrases,
+    farewells: farewellPhrases,
     travel: travelPhrases,
     market: marketPhrases,
     everyday: everydayPhrases,
     questions: questionPhrases,
     health: healthPhrases,
     dining: diningPhrases,
+    family: familyPhrases,
     romance: romancePhrases
 }
 

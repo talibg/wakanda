@@ -143,5 +143,121 @@ export const numbersWords: WolofWord[] = [
         exampleSentenceEnglish: 'The taxi costs one hundred francs.',
         exampleSentenceSenegal: 'Clando bi jël na téeméer franc.',
         exampleSentenceGambia: 'Taxi bi jël na téeméer dalasi.'
+    },
+    {
+        id: 'numbers-eleven',
+        english: 'eleven',
+        senegal: 'fukk ak benn',
+        gambia: 'fukk ak benn',
+        category: 'numbers',
+        notes: 'Built as "ten and one".',
+        exampleSentenceEnglish: 'Eleven people came.',
+        exampleSentenceSenegal: 'Fukk ak benn nit ñëw nañu.',
+        exampleSentenceGambia: 'Fukk ak benn nit ñëw nañu.'
+    },
+    {
+        id: 'numbers-twelve',
+        english: 'twelve',
+        senegal: 'fukk ak ñaar',
+        gambia: 'fukk ak nyar',
+        category: 'numbers',
+        notes: 'Built as "ten and two".'
+    },
+    {
+        id: 'numbers-thirteen',
+        english: 'thirteen',
+        senegal: 'fukk ak ñett',
+        gambia: 'fukk ak nyett',
+        category: 'numbers'
+    },
+    {
+        id: 'numbers-fourteen',
+        english: 'fourteen',
+        senegal: 'fukk ak ñent',
+        gambia: 'fukk ak nyent',
+        category: 'numbers'
+    },
+    {
+        id: 'numbers-fifteen',
+        english: 'fifteen',
+        senegal: 'fukk ak juróom',
+        gambia: 'fukk ak juróom',
+        category: 'numbers'
+    },
+    {
+        id: 'numbers-sixteen',
+        english: 'sixteen',
+        senegal: 'fukk ak juróom-benn',
+        gambia: 'fukk ak juróom-benn',
+        category: 'numbers'
+    },
+    {
+        id: 'numbers-seventeen',
+        english: 'seventeen',
+        senegal: 'fukk ak juróom-ñaar',
+        gambia: 'fukk ak juróom-nyar',
+        category: 'numbers'
+    },
+    {
+        id: 'numbers-eighteen',
+        english: 'eighteen',
+        senegal: 'fukk ak juróom-ñett',
+        gambia: 'fukk ak juróom-nyett',
+        category: 'numbers'
+    },
+    {
+        id: 'numbers-nineteen',
+        english: 'nineteen',
+        senegal: 'fukk ak juróom-ñent',
+        gambia: 'fukk ak juróom-nyent',
+        category: 'numbers'
+    },
+    {
+        id: 'numbers-thirty',
+        english: 'thirty',
+        senegal: 'ñett fukk',
+        gambia: 'nyett fukk',
+        category: 'numbers',
+        notes: 'Literally “three tens”.'
+    },
+    {
+        id: 'numbers-forty',
+        english: 'forty',
+        senegal: 'ñent fukk',
+        gambia: 'nyent fukk',
+        category: 'numbers',
+        notes: 'Literally “four tens”.'
+    },
+    {
+        id: 'numbers-sixty',
+        english: 'sixty',
+        senegal: 'juróom fukk ak fukk',
+        gambia: 'juróom fukk ak fukk',
+        category: 'numbers',
+        notes: 'Literally “fifty and ten”.'
+    },
+    {
+        id: 'numbers-seventy',
+        english: 'seventy',
+        senegal: 'juróom fukk ak ñaar fukk',
+        gambia: 'juróom fukk ak nyar fukk',
+        category: 'numbers',
+        notes: 'Literally “fifty and twenty”.'
+    },
+    {
+        id: 'numbers-eighty',
+        english: 'eighty',
+        senegal: 'juróom fukk ak ñett fukk',
+        gambia: 'juróom fukk ak nyett fukk',
+        category: 'numbers',
+        notes: 'Literally “fifty and thirty”.'
+    },
+    {
+        id: 'numbers-ninety',
+        english: 'ninety',
+        senegal: 'juróom fukk ak ñent fukk',
+        gambia: 'juróom fukk ak nyent fukk',
+        category: 'numbers',
+        notes: 'Literally “fifty and forty”.'
     }
 ]

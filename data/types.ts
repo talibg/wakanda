@@ -1,4 +1,7 @@
 export type WordCategory =
+    | 'core'
+    | 'actions'
+    | 'descriptors'
     | 'numbers'
     | 'family'
     | 'food'
@@ -12,13 +15,16 @@ export type WordCategory =
 
 export type PhraseCategory =
     | 'greetings'
+    | 'polite-expressions'
     | 'introductions'
+    | 'farewells'
     | 'travel'
     | 'market'
     | 'everyday'
     | 'questions'
     | 'health'
     | 'dining'
+    | 'family'
     | 'romance'
 
 export type WolofWord = {

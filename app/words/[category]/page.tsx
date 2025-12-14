@@ -2,10 +2,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+import { findPhraseCategory } from '@/app/data/phrases'
 import { findWordCategory, wordCategories } from '@/app/data/words'
 import { JsonLdBreadcrumb, JsonLdCollectionPage } from '@/components/json-ld'
 import { WordCategoryBrowser } from '@/components/word-category-browser'
 import { buildCanonicalUrl } from '@/lib/seo'
+import type { PhraseCategory as PhraseCategorySlug, WordCategory as WordCategorySlug } from '@/data/types'
 
 export const dynamic = 'force-static'
 
@@ -79,6 +81,22 @@ export const generateMetadata = async ({ params }: PageParams): Promise<Metadata
     }
 }
 
+const relatedPhraseCategories: Partial<Record<WordCategorySlug, PhraseCategorySlug[]>> = {
+    core: ['everyday', 'questions', 'introductions'],
+    actions: ['travel', 'dining', 'everyday'],
+    descriptors: ['everyday', 'market', 'dining'],
+    numbers: ['market', 'travel'],
+    family: ['family', 'introductions', 'romance'],
+    food: ['dining', 'market'],
+    basic: ['greetings', 'polite-expressions', 'farewells'],
+    time: ['greetings', 'farewells'],
+    places: ['travel', 'questions', 'market'],
+    body: ['health'],
+    people: ['introductions', 'greetings'],
+    animals: ['everyday'],
+    colors: ['everyday']
+}
+
 export default async function WordCategoryPage({ params }: PageParams) {
     const { category } = await params
     const descriptor = findWordCategory(category)
@@ -133,6 +151,29 @@ export default async function WordCategoryPage({ params }: PageParams) {
                                 <p className="text-sm text-muted-foreground">{category.description}</p>
                             </Link>
                         ))}
+                </div>
+                <div className="mt-10 space-y-4">
+                    <h2 className="text-2xl font-bold">Related Phrase Categories</h2>
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        {(relatedPhraseCategories[descriptor.slug] ?? ['everyday', 'questions', 'greetings']).flatMap(
+                            (slug) => {
+                                const phraseCategory = findPhraseCategory(slug)
+                                if (!phraseCategory) return []
+                                return [
+                                    <Link
+                                        className="group block rounded-lg border p-4 transition-colors hover:bg-muted/50"
+                                        href={`/phrases/${phraseCategory.slug}`}
+                                        key={phraseCategory.slug}
+                                    >
+                                        <h3 className="font-semibold group-hover:text-primary">
+                                            {phraseCategory.title}
+                                        </h3>
+                                        <p className="text-sm text-muted-foreground">{phraseCategory.description}</p>
+                                    </Link>
+                                ]
+                            }
+                        )}
+                    </div>
                 </div>
             </section>
         </div>

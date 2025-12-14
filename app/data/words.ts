@@ -1,8 +1,11 @@
 import type { WolofWord, WordCategory as WordCategorySlug } from '@/data/types'
+import { actionsWords } from '@/data/words/actions'
 import { animalsWords } from '@/data/words/animals'
 import { basicWords } from '@/data/words/basic'
 import { bodyWords } from '@/data/words/body'
 import { colorsWords } from '@/data/words/colors'
+import { coreWords } from '@/data/words/core'
+import { descriptorsWords } from '@/data/words/descriptors'
 import { familyWords } from '@/data/words/family'
 import { foodWords } from '@/data/words/food'
 import { numbersWords } from '@/data/words/numbers'
@@ -20,6 +23,9 @@ export type WordCategory = {
 }
 
 const wordsByCategory: Record<WordCategorySlug, WordItem[]> = {
+    core: coreWords,
+    actions: actionsWords,
+    descriptors: descriptorsWords,
     numbers: numbersWords,
     family: familyWords,
     food: foodWords,
@@ -33,6 +39,24 @@ const wordsByCategory: Record<WordCategorySlug, WordItem[]> = {
 }
 
 export const wordCategories: WordCategory[] = [
+    {
+        slug: 'core',
+        title: 'Core Words',
+        description: 'Pronouns and high-frequency building blocks for simple sentences.',
+        items: wordsByCategory.core
+    },
+    {
+        slug: 'actions',
+        title: 'Actions (Verbs)',
+        description: 'Essential verbs for building useful phrases.',
+        items: wordsByCategory.actions
+    },
+    {
+        slug: 'descriptors',
+        title: 'Descriptors (Adjectives)',
+        description: 'Common adjectives for describing people, places, and things.',
+        items: wordsByCategory.descriptors
+    },
     {
         slug: 'numbers',
         title: 'Numbers',
@@ -77,8 +101,8 @@ export const wordCategories: WordCategory[] = [
     },
     {
         slug: 'places',
-        title: 'Places',
-        description: 'Important locations like the market, school, and home.',
+        title: 'Places & Directions',
+        description: 'Important locations plus direction words for getting around.',
         items: wordsByCategory.places
     },
     {

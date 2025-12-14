@@ -9,7 +9,12 @@ type EnglishToWolofSnippet = {
     category: string
 }
 
-const normalizeEnglish = (value: string) => value.trim().toLowerCase().replace(/\s+/g, ' ')
+const normalizeEnglish = (value: string) => {
+    const trimmed = value.trim().toLowerCase()
+    const withoutApostrophes = trimmed.replace(/[’']/g, '')
+    const wordsOnly = withoutApostrophes.replace(/[^a-z0-9]+/g, ' ')
+    return wordsOnly.replace(/\s+/g, ' ').trim()
+}
 
 export const getEnglishToWolofSnippet = (english: string): EnglishToWolofSnippet | undefined => {
     const normalizedEnglish = normalizeEnglish(english)

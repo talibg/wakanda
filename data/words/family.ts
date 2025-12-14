@@ -111,5 +111,27 @@ export const familyWords: WolofWord[] = [
         exampleSentenceEnglish: 'My neighbor is kind.',
         exampleSentenceSenegal: 'Sama dëkkandoo dafa baax.',
         exampleSentenceGambia: 'Sama dekkandoo dafa baakh.'
+    },
+    {
+        id: 'family-brother',
+        english: 'brother',
+        senegal: 'mag bu góor',
+        gambia: 'mag bu góor',
+        category: 'family',
+        notes: 'Wolof often distinguishes older vs younger siblings. Mag = older sibling; rakk = younger sibling.',
+        exampleSentenceEnglish: 'He is my brother.',
+        exampleSentenceSenegal: 'Mooy sama mag bu góor.',
+        exampleSentenceGambia: 'Mo sama mag bu góor la.'
+    },
+    {
+        id: 'family-sister',
+        english: 'sister',
+        senegal: 'mag bu jigéen',
+        gambia: 'mag bu jigéen',
+        category: 'family',
+        notes: 'Mag bu jigéen = older sister; rakk bu jigéen = younger sister.',
+        exampleSentenceEnglish: 'She is my sister.',
+        exampleSentenceSenegal: 'Mooy sama mag bu jigéen.',
+        exampleSentenceGambia: 'Mo sama mag bu jigéen la.'
     }
 ]

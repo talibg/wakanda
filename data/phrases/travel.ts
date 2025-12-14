@@ -2,6 +2,64 @@ import type { WolofPhrase } from '@/data/types'
 
 export const travelPhrases: WolofPhrase[] = [
     {
+        id: 'travel-where-is',
+        english: 'Where is ...?',
+        senegal: 'Ana ...?',
+        gambia: 'Ana ...?',
+        category: 'travel',
+        tags: ['directions'],
+        notes: 'Replace the ellipsis with the destination.'
+    },
+    {
+        id: 'travel-how-to-get',
+        english: 'How do I get to ...?',
+        senegal: 'Naka laa man a dem ...?',
+        gambia: 'Naka laa man a dem ...?',
+        category: 'travel',
+        tags: ['directions'],
+        notes: 'Literally "How can I go to ...?" Replace the ellipsis with the destination.'
+    },
+    {
+        id: 'travel-left',
+        english: 'Left',
+        senegal: 'Càmmooñ.',
+        gambia: 'Cammoony.',
+        category: 'travel',
+        tags: ['directions']
+    },
+    {
+        id: 'travel-right',
+        english: 'Right',
+        senegal: 'Ndeyjoor.',
+        gambia: 'Ndeyjoor.',
+        category: 'travel',
+        tags: ['directions']
+    },
+    {
+        id: 'travel-straight',
+        english: 'Straight',
+        senegal: 'Jub.',
+        gambia: 'Jub.',
+        category: 'travel',
+        tags: ['directions']
+    },
+    {
+        id: 'travel-near',
+        english: 'Near',
+        senegal: 'Jëgé.',
+        gambia: 'Jege.',
+        category: 'travel',
+        tags: ['directions']
+    },
+    {
+        id: 'travel-far',
+        english: 'Far',
+        senegal: 'Sore.',
+        gambia: 'Sore.',
+        category: 'travel',
+        tags: ['directions']
+    },
+    {
         id: 'travel-1',
         english: 'Where is the bus station?',
         senegal: 'Fan la gare bus bi nekk?',
