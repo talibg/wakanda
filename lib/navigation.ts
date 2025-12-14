@@ -6,6 +6,7 @@ export type PrimaryNavItem = {
 
 export const primaryNavItems: PrimaryNavItem[] = [
     { href: '/', label: 'Home', description: 'Return to the Learn Wolof overview' },
+    { href: '/guides', label: 'Guides', description: 'Read practical Wolof lessons' },
     { href: '/alphabet', label: 'Alphabet', description: 'Master Wolof pronunciation' },
     { href: '/words', label: 'Words', description: 'Browse Wolof word lists' },
     { href: '/phrases', label: 'Phrases', description: 'Study useful Wolof sentences' },

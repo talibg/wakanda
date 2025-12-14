@@ -84,6 +84,34 @@ export default function PhrasesIndexPage() {
                     </Card>
                 ))}
             </section>
+
+            <section className="border-t pt-8 space-y-4">
+                <h2 className="text-2xl font-bold tracking-tight">Popular searches</h2>
+                <p className="text-muted-foreground">
+                    Looking for a specific phrase? These are the most common Wolof searches, with dialect-aware
+                    spellings.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                    <Button asChild variant="outline">
+                        <Link href="/translate/english-to-wolof/thank-you">Thank you in Wolof</Link>
+                    </Button>
+                    <Button asChild variant="outline">
+                        <Link href="/translate/english-to-wolof/i-love-you">I love you in Wolof</Link>
+                    </Button>
+                    <Button asChild variant="outline">
+                        <Link href="/translate/english-to-wolof/how-are-you">How are you in Wolof</Link>
+                    </Button>
+                    <Button asChild variant="outline">
+                        <Link href="/translate/english-to-wolof/good-morning">Good morning in Wolof</Link>
+                    </Button>
+                    <Button asChild variant="outline">
+                        <Link href="/translate/english-to-wolof/yes">Yes in Wolof</Link>
+                    </Button>
+                    <Button asChild variant="secondary">
+                        <Link href="/guides/wolof-greetings-and-polite-phrases">Read the greetings guide</Link>
+                    </Button>
+                </div>
+            </section>
         </div>
     )
 }

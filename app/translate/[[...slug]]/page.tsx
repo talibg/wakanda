@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 import { buildCanonicalUrl } from '@/lib/seo'
+import { formatDialectSnippet, getEnglishToWolofSnippet } from '@/lib/english-to-wolof-snippet'
 import TranslatorClient from './translator-client'
 
 type Props = {
     params: Promise<{ slug?: string[] }>
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
     const { slug } = await params
     const direction = slug?.[0]
     const term = slug?.[1] ? decodeURIComponent(slug[1]).replace(/-/g, ' ') : ''
@@ -20,9 +21,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'Translate between English and Wolof. Learn pronunciation, examples, and dialect variations (Gambia/Senegal).'
 
     if (term) {
+        const displayTerm = `${term.slice(0, 1).toUpperCase()}${term.slice(1)}`
+
         if (direction === 'english-to-wolof') {
-            title = `Translate "${term}" to Wolof - English to Wolof Dictionary`
-            description = `How to say "${term}" in Wolof. Translate "${term}" from English to Wolof (Gambian & Senegalese dialects).`
+            const snippet = getEnglishToWolofSnippet(term)
+
+            if (snippet) {
+                const translation = formatDialectSnippet(snippet)
+                title = `${displayTerm} in Wolof — ${translation}`
+                description = `How to say "${term}" in Wolof: ${translation}. Dialect-aware results for Senegal and The Gambia.`
+            }
+
+            if (!snippet) {
+                title = `Translate "${term}" to Wolof - English to Wolof Dictionary`
+                description = `How to say "${term}" in Wolof. Translate "${term}" from English to Wolof (Gambian & Senegalese dialects).`
+            }
         } else if (direction === 'wolof-to-english') {
             title = `Translate "${term}" to English - Wolof to English Dictionary`
             description = `Meaning of "${term}" in English. Translate "${term}" from Wolof to English.`
@@ -58,7 +71,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 }
 
-export default async function TranslatePage({ params }: Props) {
+const TranslatePage = async ({ params }: Props) => {
     const { slug } = await params
     const initialDirection = slug?.[0] === 'wolof-to-english' ? 'wo-en' : 'en-wo'
     const rawTerm = slug?.[1] ? decodeURIComponent(slug[1]) : ''
@@ -118,3 +131,5 @@ export default async function TranslatePage({ params }: Props) {
         </>
     )
 }
+
+export default TranslatePage
